@@ -31,7 +31,6 @@ document.onreadystatechange = function () {
             "html").style.visibility = "visible";
         document.querySelector(
             "body").style.visibility = "visible";
-        document.getElementById("body").style.overflow = "hidden";
         document.querySelector(
             "#loader").style.display = "none";
 
