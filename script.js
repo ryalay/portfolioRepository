@@ -14,14 +14,15 @@ if (window.scrollY === 0){
 
 document.onreadystatechange = function () {
     if (document.readyState !== "complete") {
+        document.querySelector(
+            "#loader").style.visibility = "visible";
+            document.getElementById("body").style.overflow = "hidden";
         window.scrollTo({top:0, behavior: "instant"})
         document.querySelector(
             "html").style.visibility = "hidden";
         document.querySelector(
             "body").style.visibility = "hidden";
-        document.querySelector(
-            "#loader").style.visibility = "visible";
-            document.getElementById("body").style.overflow = "hidden";
+
             
     } else {
         window.scrollTo({top:0, behavior: "instant"})
