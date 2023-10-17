@@ -3,7 +3,7 @@ let lastTime = 0;
 
 const windowHeight = window.innerHeight;
 
-window.scrollTo({top:windowHeight})
+window.scrollTo({top:0})
 
 if (window.scrollY === 0){
     document.getElementById("body").style.overflow = "hidden";
@@ -12,7 +12,7 @@ if (window.scrollY === 0){
 
 document.onreadystatechange = function () {
     if (document.readyState !== "complete") {
-        window.scrollTo({top:windowHeight})
+        window.scrollTo({top:0})
         document.querySelector(
             "html").style.visibility = "hidden";
         document.querySelector(
@@ -20,7 +20,7 @@ document.onreadystatechange = function () {
             document.getElementById("body").style.overflow = "hidden";
             document.getElementById("html").style.overflow = "hidden";
     } else {
-        window.scrollTo({top:windowHeight})
+        window.scrollTo({top:0})
         document.querySelector(
             "#loader").style.display = "none";
         document.querySelector(
