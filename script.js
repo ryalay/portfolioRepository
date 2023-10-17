@@ -76,6 +76,10 @@ window.addEventListener('wheel', (e) => {
         document.getElementById("body").style.overflow = "hidden";
         window.scrollTo({top:0, behavior: "smooth"})
     }
+    else if (delta > 0 && window.scrollY + 50 > windowHeight)
+    {
+        document.getElementById("body").style.overflow = "visible";
+    }
     else if (delta < 0 && window.scrollY >= windowHeight)
     {
         document.getElementById("body").style.overflow = "visible";
