@@ -3,6 +3,22 @@ let lastTime = 0;
 
 const windowHeight = window.innerHeight;
 
+document.onreadystatechange = function () {
+    if (document.readyState !== "complete") {
+        document.querySelector(
+            "html").style.visibility = "hidden";
+        document.querySelector(
+            "#loader").style.visibility = "visible";
+    } else {
+        document.querySelector(
+            "#loader").style.display = "none";
+        document.querySelector(
+            "html").style.visibility = "visible";
+    }
+};
+
+
+
 let vid = document.getElementById("backgroundvid");
 vid.playbackRate = 0.8;
 
