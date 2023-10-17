@@ -3,6 +3,8 @@ let lastTime = 0;
 
 const windowHeight = window.innerHeight;
 
+document.getElementById("body").style.overflow = "hidden";
+document.getElementById("html").style.overflow = "hidden";
 window.scrollTo({top:0})
 
 if (window.scrollY === 0){
