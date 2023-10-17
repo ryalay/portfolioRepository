@@ -3,7 +3,7 @@ let lastTime = 0;
 
 const windowHeight = window.innerHeight;
 
-document.getElementById("body").style.overflow = "hidden";
+
 
 window.scrollTo({top:0, behavior: "instant"})
 
@@ -25,17 +25,17 @@ document.onreadystatechange = function () {
             
     } else {
         window.scrollTo({top:0, behavior: "instant"})
-        document.querySelector(
-            "#loader").style.display = "none";
+        
         document.querySelector(
             "html").style.visibility = "visible";
         document.querySelector(
             "body").style.visibility = "visible";
         document.getElementById("body").style.overflow = "hidden";
+        document.querySelector(
+            "#loader").style.display = "none";
 
     }
 };
-
 
 
 let vid = document.getElementById("backgroundvid");
