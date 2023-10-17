@@ -3,6 +3,11 @@ let lastTime = 0;
 
 const windowHeight = window.innerHeight;
 
+if (window.scrollY === 0){
+    document.getElementById("body").style.overflow = "hidden";
+}
+
+
 document.onreadystatechange = function () {
     if (document.readyState !== "complete") {
         document.querySelector(
