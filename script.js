@@ -17,12 +17,17 @@ document.onreadystatechange = function () {
             "html").style.visibility = "hidden";
         document.querySelector(
             "#loader").style.visibility = "visible";
+            document.getElementById("body").style.overflow = "hidden";
+            document.getElementById("html").style.overflow = "hidden";
     } else {
         window.scrollTo({top:windowHeight})
         document.querySelector(
             "#loader").style.display = "none";
         document.querySelector(
             "html").style.visibility = "visible";
+            document.getElementById("body").style.overflow = "hidden";
+            document.getElementById("html").style.overflow = "hidden";
+
     }
 };
 
