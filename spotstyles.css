@@ -104,8 +104,8 @@ html{
   }
   
   
-  body{
-    background-color: white;
+  #body{
+    background: white;
     margin: 0px;
     font-family: leagueSpartan;
   }
