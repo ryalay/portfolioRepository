@@ -3,6 +3,8 @@ let lastTime = 0;
 
 const windowHeight = window.innerHeight;
 
+window.scrollTo({top:windowHeight})
+
 if (window.scrollY === 0){
     document.getElementById("body").style.overflow = "hidden";
 }
@@ -10,11 +12,13 @@ if (window.scrollY === 0){
 
 document.onreadystatechange = function () {
     if (document.readyState !== "complete") {
+        window.scrollTo({top:windowHeight})
         document.querySelector(
             "html").style.visibility = "hidden";
         document.querySelector(
             "#loader").style.visibility = "visible";
     } else {
+        window.scrollTo({top:windowHeight})
         document.querySelector(
             "#loader").style.display = "none";
         document.querySelector(
