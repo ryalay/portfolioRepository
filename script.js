@@ -39,6 +39,7 @@ document.onreadystatechange = function () {
 };
 
 
+
 let vid = document.getElementById("backgroundvid");
 vid.playbackRate = 0.8;
 
