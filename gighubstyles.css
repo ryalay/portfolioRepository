@@ -1,0 +1,370 @@
+html{
+  scroll-behavior: smooth;
+}
+
+.tabsgrid {
+    width: 100%;
+    height: 100px;
+    display: grid;
+    grid-template-columns: 100px auto 550px;
+    grid-template-areas: "name header tabs";
+    background-image: linear-gradient(black, transparent);
+    color: white;
+    padding-right: 200px;
+    position: fixed;
+  
+  }
+  
+  .header {
+    grid-area: header;
+    background-color: black;
+  }
+  
+  .tabs {
+    grid-area: tabs;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    max-width: 450px;
+    color: white;
+    margin-right: 250px;
+  }
+  
+  
+  .tabs a {
+    color: white;
+    font-size: 22px;
+    text-decoration: none;
+    font-weight:500;
+  }
+  
+  a.tabsgrid:hover {
+    color: gray;
+  }
+  
+  a:hover {
+    color: gray;
+  }
+  
+  
+  .name {
+    grid-area: name;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 250px;
+  }
+  
+  .name img {
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  
+  body{
+    background-color: white;
+    margin: 0px;
+    font-family: leagueSpartan;
+  }
+
+  #gighubLandingPage{
+    background-image: linear-gradient(90deg, black 200px, transparent 60%), url("images/gighubLanding.jpg");
+    background-size:cover;
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+    background-position: 0px center, 200px center;
+    height: 100vh;
+    display:flex;
+    flex-direction: row;
+    align-items: left;
+    justify-content: flex-start;    
+    color: white;
+    padding-left:15%;
+    padding-top: 85px;
+}
+
+#gighubLandingPage h1{
+    font-size: 52px;
+    font-weight: 600;
+}
+
+#gighubLandingPage h2{
+    font-size: 42px;
+    font-weight: 400;
+    margin-top: -15px;  
+}
+
+#projectInfo{
+    margin-top:20px;
+    max-width:400px;
+    line-height:25px;
+}
+
+
+.projectDetail 
+{
+    margin-top: 60px;
+    line-height:20px;
+}
+
+.projectDetail h3{
+    font-size:24px;
+    font-weight:400;
+    line-height:1px;
+}
+
+#landingPageText{
+    display: flex;
+    flex-direction: column;
+}
+
+#landingImage{
+  height:700px; 
+  width: auto; 
+  margin-left: 250px; 
+  margin-top:-50px;
+  margin-right: 225px; 
+  align-self: center;
+}  
+
+#gighubCaseStudy{
+    margin-left:30%;
+    margin-right:30%;
+    padding-top:150px;
+}
+
+#gighubCaseStudy p{
+    font-weight: 350;
+    line-height:26px;
+    font-size: 18px;
+}
+
+#gighubCaseStudy h1{
+    font-size: 32px;
+    font-weight: 550;
+}
+
+#gighubCaseStudy ul{
+line-height:28px;
+font-size:18px;
+}
+
+#challenge{
+    background-color: #EDEDED;
+    padding: 15px 30px 15px 30px;
+    border-radius: 10px;
+    margin-bottom:100px;
+}
+
+.imageShowcase
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.imageShowcase img
+{
+    max-width:250px;
+    margin:50px;
+}
+
+.designShowcaseR img
+{
+max-width:300px;
+margin: 50px 0px 50px 50px;
+}
+
+.designShowcaseR
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top:50px;
+
+}
+
+.designShowcaseL img
+{
+max-width:300px;
+margin-right:50px;
+}
+
+.designShowcaseL
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top:50px;
+}
+
+strong{
+    font-weight:600;
+}
+
+h3{
+    font-size:22px;
+    font-weight: 550;
+}
+
+#footer{
+  height:300px;
+  background-color: #131313;
+  color: white;
+  padding-left: 20%;
+  padding-right:20%;
+  display: flex;
+}
+
+#footer h2
+{
+  font-weight:400;
+  margin-bottom:25px;
+  font-size:28px;
+}
+
+#footer h3
+{
+  font-weight:400;
+  margin-top:25px;
+}
+
+#footerimg{
+  height:175px;
+  width:225px;
+  margin-right: 50px;
+  margin-top:50px;
+  border-radius:30px;
+}
+
+#footer a{
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+}
+
+
+#footer a:hover{
+  filter: brightness(60%)
+}
+#allFooterText
+{
+width:100%;
+margin-top:50px;
+}
+
+#footerTitle{
+  width:auto;
+}
+
+#footerText
+{
+  width: auto;  
+  display:flex;
+  justify-content: space-between;
+  margin-top:25px;
+}
+
+@media screen and (max-width: 1700px){
+
+  #footer{
+    height:300px;
+    background-color: #131313;
+    color: white;
+    padding-left: 15%;
+    padding-right:15%;
+    display: flex;
+    align-items: space-evenly;
+  }
+  
+
+
+}
+
+@media screen and (max-width: 1600px){
+
+  #gighubLandingPage{
+    background-image: linear-gradient(90deg, black 200px, transparent 60%), url("images/gighubLanding.jpg");
+    background-size:cover;
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+    background-position: 0px center, 200px center;
+    height: 100vh;
+    display:flex;
+    flex-direction: row;
+    align-items: left;
+    justify-content: flex-start;    
+    color: white;
+    padding-left:12%;
+    padding-top: 85px;
+}
+
+#gighubLandingPage h1{
+    font-size: 52px;
+    font-weight: 600;
+}
+
+#gighubLandingPage h2{
+    font-size: 40px;
+    font-weight: 400;
+    margin-top: -15px;  
+}
+
+#projectInfo{
+    margin-top:10px;
+    max-width:450px;
+    line-height:22px;
+}
+
+
+.projectDetail 
+{
+    margin-top: 40px;
+    line-height:20px;
+}
+
+.projectDetail h3{
+    font-size:24px;
+    font-weight:400;
+    line-height:0.1px;
+}
+
+#landingPageText{
+    display: flex;
+    flex-direction: column;
+}
+  
+
+#landingImage{
+  height:auto; 
+  width: 325px; 
+  margin-left: 100px; 
+  margin-right: 125px; 
+  margin-top:-25px;
+  align-self: center;
+}  
+
+#gighubCaseStudy{
+  margin-left:25%;
+  margin-right:25%;
+  margin-top:150px;
+}
+
+.designShowcaseR img
+{
+max-width:275px;
+margin: 50px 0px 50px 50px;
+}
+
+.designShowcaseL img
+{
+max-width:250px;
+margin-right:50px;
+}
+}

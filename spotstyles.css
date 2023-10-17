@@ -1,0 +1,468 @@
+html{
+  scroll-behavior: smooth;
+}
+.tabsgrid {
+    width: 100%;
+    height: 100px;
+    display: grid;
+    grid-template-columns: 100px auto 550px;
+    grid-template-areas: "name header tabs";
+    background-image: linear-gradient(black, transparent);
+    color: white;
+    padding-right: 200px;
+    position: fixed;
+  
+  }
+  
+  .header {
+    grid-area: header;
+    background-color: black;
+  }
+  
+  .tabs {
+    grid-area: tabs;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    max-width: 450px;
+    color: white;
+    margin-right: 250px;
+  }
+  
+  
+  .tabs a {
+    color: white;
+    font-size: 22px;
+    text-decoration: none;
+    font-weight:500;
+  }
+  
+  a.tabsgrid:hover {
+    color: gray;
+  }
+  
+  a:hover {
+    color: gray;
+  }
+  
+  
+  .name {
+    grid-area: name;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 250px;
+  }
+  
+  .name img {
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  
+  body{
+    background-color: white;
+    margin: 0px;
+    font-family: leagueSpartan;
+  }
+
+.container{
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}
+
+  
+#spotLandingPage{
+    background-image: linear-gradient(90deg, black 200px, transparent 50%), url("images/spotLanding.png");
+    background-size:cover;
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+    background-position: 0px center, 200px center;
+    height: 100vh;
+    display:flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: flex-start;    
+    color: white;
+    padding-left:15%;
+    padding-top: 85px;
+    scroll-snap-align: start;
+}
+
+#spotLandingPage h1{
+    font-size: 52px;
+    font-weight: 600;
+}
+
+#spotLandingPage h2{
+    font-size: 42px;
+    font-weight: 400;
+    margin-top: -15px;  
+}
+
+#spotLandingPage img{
+    position: absolute;
+    left: calc(50% - 30px) ;
+    bottom: 30px;
+    height:60px;
+    width:60px;
+  }
+
+#projectInfo{
+    margin-top:20px;
+    max-width:400px;
+    line-height:25px;
+}
+
+.projectDetail 
+{
+    margin-top: 60px;
+    line-height:20px;
+}
+
+.projectDetail h3{
+    font-size:24px;
+    font-weight:400;
+    line-height:1px;
+}
+
+
+#spotCaseStudy{
+    margin-left:30%;
+    margin-right:30%;
+    padding-top:150px;
+}
+
+#challenge{
+  background-color: #EDEDED;
+  padding: 15px 30px 15px 30px;
+  border-radius: 10px;
+  margin-bottom:100px;
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#challenge p{
+  line-height:20px;
+}
+
+#spotCaseStudy p{
+  font-weight: 350;
+  line-height:26px;
+  font-size: 18px;
+}
+
+#spotCaseStudy h1{
+  font-size: 32px;
+  font-weight: 550;
+}
+
+#spotCaseStudy h2{
+  font-size:28px;
+  font-weight:450;
+}
+
+#spotCaseStudy h3{
+  font-size:22px;
+  font-weight: 550;
+}
+
+#spotCaseStudy ul{
+  line-height:28px;
+  font-size:16px;
+  }
+
+strong{
+  font-weight:600;
+}
+
+.statistic{
+    display:flex;
+    align-items: center;
+    margin-top:100px;
+}
+
+.statistic img{
+    height:auto;
+    width:350px;
+    margin-left: 50px;
+}
+
+#finalDesigns{
+  margin-left:-100px;
+  margin-right:-100px;
+}
+
+.designShowcase
+{
+    display: flex;
+    align-items: center;
+    margin-top:50px;
+}
+
+.designShowcaseR
+{
+  display: flex;
+  align-items: center;
+  margin-top:100px;
+}
+
+
+.designShowcaseR img
+{
+max-width:250px;
+} 
+
+.designShowcaseR p{
+  margin-right:50px;
+}
+
+.designShowcaseR h3{
+  margin-right:50px;
+}
+
+
+.designShowcaseL
+{
+  display: flex;
+  align-items: center;
+  margin-top:100px;
+}
+
+.designShowcaseL img
+{
+max-width:250px;
+} 
+.designShowcaseL p{
+  margin-left:50px;
+}
+
+.designShowcaseL h3{
+  margin-left:50px;
+}
+
+#spotdata1{
+  margin-right: 96px; margin-top: 25px;
+}
+
+#spotdata2{
+  margin-top: 25px;
+}
+
+#spotdata3{
+
+margin-top:50px;
+}
+
+#footer{
+  height:300px;
+  background-color: #131313;
+  color: white;
+  padding-left: 20%;
+  padding-right:20%;
+  display: flex;
+}
+
+#footer h2
+{
+  font-weight:400;
+  margin-bottom:25px;
+  font-size:28px;
+}
+
+#footer h3
+{
+  font-weight:400;
+  margin-top:25px;
+}
+
+#footerimg{
+  height:175px;
+  width:225px;
+  margin-right: 50px;
+  margin-top:50px;
+  border-radius:30px;
+}
+
+#footer a{
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+}
+
+
+#footer a:hover{
+  filter: brightness(60%)
+}
+#allFooterText
+{
+width:100%;
+margin-top:50px;
+}
+
+#footerTitle{
+  width:auto;
+}
+
+#footerText
+{
+  width: auto;  
+  display:flex;
+  justify-content: space-between;
+  margin-top:25px;
+}
+
+@media screen and (max-width: 1700px){
+
+  #footer{
+    height:300px;
+    background-color: #131313;
+    color: white;
+    padding-left: 15%;
+    padding-right:15%;
+    display: flex;
+    align-items: space-evenly;
+  }
+  
+
+
+}
+
+@media screen and (max-width: 1675px){
+
+  #spotLandingPage{
+    background-image: linear-gradient(90deg, black 250px, transparent 50%), url("images/spotLanding.jpeg");
+    background-size:cover;
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+    background-position: 0px center, 250px center;
+    height: 100vh;
+    display:flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: flex-start;    
+    color: white;
+    padding-left:15%;
+    padding-top: 75px;
+}
+
+#spotLandingPage h1{
+    font-size: 52px;
+    font-weight: 600;
+}
+
+#spotLandingPage h2{
+    font-size: 36px;
+    font-weight: 400;
+    margin-top: -15px; 
+    max-width:650px; 
+}
+
+#projectInfo{
+    margin-top:5px;
+    max-width:450px;
+    line-height:22px;
+}
+
+
+.projectDetail 
+{
+    margin-top: 40px;
+    line-height:20px;
+}
+
+.projectDetail h3{
+    font-size:24px;
+    font-weight:400;
+    line-height:0.1px;
+}
+
+#landingPageText{
+    display: flex;
+    flex-direction: column;
+}
+  
+
+#landingImage{
+  height:auto; 
+  width: 325px; 
+  margin-left: 100px; 
+  margin-right: -400px; 
+  margin-top:-25px;
+  align-self: center;
+  justify-self: flex-end;
+}  
+
+#spotCaseStudy{
+  margin-left:25%;
+  margin-right:25%;
+  margin-top:150px;
+}
+
+.designShowcaseR
+{
+  display: flex;
+  align-items: center;
+  margin-top:100px;
+  margin-left:-50px;
+  margin-right:-50px;
+}
+
+.designShowcaseR img
+{
+max-width:225px;
+} 
+
+.designShowcaseR p{
+  margin-right:50px;
+}
+
+.designShowcaseR h3{
+  margin-right:50px;
+}
+
+
+.designShowcaseL
+{
+  display: flex;
+  align-items: center;
+  margin-top:100px;
+  margin-left:-50px;
+  margin-right:-50px;
+}
+
+.designShowcaseL img
+{
+max-width:225px;
+} 
+
+.designShowcaseL p{
+  margin-left:50px;
+}
+
+.designShowcaseL h3{
+  margin-left:50px;
+}
+
+#spotdata1{
+ margin-top: 25px;
+ margin-right:auto;
+}
+
+#spotdata2{
+  margin-top: 25px;
+}
+
+#spotdata3{
+
+margin-top:50px;
+max-width:100%;
+height:auto;
+}
+
+
+}
