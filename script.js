@@ -4,8 +4,8 @@ let lastTime = 0;
 const windowHeight = window.innerHeight;
 
 document.getElementById("body").style.overflow = "hidden";
-document.getElementById("html").style.overflow = "hidden";
-window.scrollTo({top:0})
+
+window.scrollTo({top:0, behavior: "instant"})
 
 if (window.scrollY === 0){
     document.getElementById("body").style.overflow = "hidden";
@@ -14,21 +14,24 @@ if (window.scrollY === 0){
 
 document.onreadystatechange = function () {
     if (document.readyState !== "complete") {
-        window.scrollTo({top:0})
+        window.scrollTo({top:0, behavior: "instant"})
         document.querySelector(
             "html").style.visibility = "hidden";
         document.querySelector(
+            "body").style.visibility = "hidden";
+        document.querySelector(
             "#loader").style.visibility = "visible";
             document.getElementById("body").style.overflow = "hidden";
-            document.getElementById("html").style.overflow = "hidden";
+            
     } else {
-        window.scrollTo({top:0})
+        window.scrollTo({top:0, behavior: "instant"})
         document.querySelector(
             "#loader").style.display = "none";
         document.querySelector(
             "html").style.visibility = "visible";
-            document.getElementById("body").style.overflow = "hidden";
-            document.getElementById("html").style.overflow = "hidden";
+        document.querySelector(
+            "body").style.visibility = "visible";
+        document.getElementById("body").style.overflow = "hidden";
 
     }
 };
