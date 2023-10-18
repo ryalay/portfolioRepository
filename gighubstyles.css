@@ -610,7 +610,7 @@ margin-right:50px;
     align-items: left;
     justify-content: flex-start;    
     color: white;
-    padding-left:10vw;
+    padding-left:14vw;
     padding-top: 15vh;
     scroll-snap-align: start;
 }
@@ -631,14 +631,6 @@ margin-right:50px;
   font-weight:350;
 }
 
-
-#gighubLandingPage img{
-    position: absolute;
-    left: calc(50% - 30px) ;
-    bottom: 30px;
-    height:60px;
-    width:60px;
-  }
 
   #landingImage{
     height:900px; 
