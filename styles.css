@@ -620,7 +620,7 @@ margin-bottom:36px;
 }
 
 .mobileWorkCard img{
-  width: 200px;
+  width: 50%;
   height: auto;
   border-radius: 30px;
   object-fit: cover;
