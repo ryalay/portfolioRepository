@@ -94,7 +94,8 @@ html{
   }
   
   .name img {
-    width: 100px;
+    width: 80px;
+    height:auto;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -171,7 +172,8 @@ html{
   }
   
   #mobilename img {
-    width: 100px;
+    width: 80px;
+    height:auto;
     padding:25px;
   }
   
@@ -436,7 +438,8 @@ margin-top:50px;
   }
   
   #mobilename img {
-    width: 100px;
+    width: 80px;
+    height:auto;
     padding:25px;
   }
   

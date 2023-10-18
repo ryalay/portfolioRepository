@@ -91,7 +91,8 @@
   }
   
   .name img {
-    width: 100px;
+    width: 80px;
+    height:auto;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -167,7 +168,8 @@
   }
   
   #mobilename img {
-    width: 100px;
+    width: 80px;
+    height:auto;
     padding:25px;
   }
   
@@ -341,7 +343,8 @@ margin-top:50px;
   }
   
   #mobilename img {
-    width: 100px;
+    width: 80px;
+    height:auto;
     padding:25px;
   }
   
@@ -522,7 +525,8 @@ background-color: #131313;
   }
   
   #mobilename img {
-    width: 100px;
+    width: 80px;
+    height:auto;
     padding:25px;
   }
   

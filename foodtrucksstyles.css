@@ -95,12 +95,12 @@ scroll-behavior: smooth;
   }
   
   .name img {
-    width: 100px;
+    width: 80px;
+    height:auto;
     display: flex;
     align-items: center;
     justify-content: center;
   }
-  
   .mobileHeader
   {
     height:100px;
@@ -171,7 +171,8 @@ scroll-behavior: smooth;
   }
   
   #mobilename img {
-    width: 100px;
+    width: 80px;
+    height:auto;
     padding:25px;
   }
   
@@ -500,7 +501,8 @@ margin-top:50px;
   }
   
   #mobilename img {
-    width: 100px;
+    width: 80px;
+    height:auto;
     padding:25px;
   }
   
