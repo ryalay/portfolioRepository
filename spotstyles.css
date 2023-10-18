@@ -614,18 +614,18 @@ width:100%;
 @media screen and (min-width: 2250px){
 
   #spotLandingPage{
-    background-image: linear-gradient(90deg, black 250px, transparent 50%), url("images/spotLanding.png");
+    background-image: linear-gradient(90deg, black 300px, transparent 45%), url("images/spotLanding.png");
     background-size:cover;
     box-sizing: border-box;
     background-repeat: no-repeat;
-    background-position: 0px center, 200px center;
+    background-position: 0px center, 300px center;
     height: 100vh;
     display:flex;
     flex-direction: column;
     align-items: left;
     justify-content: flex-start;    
     color: white;
-    padding-left:10vw;
+    padding-left:12vw;
     padding-top: 15vh;
     scroll-snap-align: start;
 }
