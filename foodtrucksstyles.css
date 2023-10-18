@@ -602,7 +602,7 @@ margin-top:50px;
   
   
   #projectInfo{
-      margin-top:20px;
+      margin-top:35px;
       width:25vw;
       line-height:27px;
     }
@@ -656,8 +656,8 @@ margin-top:50px;
    }
   
    #finalDesigns{
-    margin-left:50px;
-    margin-right:50px;
+    margin-left:30vw;
+    margin-right:30vw;
   }
   
   #finalDesigns img {
