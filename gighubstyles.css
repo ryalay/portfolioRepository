@@ -596,4 +596,113 @@ margin-right:50px;
 }
 
 
+@media screen and (min-width: 2250px){
+
+  #gighubLandingPage{
+    background-image: linear-gradient(90deg, black 250px, transparent 50%), url("images/gighubLanding.jpg");
+    background-size:cover;
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+    background-position: 0px center, 200px center;
+    height: 100vh;
+    display:flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: flex-start;    
+    color: white;
+    padding-left:10vw;
+    padding-top: 15vh;
+    scroll-snap-align: start;
+}
+
+#gighubLandingPage h1{
+    font-size: 54px;
+    font-weight: 600;
+}
+
+#gighubLandingPage h2{
+    font-size: 44px;
+    font-weight: 400;
+    margin-top: -15px;  
+}
+
+#gighubLandingPage p{
+  font-size: 22px;
+  font-weight:350;
+}
+
+
+#gighubLandingPage img{
+    position: absolute;
+    left: calc(50% - 30px) ;
+    bottom: 30px;
+    height:60px;
+    width:60px;
+  }
+
+  #landingImage{
+    height:900px; 
+    width: auto; 
+    margin-left: 300px; 
+    position:absolute;
+    right:1vw;
+    top:18vh;
+  }  
+
+
+#projectInfo{
+    margin-top:20px;
+    width:30vw;
+    line-height:27px;
+  }
+
+.projectDetail 
+{
+    margin-top: 60px;
+    line-height:26px;
+}
+
+.projectDetail h3{
+    font-size:28px;
+    font-weight:400;
+    line-height:4px;
+}
+
+#gighubCaseStudy{
+  margin-left:28%;
+  margin-right:28%;
+}
+
+.statistic img{
+  height:auto;
+  width:375px;
+  margin-left: 50px;
+}
+
+#gighubdata1{
+  margin-top: 25px;
+  margin-right:auto;
+ }
+ 
+ #gighubdata2{
+   margin-top: 25px;
+ }
+ 
+ #gighubdata3{
+ 
+ margin-top:50px;
+width:100%;
+ height:auto;
+ }
+
+ #finalDesigns{
+  margin-left:-25px;
+  margin-right:-25px;
+}
+
+#finalDesigns img {
+  max-width:290px;
+}
+
+}
 }

@@ -477,5 +477,104 @@ margin-top:50px;
   max-width:290px;
 }
 
+@media screen and (min-width: 2250px){
+
+  #keheLandingPage{
+    background-image: linear-gradient(90deg, black 250px, transparent 50%), url("images/keheLanding.jpg");
+    background-size:cover;
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+    background-position: 0px center, 200px center;
+    height: 100vh;
+    display:flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: flex-start;    
+    color: white;
+    padding-left:10vw;
+    padding-top: 15vh;
+    scroll-snap-align: start;
+}
+
+#keheLandingPage h1{
+    font-size: 54px;
+    font-weight: 600;
+}
+
+#keheLandingPage h2{
+    font-size: 44px;
+    font-weight: 400;
+    margin-top: -15px;  
+}
+
+#keheLandingPage p{
+  font-size: 22px;
+  font-weight:350;
+}
+
+
+#keheLandingPage img{
+    position: absolute;
+    left: calc(50% - 30px) ;
+    bottom: 30px;
+    height:60px;
+    width:60px;
+  }
+
+#projectInfo{
+    margin-top:20px;
+    width:30vw;
+    line-height:27px;
+  }
+
+.projectDetail 
+{
+    margin-top: 60px;
+    line-height:26px;
+}
+
+.projectDetail h3{
+    font-size:28px;
+    font-weight:400;
+    line-height:4px;
+}
+
+#keheCaseStudy{
+  margin-left:28%;
+  margin-right:28%;
+}
+
+.statistic img{
+  height:auto;
+  width:375px;
+  margin-left: 50px;
+}
+
+#kehedata1{
+  margin-top: 25px;
+  margin-right:auto;
+ }
+ 
+ #kehedata2{
+   margin-top: 25px;
+ }
+ 
+ #kehedata3{
+ 
+ margin-top:50px;
+width:100%;
+ height:auto;
+ }
+
+ #finalDesigns{
+  margin-left:-25px;
+  margin-right:-25px;
+}
+
+#finalDesigns img {
+  max-width:290px;
+}
+
+}
 
 }

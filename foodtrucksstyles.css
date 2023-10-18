@@ -563,3 +563,113 @@ margin-top:50px;
   
   
   }
+
+  @media screen and (min-width: 2250px){
+
+    #foodtruckLandingPage{
+      background-image: linear-gradient(90deg, black 250px, transparent 50%), url("images/foodTruckLanding.png");
+      background-size:cover;
+      box-sizing: border-box;
+      background-repeat: no-repeat;
+      background-position: 0px center, 200px center;
+      height: 100vh;
+      display:flex;
+      flex-direction: column;
+      align-items: left;
+      justify-content: flex-start;    
+      color: white;
+      padding-left:10vw;
+      padding-top: 15vh;
+      scroll-snap-align: start;
+  }
+  
+  #foodtruckLandingPage h1{
+      font-size: 54px;
+      font-weight: 600;
+  }
+  
+  #foodtruckLandingPage h2{
+      font-size: 44px;
+      font-weight: 400;
+      margin-top: -15px;  
+  }
+  
+  #foodtruckLandingPage p{
+    font-size: 22px;
+    font-weight:350;
+  }
+  
+  
+  #foodtruckLandingPage img{
+      position: absolute;
+      left: calc(50% - 30px) ;
+      bottom: 30px;
+      height:60px;
+      width:60px;
+    }
+  
+  #projectInfo{
+      margin-top:20px;
+      width:25vw;
+      line-height:27px;
+    }
+  
+  .projectDetail 
+  {
+      margin-top: 60px;
+      line-height:26px;
+  }
+  
+  .projectDetail h3{
+      font-size:28px;
+      font-weight:400;
+      line-height:4px;
+  }
+  
+  #foodtruckCaseStudy{
+    margin-left:28%;
+    margin-right:28%;
+  }
+  
+  #landingImage{
+    height:1000px; 
+    width: auto; 
+    margin-left: 250px; 
+    position:absolute;
+    right:15vw;
+    top:10vh;
+  }  
+
+  .statistic img{
+    height:auto;
+    width:375px;
+    margin-left: 50px;
+  }
+  
+  #foodtruckdata1{
+    margin-top: 25px;
+    margin-right:auto;
+   }
+   
+   #foodtruckdata2{
+     margin-top: 25px;
+   }
+   
+   #foodtruckdata3{
+   
+   margin-top:50px;
+  width:100%;
+   height:auto;
+   }
+  
+   #finalDesigns{
+    margin-left:50px;
+    margin-right:50px;
+  }
+  
+  #finalDesigns img {
+    max-width:290px;
+  }
+  
+  }
+  
