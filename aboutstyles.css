@@ -97,7 +97,98 @@
     justify-content: center;
   }
   
-
+  .mobileHeader
+  {
+    height:100px;
+    width:100vw;
+    display: flex;
+    justify-content: space-between;
+    background-image: linear-gradient(black, transparent);
+    position: fixed;
+    z-index: 2;
+    color:white;
+    display:none;
+  }
+  
+  .closeIcon {
+    display: none;
+    z-index: 90;
+  }
+  
+  .closeIcon img{
+    max-width:24px;
+    max-height:24px;
+  }
+  
+  .mobilemenuopen{
+    position: fixed;
+    transform: translateY(-100%);
+    transition: transform 0.2s;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 3;
+    background: rgba(0, 0, 0, 0.90);
+    color: white;
+    list-style: none;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    max-width:100%;
+    padding-right:50px;
+  }
+  
+  
+  .mobilemenu{
+    width:50px;
+    height:50px;
+    padding:25px;
+    display:flex;
+    margin:25px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: #0000;
+    border: none;
+    z-index: 50;
+  }
+  
+  .mobilemenu img{
+    height:48px;
+    width:48px;
+  }
+  
+  #mobilename {
+    justify-self: flex-start;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #mobilename img {
+    width: 100px;
+    padding:25px;
+  }
+  
+  
+  .mobilemenuopen a{
+    text-decoration: none;
+    color: white;
+    font-size:28px;
+    align-self:center;
+    margin-left: auto;
+    margin-right:auto;
+  }
+  
+  .mobilemenuopen li{
+    margin:25px;
+  }
+  
+  .showMenu {
+    transform: translateY(0);
+  }
+  
 
 body{
     height:100%;
@@ -211,6 +302,232 @@ margin-top:50px;
   display:flex;
   justify-content: space-between;
   margin-top:25px;
+}
+@media screen and (max-width: 850px) {
+
+  .tabsgrid {
+    display:none;
+  }
+
+
+  .mobileHeader{
+    display:flex
+  }
+  
+  .mobilemenu{
+    width:50px;
+    height:50px;
+    padding:25px;
+    display:flex;
+    margin:25px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: #0000;
+    border: none;
+    z-index: 50;
+  }
+
+  .mobilemenu img{
+    height:48px;
+    width:48px;
+  }
+
+  #mobilename {
+    justify-self: flex-start;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #mobilename img {
+    width: 100px;
+    padding:25px;
+  }
+  
+
+  
+#body{
+  height:100%;
+  max-width:100vw;
+  background-color: black;
+  margin: 0px;
+  font-family: leagueSpartan;
+  padding: 0px !important;
+}
+
+body{
+  height:100%;
+  background-color: black;
+  margin: 0px;
+  font-family: leagueSpartan;
+  background-image: url("images/topobg.jpeg");
+  background-position-y:-700px;
+  display: flex;
+  flex-direction: column;  
+  align-items: center;
+  min-height:100vh;
+  max-width:100vw;
+  padding: 0px !important;
+  overflow-x: hidden;
+  }
+
+#aboutPage{
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  color: white;
+  width:100%;
+  margin-left:20px;
+  margin-right:20px;
+  margin-top:-75px;
+}
+#aboutPage p{
+  font-weight: 350;
+  line-height:26px;
+  font-size: 18px;
+}
+
+#aboutPage h1{
+  color: white;
+  font-size:52px;
+  font-weight: 600;
+  }
+
+
+#aboutContent{
+  display:flex;
+  margin-top:25px;
+  flex-direction: column;
+  align-items: center;
+}
+
+#aboutContent img{
+  align-self: center;
+  width:60%;
+  height:auto;
+  border-radius: 10px;
+  margin:20px;
+}
+
+#aboutContent p{
+font-size:22px;
+line-height:28px;
+margin:20px;
+}
+
+#footer{
+  height:300px;
+  width:100%;
+
+  background-color: #131313;
+  color: white;
+  padding-left:50px !important;
+  padding-right:20px !important;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top:12px;
+}
+
+#footerTitle{
+  font-size:26px;
+}
+#footer h2
+{
+  font-weight:400;
+  margin-top:42px;
+  font-size:20px;
+  margin-bottom:12px;
+}
+
+#footer h3
+{
+  font-weight:400;
+  margin-top:42px;
+  font-size:18px;
+  margin-bottom:64px;
+}
+
+#footerimg{
+  display:none;
+}
+
+#footer a{
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+}
+
+
+#footer a:hover{
+  filter: brightness(60%)
+}
+
+#allFooterText
+{
+width:100%;
+margin-top:32px;
+background-color: #131313;
+}
+
+#footerTitle{
+  width:auto;
+  background-color: #131313;
+}
+
+#footerText
+{
+  width: auto;  
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top:12px;
+  background-color: #131313;
+}
+
+
+}
+
+@media screen and (max-width: 850px) {
+
+  .tabsgrid {
+    display:none;
+  }
+
+
+  .mobileHeader{
+    display:flex
+  }
+  
+  .mobilemenu{
+    width:50px;
+    height:50px;
+    padding:25px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .mobilemenu img{
+    height:48px;
+    width:48px;
+  }
+
+  #mobilename {
+    justify-self: flex-start;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #mobilename img {
+    width: 100px;
+    padding:25px;
+  }
+  
+
+
 }
 
 @media screen and (max-width: 1700px){
