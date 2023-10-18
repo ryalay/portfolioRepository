@@ -308,6 +308,7 @@ font-weight: 600;
 .workCard{
   display: flex;
   justify-content: center;
+  align-items: center;
   margin: 50px;
   color: white;
   height:450px;
@@ -322,7 +323,6 @@ font-weight: 600;
   font-family: leagueSpartan;
   width: 252px;
   height: 60px;
-  position: absolute;
   background: #408184;
   border: none;
   border-radius: 34px;
@@ -345,6 +345,7 @@ font-weight: 600;
 .workCard p{
   margin:50px 0px 50px 50px;
   font-size:24px;
+  line-height: 1.2;
 }
 
 .workCard img{

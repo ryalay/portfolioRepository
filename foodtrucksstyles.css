@@ -226,11 +226,12 @@ scroll-behavior: smooth;
     font-size: 42px;
     font-weight: 400;
     margin-top: -15px;  
+    max-width:35vw;
 }
 
 #projectInfo{
-    margin-top:20px;
-    max-width:35vw;
+    margin-top:-5px;
+    max-width:40vw;
     line-height:25px;
 }
 
@@ -250,6 +251,7 @@ scroll-behavior: smooth;
 #landingPageText{
   display: flex;
   flex-direction: column;
+  max-width:50vw;
 }
 
 #foodtruckLandingPage p{
@@ -828,12 +830,12 @@ width:100vw !important;
       font-size: 32px;
       font-weight: 400;
       margin-top: -15px; 
-      max-width:800px; 
+      max-width:40vw; 
   }
   
   #projectInfo{
-      margin-top:10px;
-      max-width:40vw;
+      margin-top:5px;
+      max-width:35vw;
       line-height:22px;
   }
   
@@ -922,7 +924,7 @@ width:100vw !important;
   
   
   #projectInfo{
-      margin-top:20px;
+      margin-top:10px;
       max-width:40vw;
       line-height:25px;
     }
@@ -1016,7 +1018,7 @@ width:100vw !important;
   
   #projectInfo{
       margin-top:35px;
-      width:25vw;
+      width:30vw;
       line-height:27px;
     }
   
