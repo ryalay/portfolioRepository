@@ -142,6 +142,12 @@ html{
     width:60px;
   }
 
+  #keheLandingPage p{
+    font-size: 18px;
+    font-weight:350;
+  }
+  
+
 #projectInfo{
     margin-top:20px;
     max-width:400px;
@@ -201,6 +207,7 @@ strong{
     justify-content: center;
     background-color: #EDEDED;
     border-radius: 10px;
+    padding:25px;
 }
 
 .keheMockups{
@@ -212,17 +219,19 @@ strong{
 }
 
 .keheVidMockups video{
-  margin-top:25px;
-  margin-bottom:25px;
+  width:100%;
+  height:auto;
+  justify-self:center;
 }
 
 .enterpriseMockup{
   margin:10px;
+  padding:25px;
 }
 
 
 .enterpriseMockup img{
-  max-width:700px;
+  max-width:100%;
   max-height:auto;
 
 }
@@ -301,14 +310,14 @@ margin-top:50px;
 
 }
 
-
-@media screen and (max-width: 1600px){
+@media screen and (max-width: 1675px){
 
   #keheLandingPage{
-    background-image: linear-gradient(90deg, black 200px, transparent 50%), url("images/keheLanding.jpg");
+    background-image: linear-gradient(90deg, black 300px, transparent 60%), url("images/keheLanding.jpg");
     background-size:cover;
     box-sizing: border-box;
     background-repeat: no-repeat;
+    background-position: 0px center, 250px center;
     height: 100vh;
     display:flex;
     flex-direction: column;
@@ -316,30 +325,31 @@ margin-top:50px;
     justify-content: flex-start;    
     color: white;
     padding-left:15%;
-    padding-top: 85px;
+    padding-top: 100px;
 }
 
 #keheLandingPage h1{
-    font-size: 52px;
+    font-size: 48px;
     font-weight: 600;
 }
 
 #keheLandingPage h2{
-    font-size: 40px;
+    font-size: 32px;
     font-weight: 400;
-    margin-top: -15px;  
+    margin-top: -15px; 
+    max-width:800px; 
 }
 
 #projectInfo{
     margin-top:10px;
-    max-width:450px;
+    width:35vw;
     line-height:22px;
 }
 
 
 .projectDetail 
 {
-    margin-top: 40px;
+    margin-top: 50px;
     line-height:20px;
 }
 
@@ -355,65 +365,117 @@ margin-top:50px;
 }
   
 
-#landingImage{
-  height:auto; 
-  width: 325px; 
-  margin-left: 100px; 
-  margin-right: -400px; 
-  margin-top:-25px;
-  align-self: center;
-  justify-self: flex-end;
-}  
 
 #keheCaseStudy{
   margin-left:25%;
   margin-right:25%;
-  margin-top:150px;
 }
 
-.designShowcaseR
+
+
+#keheCaseStudy{
+  margin-left:25%;
+  margin-right:25%;
+}
+
+
+.keheVidMockups video{
+  width:100%;
+}
+
+#finalDesigns{
+  margin-left:-25px;
+  margin-right:-25px;
+}
+
+
+.enterpriseMockup img{
+  max-width:100%;
+  max-height:auto;
+
+}
+
+}
+
+
+@media screen and (min-width: 1900px){
+
+  #keheLandingPage{
+    background-image: linear-gradient(90deg, black 250px, transparent 55%), url("images/keheLanding.jpg");
+    background-size:cover;
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+    background-position: 0px center, 200px center;
+    height: 100vh;
+    display:flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: flex-start;    
+    color: white;
+    padding-left:15%;
+    padding-top: 15vh;
+    scroll-snap-align: start;
+}
+
+#keheLandingPage h1{
+    font-size: 52px;
+    font-weight: 600;
+}
+
+#keheLandingPage h2{
+    font-size: 42px;
+    font-weight: 400;
+    margin-top: -15px;  
+}
+
+#keheLandingPage p{
+  font-size: 20px;
+  font-weight:350;
+}
+
+
+#keheLandingPage img{
+    position: absolute;
+    left: calc(50% - 30px) ;
+    bottom: 30px;
+    height:60px;
+    width:60px;
+  }
+
+#projectInfo{
+    margin-top:20px;
+    width:30vw;
+    line-height:25px;
+  }
+
+.projectDetail 
 {
-  display: flex;
-  align-items: center;
-  margin-top:100px;
-  margin-left:-100px;
-  margin-right:-100px;
+    margin-top: 60px;
+    line-height:24px;
 }
 
-.designShowcaseR img
-{
-max-width:225px;
-} 
-
-.designShowcaseR p{
-  margin-right:50px;
+.projectDetail h3{
+    font-size:28px;
+    font-weight:400;
+    line-height:1px;
 }
 
-.designShowcaseR h3{
-  margin-right:50px;
+#keheCaseStudy{
+  margin-left:28%;
+  margin-right:28%;
 }
 
 
-.designShowcaseL
-{
-  display: flex;
-  align-items: center;
-  margin-top:100px;
-  margin-left:-100px;
-  margin-right:-100px;
+
+
+ #finalDesigns{
+  margin-left:-25px;
+  margin-right:-25px;
 }
 
-.designShowcaseL img
-{
-max-width:225px;
-} 
-
-.designShowcaseL p{
-  margin-left:50px;
+#finalDesigns img {
+  max-width:290px;
 }
 
-.designShowcaseL h3{
-  margin-left:50px;
-}
 
 }

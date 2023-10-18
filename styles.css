@@ -49,7 +49,7 @@ html{
   color: white;
   padding-right: 200px;
   position: fixed;
-
+  z-index: 2;
 }
 
 .header {

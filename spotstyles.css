@@ -129,7 +129,7 @@ html{
     justify-content: flex-start;    
     color: white;
     padding-left:15%;
-    padding-top: 85px;
+    padding-top: 15vh;
     scroll-snap-align: start;
 }
 
@@ -154,9 +154,9 @@ html{
 
 #projectInfo{
     margin-top:20px;
-    max-width:400px;
+    width:30vw;
     line-height:25px;
-}
+  }
 
 .projectDetail 
 {
@@ -235,8 +235,8 @@ strong{
 }
 
 #finalDesigns{
-  margin-left:-100px;
-  margin-right:-100px;
+  margin-left:-50px;
+  margin-right:-50px;
 }
 
 .designShowcase
@@ -377,7 +377,7 @@ margin-top:50px;
 @media screen and (max-width: 1675px){
 
   #spotLandingPage{
-    background-image: linear-gradient(90deg, black 250px, transparent 50%), url("images/spotLanding.jpeg");
+    background-image: linear-gradient(90deg, black 300px, transparent 60%), url("images/spotLanding.jpeg");
     background-size:cover;
     box-sizing: border-box;
     background-repeat: no-repeat;
@@ -389,31 +389,31 @@ margin-top:50px;
     justify-content: flex-start;    
     color: white;
     padding-left:15%;
-    padding-top: 75px;
+    padding-top: 100px;
 }
 
 #spotLandingPage h1{
-    font-size: 52px;
+    font-size: 48px;
     font-weight: 600;
 }
 
 #spotLandingPage h2{
-    font-size: 36px;
+    font-size: 32px;
     font-weight: 400;
     margin-top: -15px; 
-    max-width:650px; 
+    max-width:800px; 
 }
 
 #projectInfo{
-    margin-top:5px;
-    max-width:450px;
+    margin-top:10px;
+    width:35vw;
     line-height:22px;
 }
 
 
 .projectDetail 
 {
-    margin-top: 40px;
+    margin-top: 50px;
     line-height:20px;
 }
 
@@ -442,16 +442,21 @@ margin-top:50px;
 #spotCaseStudy{
   margin-left:25%;
   margin-right:25%;
-  margin-top:150px;
 }
+
+#finalDesigns{
+  margin-left:-25px;
+  margin-right:-25px;
+}
+
+
 
 .designShowcaseR
 {
   display: flex;
   align-items: center;
   margin-top:100px;
-  margin-left:-50px;
-  margin-right:-50px;
+
 }
 
 .designShowcaseR img
@@ -473,8 +478,6 @@ max-width:225px;
   display: flex;
   align-items: center;
   margin-top:100px;
-  margin-left:-50px;
-  margin-right:-50px;
 }
 
 .designShowcaseL img
@@ -504,6 +507,108 @@ max-width:225px;
 margin-top:50px;
 max-width:100%;
 height:auto;
+}
+
+
+}
+
+
+@media screen and (min-width: 1900px){
+
+  #spotLandingPage{
+    background-image: linear-gradient(90deg, black 250px, transparent 55%), url("images/spotLanding.png");
+    background-size:cover;
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+    background-position: 0px center, 200px center;
+    height: 100vh;
+    display:flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: flex-start;    
+    color: white;
+    padding-left:15%;
+    padding-top: 15vh;
+    scroll-snap-align: start;
+}
+
+#spotLandingPage h1{
+    font-size: 52px;
+    font-weight: 600;
+}
+
+#spotLandingPage h2{
+    font-size: 42px;
+    font-weight: 400;
+    margin-top: -15px;  
+}
+
+#spotLandingPage p{
+  font-size: 20px;
+  font-weight:350;
+}
+
+
+#spotLandingPage img{
+    position: absolute;
+    left: calc(50% - 30px) ;
+    bottom: 30px;
+    height:60px;
+    width:60px;
+  }
+
+#projectInfo{
+    margin-top:20px;
+    width:30vw;
+    line-height:25px;
+  }
+
+.projectDetail 
+{
+    margin-top: 60px;
+    line-height:24px;
+}
+
+.projectDetail h3{
+    font-size:28px;
+    font-weight:400;
+    line-height:1px;
+}
+
+#spotCaseStudy{
+  margin-left:28%;
+  margin-right:28%;
+}
+
+.statistic img{
+  height:auto;
+  width:375px;
+  margin-left: 50px;
+}
+
+#spotdata1{
+  margin-top: 25px;
+  margin-right:auto;
+ }
+ 
+ #spotdata2{
+   margin-top: 25px;
+ }
+ 
+ #spotdata3{
+ 
+ margin-top:50px;
+width:100%;
+ height:auto;
+ }
+
+ #finalDesigns{
+  margin-left:-25px;
+  margin-right:-25px;
+}
+
+#finalDesigns img {
+  max-width:290px;
 }
 
 
