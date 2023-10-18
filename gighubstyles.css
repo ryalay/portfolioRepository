@@ -100,7 +100,100 @@ html{
     justify-content: center;
   }
   
+  .mobileHeader
+  {
+    height:100px;
+    width:100vw;
+    display: flex;
+    justify-content: space-between;
+    background-image: linear-gradient(black, transparent);
+    position: fixed;
+    z-index: 2;
+    color:white;
+    display:none;
+    margin-top:0px !important;
+  }
   
+  .closeIcon {
+    display: none;
+    z-index: 90;
+  }
+  
+  .closeIcon img{
+    max-width:24px;
+    max-height:24px;
+  }
+  
+  .mobilemenuopen{
+    position: fixed;
+    transform: translateY(-100%);
+    transition: transform 0.2s;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 3;
+    background: rgba(0, 0, 0, 0.90);
+    color: white;
+    list-style: none;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    max-width:100%;
+    padding-right:50px;
+  }
+  
+  
+  .mobilemenu{
+    width:50px;
+    height:50px;
+    padding:25px;
+    display:flex;
+    margin:25px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: #0000;
+    border: none;
+    z-index: 50;
+  }
+  
+  .mobilemenu img{
+    height:48px;
+    width:48px;
+  }
+  
+  #mobilename {
+    justify-self: flex-start;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #mobilename img {
+    width: 100px;
+    padding:25px;
+  }
+  
+  
+  .mobilemenuopen a{
+    text-decoration: none;
+    color: white;
+    font-size:28px;
+    align-self:center;
+    margin-left: auto;
+    margin-right:auto;
+  }
+  
+  .mobilemenuopen li{
+    margin:25px;
+  }
+  
+  .showMenu {
+    transform: translateY(0);
+  }
+  
+
   body{
     background-color: white;
     margin: 0px;
@@ -307,6 +400,329 @@ margin-top:50px;
   justify-content: space-between;
   margin-top:25px;
 }
+
+@media screen and (max-width: 850px) {
+
+  .tabsgrid {
+    display:none;
+  }
+
+
+  .mobileHeader{
+    display:flex;
+  }
+  
+  .mobilemenu{
+    width:50px;
+    height:50px;
+    padding:25px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    
+  }
+
+  .mobilemenu img{
+    height:48px;
+    width:48px;
+  }
+
+  #mobilename {
+    justify-self: flex-start;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #mobilename img {
+    width: 100px;
+    padding:25px;
+  }
+  
+  #gighubLandingPage{
+    background-image: linear-gradient(90deg, black 150px, transparent 90%), url("images/gighubLanding.jpg") !important;
+    background-size:cover;
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+    background-position: 0px center, -350px center !important;
+    height: 100vh;
+    width:100% !important;
+    display:flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: flex-start;    
+    color: white;
+    padding-left:20px !important;
+    padding-top: 15vh;
+    scroll-snap-align: start;
+
+}
+
+#gighubLandingPage h1{
+    font-size: 38px !important;
+    font-weight: 600;
+}
+
+#gighubLandingPage h2{
+    font-size: 26px !important;
+    font-weight: 400;
+    margin-top: -15px;  
+}
+
+#gighubLandingPage img{
+    position: absolute;
+    left: calc(50% - 30px) ;
+    bottom: 30px;
+    height:60px;
+    width:60px;
+  }
+
+  #gighubLandingPage p{
+    font-size: 18px;
+    font-weight:350;
+  }
+  
+
+#landingPageText{
+  width:100% !important;
+  margin-right:-200px !important;
+  }
+
+#projectInfo{
+    margin-top:20px;
+    max-width:80vw !important;
+    line-height:25px;
+  }
+
+.projectDetail 
+{
+    margin-top: 40px !important;
+    line-height:20px;
+    width:100% !important;
+}
+
+.projectDetail h3{
+    font-size:22px !important;
+    font-weight:400;
+    line-height:1px;
+}
+
+.projectDetail p{
+  font-size:16px !important;
+}
+
+#landingImage{
+  display:none;
+}
+
+#gighubCaseStudy{
+    margin-left:20px !important;
+    margin-right:20px !important;
+    padding-top:100px;
+    background-color: white;
+
+}
+
+#challenge{
+  background-color: #EDEDED;
+  padding: 15px 15px 15px 15px;
+  border-radius: 10px;
+  margin-bottom:100px;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#challenge p{
+  line-height:20px;
+}
+
+#challenge img{
+  justify-self:center ;
+  margin:0px;
+}
+
+#gighubCaseStudy p{
+  font-weight: 350;
+  line-height:26px;
+  font-size: 18px;
+}
+
+#gighubCaseStudy h1{
+  font-size: 32px;
+  font-weight: 550;
+}
+
+#gighubCaseStudy h2{
+  font-size:28px;
+  font-weight:450;
+}
+
+#gighubCaseStudy h3{
+  font-size:22px;
+  font-weight: 550;
+}
+
+#gighubCaseStudy ul{
+  line-height:28px;
+  font-size:16px;
+  }
+
+strong{
+  font-weight:600;
+}
+
+.imageShowcase
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.imageShowcase img
+{
+    max-width:40vw;
+}
+
+
+#finalDesigns{
+  margin:20px !important;
+}
+
+.designShowcase
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top:50px;
+}
+
+.designShowcaseR
+{
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  margin-top:100px;
+}
+
+
+.designShowcaseR img
+{
+max-width:250px;
+margin:0px 0px 20px 0px !important;
+} 
+
+.designShowcaseR p{
+  margin-right:0px;
+}
+
+.designShowcaseR h3{
+  margin-right:0px;
+}
+
+
+.designShowcaseL
+{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top:100px;
+}
+
+.designShowcaseL img
+{
+max-width:250px;
+margin:0px 0px 20px 0px !important;
+} 
+.designShowcaseL p{
+  margin-left:0px !important;
+}
+
+.designShowcaseL h3{
+  margin-left:0px !important;
+}
+
+
+
+#footer{
+  height:300px;
+  background-color: #131313;
+  color: white;
+  padding-left:20px !important;
+  padding-right:20px !important;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top:12px;
+  margin-left:-20px;
+}
+
+#footerTitle{
+  font-size:26px;
+  margin-left:20px;
+}
+#footer h2
+{
+  font-weight:400;
+  margin-top:42px;
+  font-size:20px;
+  margin-bottom:12px;
+}
+
+#footer h3
+{
+  font-weight:400;
+  margin-top:42px;
+  font-size:18px;
+  margin-bottom:64px;
+}
+
+#footerimg{
+  display:none;
+}
+
+#footer a{
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+}
+
+
+#footer a:hover{
+  filter: brightness(60%)
+}
+#allFooterText
+{
+  
+width:100%;
+margin-top:32px;
+background-color: #131313;
+width:100vw !important;
+
+}
+
+#footerTitle{
+  width:auto;
+  background-color: #131313;
+}
+
+#footerText
+{
+  width: auto;  
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left:20px;
+  margin-top:12px;
+  background-color: #131313;
+  width:100% !important;
+
+}
+
+}
+
 
 @media screen and (max-width: 1700px){
 
