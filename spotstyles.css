@@ -523,7 +523,7 @@ margin-top:50px;
 #spotLandingPage img{
     position: absolute;
     left: calc(50% - 30px) ;
-    bottom: 30px;
+    bottom: 0px;
     height:60px;
     width:60px;
   }
