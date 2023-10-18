@@ -3,6 +3,7 @@ let lastTime = 0;
 
 const windowHeight = window.innerHeight;
 
+const mediaQueryMobile = window.matchMedia('(max-width: 500px)');
 
 
 window.scrollTo({top:0, behavior: "instant"})
@@ -37,10 +38,41 @@ document.onreadystatechange = function () {
     }
 };
 
+if (mediaQueryMobile.matches){
+}
 
 
 let vid = document.getElementById("backgroundvid");
 vid.playbackRate = 0.8;
+
+
+
+
+const menu = document.querySelector(".mobilemenuopen");
+const menuItems = document.querySelectorAll(".menuItem");
+const mobilemenu= document.querySelector(".mobilemenu");
+const closeIcon= document.querySelector(".closeIcon");
+const menuIcon = document.querySelector(".menuIcon");
+
+function toggleMenu() {
+  if (menu.classList.contains("showMenu")) {
+    menu.classList.remove("showMenu");
+    closeIcon.style.display = "none";
+    menuIcon.style.display = "block";
+  } else {
+    menu.classList.add("showMenu");
+    closeIcon.style.display = "block";
+    menuIcon.style.display = "none";
+  }
+}
+
+mobilemenu.addEventListener("click", toggleMenu);
+
+menuItems.forEach( 
+    function(menuItem) { 
+      menuItem.addEventListener("click", toggleMenu);
+    }
+  )
 
 
 

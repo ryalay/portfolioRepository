@@ -25,6 +25,24 @@
     </div>
   </section>
 
+  <section class="mobileHeader">
+    <div id="mobilename">
+      <a href="./index.html"><img src="./images/initials.png" /></a>
+    </div>
+    <div>
+    <ul class="mobilemenuopen">
+      <li><a class="menuItem" href="#work">Work</a></li>
+      <li><a class="menuItem" href="./about.html">About</a></li>
+      <li><a class="menuItem" href="images/RyanLaytonResume23.pdf">Resume</a></li>
+    </ul>
+    <button class="mobilemenu">
+      <i class ="menuIcon"><img src="images/mobilemenu.png" alt=""></i>
+      <i class ="closeIcon"><img src="images/close.png" alt=""></i>
+      </button>
+    </div>
+  
+
+  </section>
 
 
   <div id="loader" class="center"></div>
@@ -51,19 +69,24 @@
 
     <section id="work">
 
-      <div class="workTitle">
+      <div class="workTitle">      
         <h1>Case Studies</h1>
       </div>
+      
       <div id="workCards">
         <div class="workCard"><img src="images/spotthumb.png" loading="lazy"><div><h2>Spot</h2><p>The most detailed parking app that accounts for every scenario</p><a href="spot.html"><button>View Case Study</button></a></div></div>
-
+        <div class="mobileWorkCard"><div style="display: flex; align-items: center;"><img src="images/spotthumb.png" loading="lazy"><div><h2>Spot</h2><p>The most detailed parking app that accounts for every scenario</p></div></div><a href="spot.html"><button>View Case Study</button></a></div>
         <div class="workCard"><img src="images/kehethumb.png" loading="lazy"><div><h2>KeHE</h2><p>Work as a UI/UX design intern at KeHE Distributors</p><a href="kehe.html"><button>View Case Study</button></a></div></div>
-
+        <div class="mobileWorkCard"><div style="display: flex; align-items: center;"><img src="images/kehethumb.png" loading="lazy"><div><h2>KeHE</h2><p>Work as a UI/UX design intern at KeHE Distributors</p></div></div><a href="kehe.html"><button>View Case Study</button></a></div>
         <div class="workCard"><img src="images/foodtruckthumb.png"loading="lazy"><div><h2>FoodTrucks</h2><p>The hub that helps get the most out of food trucks &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p><a href="foodtrucks.html"><button>View Case Study</button></a></div></div>
-
+        <div class="mobileWorkCard"><div style="display: flex; align-items: center;"><img src="images/foodtruckthumb.png" loading="lazy"><div><h2>FoodTrucks</h2><p>The hub that helps get the most out of food trucks</p></div></div><a href="foodtrucks.html"><button>View Case Study</button></a></div>
         <div class="workCard"><img src="images/gighubthumb.png"loading="lazy"><div><h2>GigHub</h2><p>A gateway to the vibrant local music scene	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><a href="gighub.html"><button>View Case Study</button></a></div></div>
-
+        <div class="mobileWorkCard"><div style="display: flex; align-items: center;"><img src="images/gighubthumb.png" loading="lazy"><div><h2>GigHub</h2><p>A gateway to the vibrant local music scene</p></div></div><a href="gighub.html"><button>View Case Study</button></a></div>
       </div>
+
+
+
+
       <div class="workTitle">
         <h1>Other Work</h1>
         </div>
@@ -80,7 +103,7 @@
     <section id="footer">
       <img id="footerimg"src="images/footerme.png" alt="" loading="lazy">
       <div id="allFooterText">
-      <div id="footerTitle"style = "font-size: 32px">Thanks for visiting</div>
+      <div id="footerTitle">Thanks for visiting</div>
       <div id = "footerText">
         <div>
           <h2>Connect</h2>
@@ -93,7 +116,7 @@
       
     </div>
     <div>
-      <h3>Website made from scratch :)</h3>
+      <h3 id="footerNote">Website made from scratch :)</h3>
     </div>
     </div>
   </div>
