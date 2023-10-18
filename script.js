@@ -3,7 +3,7 @@ let lastTime = 0;
 
 const windowHeight = window.innerHeight;
 
-const mediaQueryMobile = window.matchMedia('(max-width: 500px)');
+const mediaQueryMobile = window.matchMedia('(max-width: 850px)');
 
 
 window.scrollTo({top:0, behavior: "instant"})
@@ -38,14 +38,15 @@ document.onreadystatechange = function () {
     }
 };
 
-if (mediaQueryMobile.matches){
-}
 
 
 let vid = document.getElementById("backgroundvid");
 vid.playbackRate = 0.8;
 
-
+while (mediaQueryMobile.matches && document.getElementById("body").style.overflow === "hidden"){
+    document.getElementById("body").style.overflow = "visible";
+    document.getElementById("html").style.overflow = "visible";
+}
 
 
 const menu = document.querySelector(".mobilemenuopen");
@@ -87,6 +88,8 @@ if (window.scrollY === 0){
 function showScroll(){
     document.getElementById("body").style.overflow = "visible";
 }
+
+
 window.addEventListener('wheel', (e) => {
     const delta = e.wheelDelta;
     const currentTime = new Date().getTime();
@@ -121,6 +124,13 @@ window.addEventListener('wheel', (e) => {
     lastTime = currentTime;
 })
 
+window.addEventListener("touchstart", handleStart);
+
+function handleStart(){
+    document.getElementById("body").style.overflow = "visible";
+}
+
+
 
 while (window.scrollY === windowHeight &&  document.getElementById("body").style.overflow === "hidden") {
     document.getElementById("body").style.overflow = "visible";
@@ -130,6 +140,11 @@ while (window.scrollY < windowHeight && document.getElementById("body").style.ov
 {
     document.getElementById("body").style.overflow = "hidden";
     window.scrollTo({top:windowHeight, behavior: "smooth"})
+}
+
+while (mediaQueryMobile.matches && document.getElementById("body").style.overflow === "hidden"){
+    document.getElementById("body").style.overflow = "visible";
+    document.getElementById("html").style.overflow = "visible";
 }
 
 document.getElementById("body").onscroll = function myFunction() {  
