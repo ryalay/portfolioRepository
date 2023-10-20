@@ -403,6 +403,76 @@ margin-top:50px;
   margin-top:25px;
 }
 
+@media screen and (max-height: 800px) and (min-width:900px) and (max-width: 1700px)  {
+
+  #spotLandingPage{
+    background-image: linear-gradient(90deg, black 300px, transparent 60%), url("images/gighubLanding.jpg");
+    background-size:cover;
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+    background-position: 0px center, 250px center;
+    height: 100vh;
+    display:flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: flex-start;    
+    color: white;
+    padding-left:15%;
+    padding-top: 10vh !important;
+}
+
+#spotLandingPage h1{
+    font-size: 42px !important;
+    font-weight: 600;
+}
+
+#spotLandingPage h2{
+    font-size:26px !important; 
+    font-weight: 400;
+    margin-top: -15px; 
+    max-width:40vw; 
+}
+
+#projectInfo{
+    margin-top:5px;
+    max-width:35vw;
+    line-height:22px;
+}
+
+
+.projectDetail 
+{
+    margin-top: 40px !important;
+    line-height:20px;
+}
+
+.projectDetail h3{
+    font-size:22px !important;
+    font-weight:400;
+    line-height:0.1px;
+}
+
+.projectDetail p{
+font-size: 16px !important;
+}
+
+
+#landingPageText{
+    display: flex;
+    flex-direction: column;
+}
+  
+#landingImage{
+  height:550px !important; 
+  width: auto !important; 
+  margin-left: 250px; 
+  position:absolute;
+  right:9vw;
+  top:9vh;
+  bottom:5vh;
+}  
+}
+
 @media screen and (max-width: 850px) {
 
   .tabsgrid {
@@ -463,12 +533,12 @@ margin-top:50px;
 }
 
 #gighubLandingPage h1{
-    font-size: 38px !important;
+    font-size: 34px !important;
     font-weight: 600;
 }
 
 #gighubLandingPage h2{
-    font-size: 26px !important;
+    font-size: 22px !important;
     font-weight: 400;
     margin-top: -15px;  
 }
@@ -482,7 +552,7 @@ margin-top:50px;
   }
 
   #gighubLandingPage p{
-    font-size: 18px;
+    font-size: 16px;
     font-weight:350;
   }
   
@@ -506,7 +576,7 @@ margin-top:50px;
 }
 
 .projectDetail h3{
-    font-size:22px !important;
+    font-size:20px !important;
     font-weight:400;
     line-height:1px;
 }
