@@ -317,6 +317,17 @@ strong{
   font-weight:600;
 }
 
+.imagetext{
+  display:flex; 
+  align-items: center;
+}
+
+.imagetext2{
+  display:flex; 
+  align-items: center;
+  gap:50px;
+}
+
 .statistic{
     display:flex;
     align-items: center;
@@ -324,9 +335,9 @@ strong{
 }
 
 .statistic img{
+  width:75% !important;
     height:auto;
-    width:350px;
-    margin-left: 50px;
+    margin-right: 50px;
 }
 
 #finalDesigns{
@@ -501,7 +512,11 @@ margin-top:50px;
     font-weight:400;
     line-height:0.1px;
 }
-
+.statistic img{
+  width: 200px !important;
+    height:auto;
+    margin-right: 50px;
+}
 .projectDetail p{
 font-size: 16px !important;
 }
@@ -641,6 +656,20 @@ font-size: 16px !important;
   align-items: center;
 }
 
+.imagetext{
+  display:flex; 
+  flex-direction: column-reverse;
+  align-items: center;
+}
+
+.imagetext2{
+  display:flex; 
+  flex-direction: column;
+  gap:0px;
+  align-items: center;
+  margin-top:25px;
+}
+
 #challenge p{
   line-height:20px;
 }
@@ -684,8 +713,8 @@ strong{
 
 .statistic img{
     height:auto;
-    width:85%;
-    margin-left: 50px;
+    width:85% !important;
+    margin-right: 50px;
 }
 
 #finalDesigns{
@@ -1066,7 +1095,7 @@ height:auto;
 .statistic img{
   height:auto;
   width:375px;
-  margin-left: 50px;
+  margin-right: 50px;
 }
 
 #spotdata1{
@@ -1091,8 +1120,16 @@ width:100%;
 }
 
 #finalDesigns img {
-  max-width:290px;
+  max-width:100%;
 }
+
+.designShowcaseL img{
+max-width: 35% !important;
+}
+
+.designShowcaseR img{
+  max-width: 35% !important;
+  }
 
 @media screen and (min-width: 2250px){
 
@@ -1164,7 +1201,7 @@ width:100%;
 .statistic img{
   height:auto;
   width:375px;
-  margin-left: 50px;
+  margin-right: 50px;
 }
 
 #spotdata1{
