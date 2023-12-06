@@ -334,6 +334,29 @@ strong{
     margin-top:100px;
 }
 
+.analyze{
+  display:flex;
+  align-items: center;
+  margin-top:150px;
+  gap: 50px;
+  margin-left:-20%;
+  margin-right:-20% ;
+}
+
+#quotes{
+  width:50% !important;
+    height:auto;
+
+}
+
+.line{
+  width:5px;
+  height:150px;
+  background-color: #DBDBDB;
+  margin-right:25px;
+
+}
+
 .statistic img{
   width:75% !important;
     height:auto;
