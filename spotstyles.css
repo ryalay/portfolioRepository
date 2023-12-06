@@ -396,6 +396,9 @@ max-width:250px;
   margin-right:50px;
 }
 
+.wideshowcase{
+  width:100%;
+}
 
 .designShowcaseL
 {
@@ -536,7 +539,7 @@ margin-top:50px;
     line-height:0.1px;
 }
 .statistic img{
-  width: 200px !important;
+  width: 60% !important;
     height:auto;
     margin-right: 50px;
 }
@@ -685,6 +688,14 @@ font-size: 16px !important;
   align-items: center;
 }
 
+.line{
+display:none;
+}
+
+.arrow{
+  display:none;
+}
+
 .imagetext2{
   display:flex; 
   flex-direction: column;
@@ -729,9 +740,19 @@ strong{
 
 .statistic{
     display:flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     align-items: center;
     margin-top:100px;
+}
+
+
+.analyze{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top:100px;
+  margin-left:0px;
+  margin-right:0px;
 }
 
 .statistic img{
