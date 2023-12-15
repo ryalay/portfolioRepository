@@ -289,6 +289,14 @@ scroll-behavior: smooth;
     line-height:20px;
 }
 
+.solution{
+  display:flex;
+  align-items:center;
+  gap:50px;
+  margin-left:-50px;
+  margin-right:-50px;
+}
+
 .painPoints{
     margin-left:50px;
 }
@@ -334,8 +342,8 @@ strong{
 }
 
 #finalDesigns{
-  margin-left:23%;
-  margin-right:23%;
+  margin-left:18%;
+  margin-right:18%;
   margin-top:100px;
 }
 #finalDesigns p{
@@ -363,7 +371,8 @@ strong{
 {
   display: flex;
   align-items: center;
-  margin-top:100px;
+  margin-top:125px;
+  gap:40px;
 }
 
 .designShowcase
@@ -395,7 +404,8 @@ max-width:250px;
 {
   display: flex;
   align-items: center;
-  margin-top:100px;
+  margin-top:125px;
+  gap:40px;
 }
 
 .designShowcaseL img
@@ -715,6 +725,11 @@ strong{
   height:auto;
 }
 
+.solution{
+  flex-direction: column;
+  margin-left:0px;
+  margin-right:0px;
+}
 #foodtrucksflow{
   height:auto; width: 95%;
 }
@@ -1032,8 +1047,8 @@ width:100vw !important;
   
   
   #finalDesigns{
-    margin-left:20vw;
-    margin-right:20vw;
+    margin-left:18vw;
+    margin-right:18vw;
     margin-top:100px;
   }
   
