@@ -328,6 +328,27 @@ scroll-behavior: smooth;
     font-weight: 550;
 }
 
+#takeaways{
+  margin-left:30%;
+  margin-right:30%;
+  margin-bottom:100px;
+}
+
+#takeaways p{
+  font-weight: 350;
+  line-height:26px;
+  font-size: 18px;
+}
+
+#takeaways h1{
+  font-size: 32px;
+  font-weight: 550;
+}
+
+#takeaways h2{
+  font-size:28px;
+  font-weight:450;
+}
 strong{
     font-weight:600;
 }
