@@ -606,7 +606,7 @@ background-color: #131313;
     flex-direction:column;
     color: white;
     padding-top:150px;
-    margin-bottom:150px;
+    margin-bottom:250px;
   }
 }
   @media screen and (min-width: 2250px){
@@ -618,7 +618,7 @@ background-color: #131313;
       flex-direction:column;
       color: white;
       padding-top:150px;
-      margin-bottom:150px;
+      margin-bottom:300px;
     }
 
     #aboutImg img{
