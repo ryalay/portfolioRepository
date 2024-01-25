@@ -1,3 +1,7 @@
+html{
+  margin:0px;
+}
+
 .tabsgrid {
     width: 100%;
     height: 100px;
@@ -196,27 +200,18 @@ body{
     height:100%;
     background-color: black;
     margin: 0px;
+    padding:0px;
     font-family: leagueSpartan;
     background-image: url("images/topobg.jpeg");
     background-position-y:-700px;
-    display: flex;
-    flex-direction: column;  
     min-height:100vh;
     }
 
   #aboutPage{
-    margin-left:30%;
-    margin-right:30%;
-    display: flex;
-    flex-direction:column;
     color: white;
-    padding-top:100px;
+    padding-top:50px;
     margin-bottom:150px;
-  }
- #aboutPage p{
-    font-weight: 350;
-    line-height:26px;
-    font-size: 18px;
+    width:100%;
   }
 
   #aboutPage h1{
@@ -225,27 +220,49 @@ body{
     font-weight: 600;
     }
 
-  
-#aboutContent{
+  #aboutContent{
     display:flex;
     margin-top:25px;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-}
-
-#aboutContent img{
-    align-self: flex-start;
-    width:300px;
     height:auto;
-    border-radius: 10px;
-    margin-right:50px;
+    width:100%;
 }
 
-#aboutContent p{
-font-size:22px;
-line-height:28px;
+#aboutImg{
+  border-radius: 20px;
+  width:auto;
+  max-height:auto;
 }
+
+#aboutImg img{
+  border-radius: 10px;
+  margin-right:50px;
+  box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
+  object-fit: contain;
+  width:auto;
+  height:50vh;
+}
+
+
+  #aboutText {
+    background-color: #252525;
+    height: 100%;
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
+    max-height:auto;
+    min-width:30vw;
+  }
+
+  #aboutText p{
+  margin:25px;
+  font-weight: 350;
+  line-height:28px;
+  font-size: 20px;
+  max-width: 100%;
+  height: 100%;
+  }
 
 #footer{
   height:300px;
@@ -403,14 +420,26 @@ body{
   margin-top:0px;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+}
+
+#aboutImg{
+  margin:0px;
 }
 
 #aboutContent img{
-  align-self: center;
-  width:60%;
+  width:50vw;
   height:auto;
   border-radius: 10px;
-  margin:20px;
+  margin:10px 0px 25px 0px;
+}
+
+#aboutText {
+  background-color: #252525;
+  height: 100%;
+  border-radius: 20px;
+  box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
+  max-height:auto;
 }
 
 #aboutContent p{
@@ -552,16 +581,14 @@ background-color: #131313;
 
 @media screen and (max-width: 1550px){
   #aboutPage{ 
-    margin-left:21vw !important;
-    margin-right:21vw !important;;
+    margin-left:17vw !important;
+    margin-right:17vw !important;;
   }
 }
 
 
 @media screen and (max-width: 1850px){
 #aboutPage{
-  margin-left:25%;
-  margin-right:25%;
   display: flex;
   flex-direction:column;
   color: white;
@@ -574,6 +601,7 @@ background-color: #131313;
   #aboutPage{
     margin-left:25%;
     margin-right:25%;
+    width:auto;
     display: flex;
     flex-direction:column;
     color: white;

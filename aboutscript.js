@@ -47,3 +47,7 @@ menuItems.forEach(
       menuItem.addEventListener("click", toggleMenu);
     }
   )
+
+var textHeight = document.getElementById("#aboutText").clientHeight
+
+document.getElementById("meimg").style.height = textHeight;
