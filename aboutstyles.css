@@ -621,6 +621,9 @@ background-color: #131313;
       margin-bottom:300px;
     }
 
+    #aboutContent{
+      margin-top:50px;
+    }
     #aboutImg img{
       border-radius: 10px;
       margin-right:50px;
