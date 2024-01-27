@@ -41,7 +41,11 @@ document.onreadystatechange = function () {
 
 
 let vid = document.getElementById("backgroundvid");
+vid.setAttribute("playsinline", "");
+vid.setAttribute("muted", "");
+vid.play();
 vid.playbackRate = 0.8;
+
 
 while (mediaQueryMobile.matches && document.getElementById("body").style.overflow === "hidden"){
     document.getElementById("body").style.overflow = "visible";
