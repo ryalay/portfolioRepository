@@ -454,7 +454,7 @@ margin:20px;
 }
 
 #footer{
-  height:300px;
+  height:auto;
   width:100%;
 
   background-color: #131313;
@@ -569,7 +569,7 @@ background-color: #131313;
 
 }
 
-@media screen and (max-width: 1700px){
+@media screen and (min-width: 850px) and (max-width: 1700px){
 
   #footer{
     height:300px;

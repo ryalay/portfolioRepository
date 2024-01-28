@@ -608,7 +608,7 @@ font-size: 16px !important;
   }
   
   #spotLandingPage{
-    background-image: linear-gradient(90deg, black 150px, transparent 99%), url("images/spotLanding.png") !important;
+    background-image: linear-gradient(#000000ca, #000000ca), url("images/spotLanding.png") !important;
     background-size:cover;
     box-sizing: border-box;
     background-repeat: no-repeat;
@@ -933,7 +933,7 @@ width:100vw !important;
 
 }
 
-@media screen and (max-width: 1675px){
+@media screen and (min-width: 850px) and (max-width: 1675px){
 
   #spotLandingPage{
     background-image: linear-gradient(90deg, black 300px, transparent 60%), url("images/spotLanding.jpeg");
