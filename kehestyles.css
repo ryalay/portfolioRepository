@@ -107,7 +107,7 @@ html{
     width:100vw;
     display: flex;
     justify-content: space-between;
-    background-image: linear-gradient(black, transparent);
+    background-image: linear-gradient(black, #000000a5 ,transparent);
     position: fixed;
     z-index: 2;
     color:white;
@@ -126,14 +126,16 @@ html{
   
   .mobilemenuopen{
     position: fixed;
-    transform: translateY(-100%);
-    transition: transform 0.2s;
+    transform: translateY(-105%);
+    transition: transform 0.4s;
+    margin-top:0px;
+    padding-top:100px;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     z-index: 3;
-    background: rgba(0, 0, 0, 0.90);
+    background: rgba(0, 0, 0, 0.926);
     color: white;
     list-style: none;
     display: flex;
@@ -141,6 +143,7 @@ html{
     align-items: center;
     max-width:100%;
     padding-right:50px;
+    height:110vh;
   }
   
   
@@ -477,8 +480,14 @@ font-size: 16px !important;
   }
 
   .mobilemenu img{
-    height:48px;
-    width:48px;
+    height:36px;
+    width:36px;
+  }
+  
+  #mobilename img {
+    width: 60px;
+    height:auto;
+    padding:25px;
   }
 
   #mobilename {
@@ -488,11 +497,6 @@ font-size: 16px !important;
     align-items: center;
   }
   
-  #mobilename img {
-    width: 80px;
-    height:auto;
-    padding:25px;
-  }
   
   #keheLandingPage{
     background-image: linear-gradient(90deg, black 150px, transparent 90%), url("images/keheLanding.jpg") !important;

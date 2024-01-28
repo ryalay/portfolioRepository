@@ -107,7 +107,7 @@ a:hover {
   height:100px;
   width:100vw;
   justify-content: space-between;
-  background-image: linear-gradient(black, transparent);
+  background-image: linear-gradient(black, #000000a5 ,transparent);
   top:0;
   position: fixed;
   z-index: 2;
@@ -489,10 +489,6 @@ margin-top:50px;
   }
   
 
-  .mobilemenu img{
-    height:36px;
-    width:36px;
-  }
 
   .mobilemenu{
     width:50px;
@@ -515,6 +511,12 @@ margin-top:50px;
     align-items: center;
   }
   
+
+  .mobilemenu img{
+    height:36px;
+    width:36px;
+  }
+
   #mobilename img {
     width: 60px;
     height:auto;
@@ -547,6 +549,15 @@ margin-top:50px;
   display:none;
 }
 
+#landingScreen{
+  background-color: rgba(0, 13, 30, 0.721);
+ 
+}
+#landingScreen img{
+  height:48px !important;
+  width:48px !important;
+ 
+}
   
   #landingScreen h1{
     font-size:48px;
