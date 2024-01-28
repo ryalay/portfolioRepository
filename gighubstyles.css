@@ -519,7 +519,7 @@ font-size: 16px !important;
   }
 
   #gighubLandingPage{
-    background-image: linear-gradient(90deg, black 150px, transparent 90%), url("images/gighubLanding.jpg") !important;
+    background-image: linear-gradient(#000000b9, #000000b9), url("images/gighubLanding.jpg") !important;
     background-size:cover;
     box-sizing: border-box;
     background-repeat: no-repeat;
@@ -538,7 +538,7 @@ font-size: 16px !important;
 }
 
 #gighubLandingPage h1{
-    font-size: 34px !important;
+    font-size: 32px !important;
     font-weight: 600;
 }
 
@@ -552,8 +552,8 @@ font-size: 16px !important;
     position: absolute;
     left: calc(50% - 30px) ;
     bottom: 10px;
-    height:60px;
-    width:60px;
+    height:48px !important;
+    width:48px !important;
   }
 
   #gighubLandingPage p{
@@ -620,6 +620,10 @@ font-size: 16px !important;
 #challenge img{
   justify-self:center ;
   margin:0px;
+}
+
+#initialmockshowcase{
+  max-width: 100%;
 }
 
 #gighubCaseStudy p{
@@ -823,7 +827,7 @@ width:100vw !important;
 
 }
 
-@media screen and (max-width: 1600px){
+@media screen and (min-width: 850px) and (max-width: 1600px){
 
   #gighubLandingPage{
     background-image: linear-gradient(90deg, black 200px, transparent 60%), url("images/gighubLanding.jpg");
