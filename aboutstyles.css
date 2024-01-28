@@ -585,10 +585,11 @@ background-color: #131313;
 
 
 
-@media screen and (min-width: 850px) and (max-width: 1550px){
+@media screen and (min-width: 850px) and (max-width: 1550px)
+{
   #aboutPage{ 
     margin-left:17vw !important;
-    margin-right:17vw !important;;
+    margin-right:17vw !important;
   }
 }
 
