@@ -661,10 +661,10 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 color: white;
-margin-top:56px;
 margin-bottom:56px;
-padding:12px;
-border-radius: 15px;
+padding:36px 24px 36px 24px;
+border-radius: 24px;
+background-color: #000000bd;
 }
 
 .mobileWorkCard button{
