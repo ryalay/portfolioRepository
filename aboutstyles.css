@@ -587,27 +587,45 @@ background-color: #131313;
 
 @media screen and (min-width: 850px) and (max-width: 1550px)
 {
-  #aboutPage{ 
-    margin-left:17vw !important;
-    margin-right:17vw !important;
+  #aboutPage{
+    margin-left:17%;
+    margin-right:17%;
+    width:auto;
+    display: flex;
+    flex-direction:column;
+    color: white;
+    padding-top:150px;
+    margin-bottom:250px;
   }
+
+  #aboutContent{
+    display:flex;
+    margin-top:0px;
+    max-width:100%;
+  }
+
+  
+
 }
 
 
 @media screen and (min-width: 1550px) and (max-width: 1850px){
-#aboutPage{
-  display: flex;
-  flex-direction:column;
-  color: white;
-  padding-top:100px;
-  margin-bottom:150px;
-}
+  #aboutPage{
+    margin-left:22%;
+    margin-right:22%;
+    width:auto;
+    display: flex;
+    flex-direction:column;
+    color: white;
+    padding-top:150px;
+    margin-bottom:250px;
+  }
 }
 
 @media screen and (min-width: 1850px)and (max-width: 2250px){
   #aboutPage{
-    margin-left:25%;
-    margin-right:25%;
+    margin-left:30%;
+    margin-right:30%;
     width:auto;
     display: flex;
     flex-direction:column;
