@@ -503,7 +503,7 @@ font-size: 16px !important;
     background-size:cover;
     box-sizing: border-box;
     background-repeat: no-repeat;
-    background-position: 0px center, -400px center !important;
+    background-position: 0px center, -350px center !important;
     height: 100vh;
     width:100%;
     display:flex;
@@ -538,7 +538,7 @@ font-size: 16px !important;
 
 #projectInfo{
     margin-top:10px;
-    width:100vw !important;
+    width:100% !important;
     line-height:25px;
   }
 
@@ -750,7 +750,7 @@ max-width:250px;
 width:100%;
 margin-top:32px;
 background-color: #131313;
-width:100vw !important;
+width:100% !important;
 
 }
 
