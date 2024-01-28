@@ -503,7 +503,7 @@ font-size: 16px !important;
     background-size:cover;
     box-sizing: border-box;
     background-repeat: no-repeat;
-    background-position: 0px center, -500px center !important;
+    background-position: 0px center, -400px center !important;
     height: 100vh;
     width:100%;
     display:flex;
@@ -518,7 +518,7 @@ font-size: 16px !important;
 }
 
 #keheLandingPage h1{
-    font-size: 38px !important;
+    font-size: 32px !important;
     font-weight: 600;
 }
 
@@ -537,7 +537,7 @@ font-size: 16px !important;
   }
 
 #projectInfo{
-    margin-top:20px;
+    margin-top:10px;
     width:100vw !important;
     line-height:25px;
   }
