@@ -240,7 +240,7 @@ body{
 
 
 #landingScreen{
-  background-color: rgba(0, 13, 30, 0.597);
+  background-color: rgba(0, 16, 36, 0.759);
   height: 100vh;
   max-width: 100vw;
   display: flex;
@@ -767,17 +767,18 @@ font-size:16px;
 }
 
 #footer{
-  height:300px;
+  height:auto;
   background-color: #131313;
   color: white;
-  padding-left:20px !important;
-  padding-right:20px !important;
   display: flex;
+  padding-left:20px;
+  padding-right:20px;
   flex-wrap: wrap;
 }
 
 #footerTitle{
   font-size:26px;
+  background-color: #131313;
 }
 #footer h2
 {
@@ -785,6 +786,7 @@ font-size:16px;
   margin-top:42px;
   font-size:20px;
   margin-bottom:12px;
+  background-color: #131313;
 }
 
 #footer h3
@@ -793,6 +795,8 @@ font-size:16px;
   margin-top:42px;
   font-size:18px;
   margin-bottom:64px;
+  background-color: #131313;
+
 }
 
 #footerimg{
@@ -803,6 +807,7 @@ font-size:16px;
   text-decoration: none;
   color: white;
   font-size: 18px;
+  background-color: #131313;
 }
 
 
@@ -861,7 +866,7 @@ background-color: #131313;
 }
 
 
-@media screen and (max-width: 1700px){
+@media screen and (min-width: 850px) and (max-width: 1700px){
 
   .workCard{
     display: flex;
