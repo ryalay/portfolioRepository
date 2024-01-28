@@ -550,7 +550,7 @@ margin-top:50px;
 }
 
 #landingScreen{
-  background-color: rgba(0, 13, 30, 0.721);
+  background-color: rgba(0, 13, 30, 0.787);
  
 }
 #landingScreen img{
@@ -760,7 +760,6 @@ font-size:20px;
   padding-right:20px !important;
   display: flex;
   flex-wrap: wrap;
-  margin-top:12px;
 }
 
 #footerTitle{
