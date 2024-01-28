@@ -545,7 +545,7 @@ font-size: 16px !important;
 #gighubLandingPage h2{
     font-size: 22px !important;
     font-weight: 400;
-    margin-top: -15px;  
+    margin-top: -20px;  
 }
 
 #gighubLandingPage img{
@@ -575,7 +575,7 @@ font-size: 16px !important;
 
 .projectDetail 
 {
-    margin-top: 40px !important;
+    margin-top: 30px !important;
     line-height:20px;
     width:100% !important;
 }

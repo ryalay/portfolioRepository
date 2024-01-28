@@ -585,7 +585,7 @@ background-color: #131313;
 
 
 
-@media screen and (max-width: 1550px){
+@media screen and (min-width: 850px) and (max-width: 1550px){
   #aboutPage{ 
     margin-left:17vw !important;
     margin-right:17vw !important;;
@@ -593,7 +593,7 @@ background-color: #131313;
 }
 
 
-@media screen and (max-width: 1850px){
+@media screen and (min-width: 1550px) and (max-width: 1850px){
 #aboutPage{
   display: flex;
   flex-direction:column;
@@ -603,7 +603,7 @@ background-color: #131313;
 }
 }
 
-@media screen and (max-width: 2250px){
+@media screen and (min-width: 1850px)and (max-width: 2250px){
   #aboutPage{
     margin-left:25%;
     margin-right:25%;
