@@ -154,7 +154,7 @@ while (mediaQueryMobile.matches && document.getElementById("body").style.overflo
 var factor = 0;
 
 function mobileWorkScroll(){
-    window.scrollTo({top:windowHeight, behavior: "smooth"})
+    window.scrollTo({top:(windowHeight + 50), behavior: "smooth"})
 }
 
 var chevron = document.getElementById('chevron');
