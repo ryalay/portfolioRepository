@@ -655,7 +655,7 @@ font-size: 16px !important;
 
 .projectDetail 
 {
-    margin-top: 20px !important;
+    margin-top: 35px !important;
     line-height:20px;
     width:85vw !important;
 }
@@ -761,10 +761,13 @@ strong{
   margin-right:0px;
 }
 
+
+
 .statistic img{
+  align-self: center;
     height:auto;
     width:85% !important;
-    margin-right: 50px;
+    
 }
 
 #finalDesigns{
