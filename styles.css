@@ -715,15 +715,13 @@ border-radius: 15px;
 }
 
 #otherWorkCards{
-  width:100vw;
+  width:100%;
   display: flex;
   flex-direction: row;
   flex-wrap:wrap;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: top;
   color: white;
-  padding-left:20px;
-  padding-right:20px;
   margin-bottom:0px;
 }
 
