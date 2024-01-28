@@ -4,7 +4,7 @@ let lastTime = 0;
 const windowHeight = window.innerHeight;
 
 const mediaQueryMobile = window.matchMedia('(max-width: 850px)');
-
+const mediaQueryDesktop = window.matchMedia('(min-width: 850px)');
 
 window.scrollTo({top:0, behavior: "instant"})
 
@@ -151,11 +151,16 @@ while (mediaQueryMobile.matches && document.getElementById("body").style.overflo
     document.getElementById("html").style.overflow = "visible";
 }
 
-document.getElementById("body").onscroll = function myFunction() {  
+var factor = 0;
+
+
+document.getElementById("body").onscroll = function 
+myFunction() 
+{  
     var scrolltotop = document.scrollingElement.scrollTop;
     var target = document.getElementById("work");
     var xvalue = "center";
-    var factor = 0.5;
+    factor = 0.5;
     var yvalue = scrolltotop * factor - 200;
     target.style.backgroundPosition = xvalue + " -" + yvalue + "px";
   }

@@ -106,13 +106,14 @@ a:hover {
 {
   height:100px;
   width:100vw;
-  display: flex;
   justify-content: space-between;
   background-image: linear-gradient(black, transparent);
+  top:0;
   position: fixed;
   z-index: 2;
   color:white;
   display:none;
+  margin-top:0px;
 }
 
 
@@ -128,14 +129,16 @@ a:hover {
 
 .mobilemenuopen{
   position: fixed;
-  transform: translateY(-100%);
-  transition: transform 0.2s;
+  transform: translateY(-105%);
+  transition: transform 0.4s;
+  margin-top:0px;
+  padding-top:100px;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   z-index: 3;
-  background: rgba(0, 0, 0, 0.90);
+  background: rgba(0, 0, 0, 0.926);
   color: white;
   list-style: none;
   display: flex;
@@ -143,12 +146,13 @@ a:hover {
   align-items: center;
   max-width:100%;
   padding-right:50px;
+  height:110vh;
 }
 
 
 .mobilemenu{
-  width:50px;
-  height:50px;
+  width:40px;
+  height:40px;
   padding:25px;
   display:flex;
   margin:25px;
@@ -295,7 +299,9 @@ body{
 
     }
 
-
+#mobilework{
+  display:none;
+}
 
 #workCards{
   justify-content: left;
@@ -479,15 +485,19 @@ margin-top:50px;
 
 
   .mobileHeader{
-    display:flex
+    display:flex;
   }
   
+
+  .mobilemenu img{
+    height:36px;
+    width:36px;
+  }
+
   .mobilemenu{
     width:50px;
     height:50px;
-    padding:25px;
     display:flex;
-    margin:25px;
     justify-content: center;
     align-items: center;
     cursor: pointer;
@@ -495,11 +505,8 @@ margin-top:50px;
     border: none;
     z-index: 50;
   }
+  
 
-  .mobilemenu img{
-    height:48px;
-    width:48px;
-  }
 
   #mobilename {
     justify-self: flex-start;
@@ -509,11 +516,11 @@ margin-top:50px;
   }
   
   #mobilename img {
-    width: 80px;
+    width: 60px;
     height:auto;
     padding:25px;
   }
-  
+ 
   #backgroundvidmobile {
     width: 100%;
     height: 100vh;
@@ -541,21 +548,19 @@ margin-top:50px;
 }
 
   
-
   #landingScreen h1{
-    font-size:40px;
-    font-weight:400;
+    font-size:48px;
+    font-weight:450;
     margin-left:20px;
     margin-right:20px;
   }
   
   #landingScreen h2{
-    font-size: 24px;
-    font-weight:300;
+    font-size: 32px;
+    font-weight:350;
     margin-left:20px;
     margin-right:20px;
   }
-  
   
 #body{
   height:100%;
@@ -569,7 +574,7 @@ margin-top:50px;
 #work{
   position:relative;
   background-repeat:repeat;
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -583,8 +588,28 @@ margin-top:50px;
   background-position: center 300px;
   padding-top:96px;
   background-size: cover;
+  background-attachment: scroll;
+}
 
-    }
+#mobilework{
+  display:initial;
+  position:relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-left:20px;
+  padding-right:20px;
+  max-width: 100vw;
+  padding-bottom:48px;
+  overflow-x: hidden;
+  padding-top: 0px;
+  background-image: url("images/topobgmobile.png");
+  padding-top:96px;
+  background-size: auto 100%;
+  background-attachment: scroll;
+}
+
 .workTitle
 {
   justify-self: flex-start;
@@ -600,13 +625,13 @@ margin-top:50px;
   margin-bottom:48px;
 }
 
-#work h1{
+#mobilework h1{
 color: white;
 font-size:28px;
 font-weight: 600;
 }
 
-#work h3{
+#mobilework h3{
     font-size:22px;
     font-weight: 400;
     line-height: 25px;
@@ -783,66 +808,34 @@ background-color: #131313;
   background-color: #131313;
 }
 
+.tabsgrid {
+  display:none;
 }
 
-@media screen and (max-width: 850px) {
 
-  .tabsgrid {
-    display:none;
-  }
-
-
-  .mobileHeader{
-    display:flex
-  }
-  
-  .mobilemenu{
-    width:50px;
-    height:50px;
-    padding:25px;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-  }
-
-  .mobilemenu img{
-    height:48px;
-    width:48px;
-  }
-
-  #mobilename {
-    justify-self: flex-start;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  #mobilename img {
-    width: 80px;
-    height:auto;
-    padding:25px;
-  }
-  
-
-  #landingScreen h1{
-    font-size:48px;
-    font-weight:400;
-    margin-left:20px;
-    margin-right:20px;
-  }
-  
-  #landingScreen h2{
-    font-size: 32px;
-    font-weight:300;
-    margin-left:20px;
-    margin-right:20px;
-  }
-
-  .workCard{
-    display:none !important;
-  }
+.mobileHeader{
+  display:flex
 }
+
+
+
+#mobilename {
+  justify-self: flex-start;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+
+.workCard{
+  display:none !important;
+}
+
+}
+
 
 @media screen and (max-width: 1700px){
 
