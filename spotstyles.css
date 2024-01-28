@@ -612,7 +612,7 @@ font-size: 16px !important;
     background-size:cover;
     box-sizing: border-box;
     background-repeat: no-repeat;
-    background-position: 0px center, -150px center !important;
+    background-position: 0px center, -250px center !important;
     height: 100vh;
     width:100%;
     display:flex;
@@ -623,18 +623,20 @@ font-size: 16px !important;
     padding-left:20px !important;
     padding-top: 15vh;
     scroll-snap-align: start;
+    
 
 }
 
 #spotLandingPage h1{
     font-size: 34px !important;
     font-weight: 600;
+    margin-top:-10px;
 }
 
 #spotLandingPage h2{
     font-size: 22px !important;
     font-weight: 400;
-    margin-top: -15px;  
+    margin-top: -20px;  
 }
 
 #spotLandingPage img{
