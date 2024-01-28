@@ -611,11 +611,11 @@ font-size: 16px !important;
   }
   
   #foodtruckLandingPage{
-    background-image: linear-gradient(90deg, black 150px, transparent 90%), url("images/foodTruckLanding.png") !important;
+    background-image:  linear-gradient(#000000b9, #000000b9), url("images/foodTruckLanding.png") !important;
     background-size:cover;
     box-sizing: border-box;
     background-repeat: no-repeat;
-    background-position: 0px center, -100px center !important;
+    background-position: 0px center, -700px center !important;
     height: 100vh;
     width:100% !important;
     display:flex;
@@ -630,12 +630,12 @@ font-size: 16px !important;
 }
 
 #foodtruckLandingPage h1{
-    font-size: 34px !important;
+    font-size: 30px !important;
     font-weight: 600;
 }
 
 #foodtruckLandingPage h2{
-    font-size: 22px !important;
+    font-size: 20px !important;
     font-weight: 400;
     margin-top: -15px;  
     max-width:400px !important;
@@ -645,8 +645,8 @@ font-size: 16px !important;
     position: absolute;
     left: calc(50% - 30px) ;
     bottom: 10px;
-    height:60px;
-    width:60px;
+    height:48px;
+    width:48px;
   }
 
   #foodtruckLandingPage p{
@@ -694,6 +694,8 @@ font-size: 16px !important;
 
 }
 
+
+
 #challenge{
   background-color: #EDEDED;
   padding: 15px 15px 15px 15px;
@@ -712,6 +714,10 @@ font-size: 16px !important;
 #challenge img{
   justify-self:center ;
   margin:0px;
+}
+
+#firstlookshowcase{
+  max-width: 90% !important;
 }
 
 #foodtruckCaseStudy p{
