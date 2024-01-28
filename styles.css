@@ -567,10 +567,11 @@ margin-top:50px;
   }
   
   #landingScreen h2{
-    font-size: 28px;
+    font-size: 26px;
     font-weight:350;
     margin-left:20px;
-    margin-right:20px;
+    margin-right:20px;    
+    line-height: 26px;
   }
   
 #body{
