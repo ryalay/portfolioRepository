@@ -208,6 +208,7 @@ body{
     background-image: url("images/topobg.jpeg");
     background-position-y:-700px;
     min-height:100vh;
+    
     }
 
   #aboutPage{
@@ -381,6 +382,7 @@ margin-top:50px;
   margin: 0px;
   font-family: leagueSpartan;
   padding: 0px !important;
+  overflow-x: hidden;
 }
 
 body{
@@ -397,6 +399,7 @@ body{
   padding: 0px !important;
   left:0px;
   right:0px;
+  overflow-x: hidden;
   }
 
 #aboutPage{
@@ -470,6 +473,7 @@ margin:20px;
   padding-left:20px;
   padding-right:20px;
   flex-wrap: wrap;
+  overflow-x: hidden;
 }
 
 #footerTitle{
