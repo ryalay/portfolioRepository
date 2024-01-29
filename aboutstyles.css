@@ -508,13 +508,13 @@ background-color: #131313;
 }
 
 #footerTitle{
-  width:auto;
+  width:100%;
   background-color: #131313;
 }
 
 #footerText
 {
-  width: auto;  
+  width: 100%;  
   display:flex;
   flex-direction: column;
   justify-content: space-between;
