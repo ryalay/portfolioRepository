@@ -461,19 +461,19 @@ margin:20px;
 }
 
 #footer{
-  height:auto;
-  width:100%;
-
+  height:300px;
   background-color: #131313;
   color: white;
-  padding-left:50px !important;
+  padding-left:20px !important;
   padding-right:20px !important;
   display: flex;
   flex-wrap: wrap;
+  margin-left:-20px;
 }
 
 #footerTitle{
   font-size:26px;
+  margin-left:20px;
 }
 #footer h2
 {
@@ -505,29 +505,34 @@ margin:20px;
 #footer a:hover{
   filter: brightness(60%)
 }
-
 #allFooterText
 {
+  
 width:100%;
 margin-top:32px;
 background-color: #131313;
+width:100vw !important;
+
 }
 
 #footerTitle{
-  width:100%;
+  width:auto;
   background-color: #131313;
+  margin-left:40px;
 }
 
 #footerText
 {
-  width: 100%;  
+  width: auto;  
   display:flex;
   flex-direction: column;
   justify-content: space-between;
+  margin-left:40px;
   margin-top:12px;
   background-color: #131313;
-}
+  width:100% !important;
 
+}
 
 }
 
