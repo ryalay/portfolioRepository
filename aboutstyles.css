@@ -316,7 +316,8 @@ margin-top:50px;
 }
 
 #footerTitle{
-  width:auto;
+  font-size:26px;
+  background-color: #131313;
 }
 
 #footerText
