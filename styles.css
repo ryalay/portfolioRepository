@@ -40,16 +40,22 @@ html{
 
 
 .tabsgrid {
-  width: 100vw;
-  height: 100px;
-  display: grid;
-  grid-template-columns: 100px auto 550px;
-  grid-template-areas: "name header tabs";
-  background-image: linear-gradient(black, transparent);
+  width: 60vw;
+  height: 55px;
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(52, 52, 52, 0.714);
+  backdrop-filter: blur(10px);
+  border-radius:100px;
+  border-style: solid;
+  border-color: rgb(41, 41, 41);
+  border-width: 2px;
+  margin-top:15px;
   color: white;
-  padding-right: 200px;
   position: fixed;
-  z-index: 2;
+  left: 20vw;
+  z-index: 3;
+  box-shadow: 0px 18px 28px -10px rgba(0,0,0,0.73);
 }
 
 .header {
@@ -58,14 +64,13 @@ html{
 }
 
 .tabs {
-  grid-area: tabs;
   display: flex;
   justify-content: space-between;
   align-items: center;
   text-decoration: none;
-  max-width: 450px;
+  width: 275px;
   color: white;
-  margin-right: 250px;
+  margin-right:50px;
 }
 
 
@@ -86,19 +91,19 @@ a:hover {
 
 
 .name {
-  grid-area: name;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 250px;
+  margin-left:50px;
 }
 
 .name img {
-  width: 80px;
+  width: 60px;
   height:auto;
   display: flex;
   align-items: center;
   justify-content: center;
+
 }
 
 
@@ -291,7 +296,7 @@ body{
   padding-bottom:150px;
 
 
-  background-image: url("images/topobg.jpeg");
+  background-image: url("images/topobg.png");
   background-position: center 300px;
   background-attachment:fixed;
 
@@ -366,12 +371,28 @@ font-weight: 600;
   line-height: 1.2;
 }
 
-.workCard img{
+.imgcontainer
+{
   width: 400px;
   height: 300px;
+  display:flex;
   border-radius: 30px;
-  object-fit: cover;
+  object-fit:contain;
   box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
+  background-color: #2d2d2d98;
+  backdrop-filter: blur(5px);
+  padding:15px;
+}
+
+.workcardtext{
+  width:550px;
+}
+
+.workCard img{
+height:300px;
+width:auto;
+margin-left:auto;
+margin-right:auto;
 }
 
 #otherWorkCards{

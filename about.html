@@ -13,16 +13,7 @@
     <link rel="icon" href="images/initials.png">
   </head>
 
-  <section class="tabsgrid">
-    <div class="name">
-      <a href="./index.html"><img src="./images/initials.png" /></a>
-    </div>
-    <div class="tabs">
-      <a href="./index.html#work"  onclick="showScroll()">Work</a>  
-      <a href="./about.html">About</a>
-      <a href="images/RyanLaytonResume23.pdf" target="_blank">Resume</a>
-    </div>
-  </section>
+  
 
   <section class="mobileHeader">
     <div id="mobilename">
@@ -46,15 +37,27 @@
   <div id="loader" class="center"></div>
 
     <body id="body">
+      <section class="tabsgrid">
+        <div class="name">
+          <a href="./index.html"><img src="./images/initials.png" /></a>
+        </div>
+        <div class="tabs">
+          <a href="./index.html#work"  onclick="showScroll()">Work</a>  
+          <a href="./about.html">About</a>
+          <a href="images/RyanLaytonResume23.pdf" target="_blank">Resume</a>
+        </div>
+      </section>
+      
         <section id="aboutPage">
             <div id=aboutTitle><h1>About</h1></div>
 
             <div id="aboutContent">
-            <div id="aboutImg">
-              <img src="images/aboutMe.png" alt="" id ="meimg">
-            </div>
+
             <div id="aboutText">
-            <p>Hello! My name is Ryan and I'm a UX designer from New Jersey. I studied at Rutgers University, where I graduated with honors in my bachelor's degree in Information Technology and Informatics, with a web design pathway. I also completed a double minor in Business Administration and Digital Communication, Information, & Media.
+              <div id="aboutImg">
+                <img src="images/aboutMe.png" alt="" id ="meimg">
+              </div>
+            <p>Hello! I'm Ryan, a UX designer from New Jersey. I studied at Rutgers University, where I graduated with honors in my bachelor's degree in Information Technology and Informatics, with a web design pathway. I also completed a double minor in Business Administration and Digital Communication, Information, & Media.
               <br>
               <br>
               My eye for design and attention to detail have developed with me since I was a kid, when I was customizing and tinkering with the software on devices around the house. Now, combined with my love for solving problems, I'm devoted to creating digital experiences that are impactful, attractive, and intuitive.
@@ -64,6 +67,29 @@
             </p>
         </div>
         </div>
+
+        <section id = "values">
+          <h2>My values</h2>
+          <div class="value"><div class="valuecard"><div class="valueimg"><img src="images/oceanthumb.png" alt=""></div><div><h3>Stay curious</h3> <br> <p><strong>95% of the ocean is unseen by the human eye. </strong>The ocean reminds us that we always have so much to learn and explore in our everyday lives.</p></div></div></div>
+          <div class="value"><div class="valuecard"><div class="valueimg"><img src="images/humbletest.png" alt=""></div><div><h3>Be humble</h3> <br> <p>The ocean’s <strong>vastness</strong> shows us how insignificant we all are in the grand scheme of everything, grouding us in the reality that we're all equal.</p></div></div></div>
+          <div class="value"><div class="valuecard"><div class="valueimg"><img src="images/resilienttest.png" alt=""></div><div><h3>Be resilient</h3> <br> <p>After <strong>enduring storms and natural disasters</strong>, the ocean always returns to calmness, reminding us about the importance of staying resilient and adapting to challenges.</p></div></div></div>
+
+        </section>
+        <h2>My writing</h2>
+        <section class ="writings">
+
+          <div class="writing"><img src="images/travelthumb.png" alt=""><div class="writingcontent"><h4>Travel and the design of everyday things</h4><div style="color:rgb(207, 207, 207); font-weight:300;">Blog post</div><a href="https://medium.com/@rylay/travel-and-the-design-of-everyday-things-ac6825f03cc6" target="_blank"loading="lazy"><button>Read</button></a></div></div>
+          <div class="writing"><img src="images/certificate.jpeg" alt=""><div><h4>What I didn't (and did) learn from Google's UX design certification</h4><div style="color:rgb(207, 207, 207); font-weight:300;">Blog post</div><a href="https://medium.com/@rylay/what-i-didnt-and-did-learn-from-google-s-ux-design-certification-195e7a6d9c0b?source=friends_link&sk=7d7f1dadd2cf88093d7a931e4a1bec86" target="_blank"><button>Read</button></a></div></div>
+
+        </section>
+
+        <section class ="writings">
+
+          <div class="writing"><img src="images/spotifythumb.png" alt=""><div class="writingcontent"><h4>Streaming services and their disruption of the music industry</h4><div style="color:rgb(207, 207, 207); font-weight:300;">Essay</div><a href="othercontent/StreamingEssay.pdf" target="_blank"><button>Read</button></a></div></div>
+          <div class="writing"><img src="images/airbnbthumb.png" alt=""><div><h4>How Airbnb has forever changed travel</h4><div style="color:rgb(207, 207, 207); font-weight:300;">Essay</div><a href="othercontent/airbnbpaper.pdf" target="_blank"><button>Read</button></a></div></div>
+
+        </section>
+
         </section>
 
         <section id="footer">
@@ -86,9 +112,8 @@
         </div>
         </div>
       </div>
+
         </section>
-
-
         <script src="aboutscript.js"></script>
     </body>
 </html>
