@@ -960,7 +960,7 @@ width:100vw !important;
 
 }
 
-  @media screen and (max-width: 1700px){
+  @media screen and (min-width:850px) and (max-width: 1700px){
 
     #footer{
       height:300px;
@@ -990,24 +990,25 @@ width:100vw !important;
       align-items: left;
       justify-content: flex-start;    
       color: white;
-      padding-left:15%;
+      padding-left:10%;
       padding-top: 10vh !important;
   }
   
   #foodtruckLandingPage h1{
       font-size: 48px;
       font-weight: 600;
+      margin-top: 50px;
   }
   
   #foodtruckLandingPage h2{
       font-size: 32px;
       font-weight: 400;
       margin-top: -15px; 
-      max-width:40vw; 
+      max-width:90vw; 
   }
   
   #projectInfo{
-      margin-top:5px;
+      margin-top:15px;
       max-width:35vw;
       line-height:22px;
       background-color: #2b2b2bb2;
@@ -1033,6 +1034,7 @@ width:100vw !important;
   #landingPageText{
       display: flex;
       flex-direction: column;
+      max-width:90vw;
   }
     
   #landingImage{

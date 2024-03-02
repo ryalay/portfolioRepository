@@ -798,7 +798,7 @@ width:100% !important;
 
 }
 
-@media screen and (max-width: 1675px){
+@media screen and (min-width: 850px) and (max-width: 1675px){
 
   #keheLandingPage{
     background-image: linear-gradient(rgba(0, 0, 0, 0.558), rgba(0, 0, 0, 0.558)), url("images/keheLanding.jpg");
@@ -812,7 +812,7 @@ width:100% !important;
     align-items: left;
     justify-content: flex-start;    
     color: white;
-    padding-left:14%;
+    padding-left:11%;
     padding-top: 10vh;
 }
 
@@ -829,7 +829,7 @@ width:100% !important;
 }
 
 #projectInfo{
-    margin-top:10px;
+    margin-top:20px;
     width:35vw;
     line-height:22px;
 }
@@ -886,7 +886,7 @@ width:100% !important;
 }
 
 
-@media screen and (min-width: 1900px){
+@media screen and (min-width: 1900px) and (max-width:2250px){
 
   #keheLandingPage{
     background-image: linear-gradient(rgba(0, 0, 0, 0.558), rgba(0, 0, 0, 0.558)), url("images/keheLanding.jpg");

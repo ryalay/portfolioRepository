@@ -974,14 +974,15 @@ width:100vw !important;
   align-items: left;
   justify-content: flex-start;    
   color: white;
-  padding-left:15%;
-  padding-top: 10vh;
+  padding-left:12%;
+  padding-top: 12vh;
   scroll-snap-align: start;
 }
 
 #spotLandingPage h1{
     font-size: 48px;
     font-weight: 600;
+    margin-top: 50px;
 }
 
 #spotLandingPage h2{
@@ -992,7 +993,7 @@ width:100vw !important;
 }
 
 #projectInfo{
-    margin-top:5px;
+    margin-top:25px;
     width:35vw;
     line-height:22px;
 }
