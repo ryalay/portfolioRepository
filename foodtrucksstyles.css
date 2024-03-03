@@ -1071,7 +1071,7 @@ width:100vw !important;
   @media screen and (min-width: 1900px) and (max-width:2250px){
   
     #foodtruckLandingPage{
-      background-image: linear-gradient(rgba(0, 0, 0, 0.558), rgba(0, 0, 0, 0.558)), url("images/foodtrucklanding.png");
+      background-image: linear-gradient(rgba(0, 0, 0, 0.558), rgba(0, 0, 0, 0.558)), url("images/foodTruckLanding.png");
       background-size:cover;
       box-sizing: border-box;
       background-repeat: no-repeat;
