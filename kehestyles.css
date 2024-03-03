@@ -982,7 +982,7 @@ width:100% !important;
   justify-content: flex-start;    
   color: white;
   padding-left:14vw;  
-  padding-top: 15vh;
+  padding-top: 28vh;
   scroll-snap-align: start;
 }
 
@@ -1012,7 +1012,7 @@ width:100% !important;
   }
 
 #projectInfo{
-    margin-top:35px;
+    margin-top:50px;
     width:30vw;
     line-height:27px;
   }
