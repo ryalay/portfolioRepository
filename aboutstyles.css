@@ -336,7 +336,7 @@ strong{
   }
 
   .bigvalue .valuecard{
-  background-image: linear-gradient(rgba(0, 0, 0, 0.387), rgba(0, 0, 0, 0.387)), url("images/bigvaluetest.png");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.448), rgba(0, 0, 0, 0.448)), url("images/bigvaluetest.png");
   flex-direction: column;
   padding:0px;
   }
