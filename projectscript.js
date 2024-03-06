@@ -1,3 +1,4 @@
+const windowHeight = window.innerHeight;
 document.onreadystatechange = function () {
     if (document.readyState !== "complete") {
         document.getElementById("body").style.background = "black";
@@ -25,6 +26,35 @@ document.onreadystatechange = function () {
     }
 };
 
+var toTopButton = document.getElementById("totop");
+
+let opacity = 0;
+function fade() {
+   opacity += 0.01;
+   element.style.opacity = opacity;
+   requestAnimationFrame(fade);
+}
+requestAnimationFrame(fade);
+
+var toTopButtonScroll = function () 
+{
+var y = window.scrollY;
+if (y > windowHeight + 200) {
+  document.getElementById("totop").style.display = "initial";
+  toTopButton.fadeIn(1000);
+}
+else {
+  document.getElementById("totop").style.display = "none";
+}
+};
+
+window.addEventListener("scroll", toTopButtonScroll);
+function scrollToTop(){
+  window.scrollTo({top:0, behavior: "smooth"})
+}
+toTopButton.addEventListener("click", scrollToTop);
+
+
 const menu = document.querySelector(".mobilemenuopen");
 const menuItems = document.querySelectorAll(".menuItem");
 const mobilemenu= document.querySelector(".mobilemenu");
@@ -50,3 +80,29 @@ menuItems.forEach(
       menuItem.addEventListener("click", toggleMenu);
     }
   )
+
+window.addEventListener('scroll', (e) => {
+    const delta = e.wheelDelta;
+    const currentTime = new Date().getTime();
+
+    if (currentTime - lastTime < animationDuration){
+        e.preventDefault();
+        return;
+    }
+
+    if (delta < 0 && window.scrollY < windowHeight) {
+        
+        window.scrollTo({top:windowHeight, behavior: "smooth"})
+
+    }
+    else(delta > 0 && window.scrollY - 50 < windowHeight)
+    {
+        window.scrollTo({top:0, behavior: "smooth"})
+    }
+
+    
+    lastTime = currentTime;
+})
+
+
+

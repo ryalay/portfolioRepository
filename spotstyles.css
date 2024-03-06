@@ -52,7 +52,7 @@ html{
   border-radius:100px;
   border-style: solid;
   border-color: rgba(58, 58, 58, 0.796);
-  border-width: 2px;
+  border-width: 1px;
   margin-top:15px;
   left: 20vw;
   margin-right:auto;
@@ -78,7 +78,7 @@ html{
   color: white;
   font-size: 22px;
   text-decoration: none;
-  font-weight:500;
+  font-weight:350;
 }
 
 a.tabsgrid:hover {
@@ -261,8 +261,8 @@ a:hover {
     background-color: #2b2b2bb2;
     padding:0px 25px 25px 25px;
     border-radius: 20px;
-    backdrop-filter: blur(7px);
-    box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    box-shadow: 5px 5px 15px 2px rgba(0, 0, 0, 0.679);
   }
 
 .projectDetail 
@@ -276,6 +276,18 @@ a:hover {
     font-weight:400;
     line-height:1px;
 }
+
+
+#totop{
+  position: fixed;
+  right:45px;
+  bottom:20px;
+  border:none;
+  background-color: rgba(0, 0, 0, 0);
+  display:none;
+  cursor: pointer;
+}
+
 
 
 #spotCaseStudy{
@@ -306,13 +318,13 @@ a:hover {
 }
 
 #spotCaseStudy h1{
-  font-size: 32px;
+  font-size: 40px;
   font-weight: 550;
   line-height:32px;
 }
 
 #spotCaseStudy h2{
-  font-size:28px;
+  font-size:32px;
   font-weight:450;
 }
 
@@ -548,8 +560,8 @@ margin-top:50px;
     background-color: #2b2b2bb2;
     padding:0px 25px 25px 25px;
     border-radius: 20px;
-    backdrop-filter: blur(7px);
-    box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    box-shadow: 5px 5px 15px 2px rgba(0, 0, 0, 0.679);
 }
 
 
@@ -1107,7 +1119,7 @@ height:auto;
 }
 
 
-@media screen and (min-width: 1900px){
+@media screen and (min-width: 1900px) and (max-width: 2250px){
 
   #spotLandingPage{
     background-image: linear-gradient(rgba(0, 0, 0, 0.558), rgba(0, 0, 0, 0.558)), url("images/spotLanding.png");
@@ -1158,8 +1170,8 @@ height:auto;
     background-color: #2b2b2bb2;
     padding:0px 25px 25px 25px;
     border-radius: 20px;
-    backdrop-filter: blur(7px);
-    box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    box-shadow: 5px 5px 15px 2px rgba(0, 0, 0, 0.679);
   }
 
 .projectDetail 
@@ -1217,6 +1229,7 @@ max-width: 35% !important;
 .designShowcaseR img{
   max-width: 35% !important;
   }
+}
 
 @media screen and (min-width: 2250px){
 
@@ -1270,8 +1283,8 @@ max-width: 35% !important;
     background-color: #2b2b2bb2;
     padding:0px 25px 25px 25px;
     border-radius: 20px;
-    backdrop-filter: blur(7px);
-    box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    box-shadow: 5px 5px 15px 2px rgba(0, 0, 0, 0.679);
   }
 
 .projectDetail 
@@ -1324,4 +1337,3 @@ width:100%;
 
 }
 
-}
