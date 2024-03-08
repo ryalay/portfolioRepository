@@ -27,6 +27,14 @@ document.onreadystatechange = function () {
 };
 
 var toTopButton = document.getElementById("totop");
+var workbutton = document.getElementById("worklink")
+
+
+
+function scrollToWork(){
+  window.scrollTo({top:windowHeight, behavior: "smooth"})
+}
+
 
 let opacity = 0;
 function fade() {

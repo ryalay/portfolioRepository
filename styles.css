@@ -276,10 +276,22 @@ body{
   justify-self: center;
 }
 
-#landingScreen img{
+
+#workarrow{
   position: absolute;
-  bottom: 30px;
+  bottom: 20px;
+  border:none;
+  background-color: #0000;
+  cursor: pointer;
   height:60px;
+  width:60px;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#workarrow img{
+  height:auto;
   width:60px;
 }
 

@@ -6,6 +6,15 @@ const windowHeight = window.innerHeight;
 const mediaQueryMobile = window.matchMedia('(max-width: 850px)');
 const mediaQueryDesktop = window.matchMedia('(min-width: 850px)');
 
+var toworkbutton = document.getElementById("workarrow");
+
+
+function scrollToWork(){
+    window.scrollTo({top:windowHeight, behavior: "smooth"})
+  }
+
+toworkbutton.addEventListener("click", scrollToWork)
+
 window.scrollTo({top:0, behavior: "instant"})
 
 if (window.scrollY === 0){
