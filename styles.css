@@ -609,7 +609,7 @@ margin-top:50px;
   }
   
   #landingScreen h2{
-    font-size: 22px;
+    font-size: 24px;
     font-weight:350;
     margin-left:20px;
     margin-right:20px;    
@@ -626,23 +626,7 @@ margin-top:50px;
 }
 
 #work{
-  position:relative;
-  background-repeat:repeat;
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding-left:20px;
-  padding-right:20px;
-  max-width: 100vw;
-  padding-bottom:48px;
-  overflow-x: hidden;
-  padding-top: 0px;
-  background-image: url("images/topobg.jpeg");
-  background-position: center 300px;
-  padding-top:96px;
-  background-size: cover;
-  background-attachment: scroll;
+display:none;
 }
 
 #mobilework{
@@ -652,8 +636,8 @@ margin-top:50px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-left:24px;
-  padding-right:24px;
+  padding-left:24px !important;
+  padding-right:24px !important;
   max-width: 100vw;
   padding-bottom:48px;
   overflow-x: hidden;
@@ -675,8 +659,8 @@ margin-top:50px;
 #workCards{
   display:flex;
   flex-direction: column;
-  margin-left:auto;
-  margin-right:auto;
+  margin-left:0px;
+  margin-right:0px;
   margin-bottom:48px;
 }
 
@@ -711,16 +695,16 @@ border-radius: 15px;
 
 .mobileWorkCard button{
   font-family: leagueSpartan;
-  margin: 18px 0px 0px 0px;
   width:100%;
   height: 40px;
   background: #408184;
   border: none;
   border-radius: 34px;
+  margin-top:18px;
   color: white;
   font-size: 18px;
   box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
-
+  
 }
 
 .mobileWorkCard a{
