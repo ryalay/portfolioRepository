@@ -638,7 +638,7 @@ display:none;
   justify-content: center;
   padding-left:24px !important;
   padding-right:24px !important;
-  max-width: 100vw;
+  max-width: 100%;
   padding-bottom:48px;
   overflow-x: hidden;
   padding-top: 0px;
@@ -659,6 +659,7 @@ display:none;
 #workCards{
   display:flex;
   flex-direction: column;
+  max-width:100%;
   margin-left:0px;
   margin-right:0px;
   margin-bottom:48px;
