@@ -341,15 +341,15 @@ strong{
   padding:0px;
   }
 
-  .bigvalue .valuecard h1{
-    font-weight:300;
-    color:black;
+  #valuetitle {
+    font-weight:400 !important;
+    color:white;
+    font-size:64px !important; 
+    padding:20px 25px 20px 25px !important; 
+    margin:50px 25px 25px 25px !important;
+    line-height:64px !important;
   }
 
-  .valuetitle{
-    font-weight:300;
-    color:black;
-  }
 .value{
   display:flex;
   justify-content: space-between;
@@ -453,6 +453,9 @@ font-weight: 400;
   filter: brightness(60%)
 }
 
+.mobilewritings{
+  display:none;
+}
 
 #footer{
   height:300px;
@@ -576,7 +579,7 @@ body{
   height:100%;
   background-color: black;
   font-family: leagueSpartan;
-  background-image: url("images/topobg.jpeg");
+  background-image: url("images/topobgmobile.png");
   background-position-y:-200px;
   background-position-x:-1000px;
   display: flex;
@@ -587,6 +590,7 @@ body{
   left:0px;
   right:0px;
   overflow-x: hidden;
+  width:100vw;
   }
 
 #aboutPage{
@@ -594,10 +598,11 @@ body{
   flex-direction:column;
   align-items: center;
   color: white;
-  width:100%;
-  margin-left:20px;
-  margin-right:20px;
+  width:auto;
+  margin-left:20px !important;
+  margin-right:20px !important;
   margin-top:50px;
+  max-width:100%;
 }
 #aboutPage p{
   font-weight: 350;
@@ -609,7 +614,18 @@ body{
   color: white;
   font-size:42px;
   font-weight: 600;
+
   }
+
+  #aboutPage h2{
+    color: white;
+    font-size:42px;
+    font-weight: 400;
+    justify-self: start;
+    align-self: start;
+    margin-left:12px;
+    }
+
 
 
 #aboutContent{
@@ -618,6 +634,7 @@ body{
   flex-direction: column-reverse;
   align-items: center;
   justify-content: center;
+  margin-bottom:48px;
 }
 
 #aboutImg{
@@ -625,30 +642,86 @@ body{
 }
 
 #aboutContent img{
-  width:50vw;
+  width:40vw;
   height:auto;
   border-radius: 10px;
-  margin:48px 0px 0px 0px;
+  margin:48px 0px 36px 0px;
 }
 
 #aboutText {
+  display:flex;
+  flex-direction: column-reverse;
   background-color: #252525;
   height: 100%;
   border-radius: 20px;
   box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
   max-height:auto;
   margin:20px;
+  min-width:0px;
+  padding:10px;
 }
 
 #aboutTitle{
-  padding-left:30px;
   align-self: flex-start;
+  padding-left:20px;
 }
 
 #aboutContent p{
 font-size:18px;
 line-height:28px;
-margin:20px;
+}
+
+#values{
+  margin:12px;
+}
+
+.bigvalue{
+  margin-top:24px;
+}
+
+#valuetitle {
+  font-weight:300 !important;
+  color:white;
+  font-size:42px !important; 
+  margin:24px 18px 0px 18px !important;
+  line-height:48px !important;
+}
+
+.bigvaluetext{
+margin:0px;
+padding:0px;
+font-size: 22px !important;
+}
+
+.bigvaluetext p{
+  font-size: 18px !important;
+}
+
+.mobilewritings
+{
+  display:flex;
+  flex-direction: column;
+  gap:30px;
+  margin-bottom:40px;
+  margin-top: 25px;
+}
+
+.writing{
+  display:flex;
+  background-color: #353535ba;
+  height:150px;
+  width:auto;
+  padding:25px;
+  gap:25px;
+  border-radius:20px;
+  align-items: center;
+  box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.8);
+  background-color: #2d2d2d98;
+  backdrop-filter: blur(5px);
+}
+
+.writings{
+  display:none;
 }
 
 #footer{
