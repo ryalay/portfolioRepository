@@ -659,7 +659,7 @@ display:none;
 #workCards{
   display:flex;
   flex-direction: column;
-  max-width:100%;
+  width:auto;
   margin-left:0px;
   margin-right:0px;
   margin-bottom:48px;
@@ -692,6 +692,7 @@ margin-top:56px;
 margin-bottom:56px;
 padding:12px;
 border-radius: 15px;
+width:auto;
 }
 
 .mobileWorkCard button{
