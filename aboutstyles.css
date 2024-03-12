@@ -107,15 +107,24 @@ a:hover {
 
   .mobileHeader
   {
-    height:100px;
-    width:100vw;
-    display: flex;
+    height:48px;
+    width:92vw;
     justify-content: space-between;
-    background-image: linear-gradient(black, #000000a5 ,transparent);
+    top:0;
     position: fixed;
-    z-index: 2;
     color:white;
     display:none;
+    background-color: rgba(52, 52, 52, 0.714);
+    backdrop-filter: blur(10px);
+    border-radius:100px;
+    border-style: solid;
+    border-color: rgb(41, 41, 41);
+    border-width: 1px;
+    margin-top:12px;
+    margin-left:4vw;
+    margin-right:4vw;
+    z-index: 3;
+    box-shadow: 0px 18px 28px -10px rgba(0,0,0,0.73);
   }
   
   .closeIcon {
@@ -133,12 +142,13 @@ a:hover {
     transform: translateY(-105%);
     transition: transform 0.4s;
     margin-top:0px;
+    margin-left:0px;
     padding-top:100px;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: 3;
+    z-index: 10;
     background: rgba(0, 0, 0, 0.926);
     color: white;
     list-style: none;
@@ -146,17 +156,19 @@ a:hover {
     flex-direction:column;
     align-items: center;
     max-width:100%;
-    padding-right:50px;
+    margin:0px 0px 0px 0px;
+    margin-left:-4vw;
+    margin-right:-4vw;
+    margin-top: -18px;
     height:110vh;
   }
   
-  
   .mobilemenu{
-    width:50px;
-    height:50px;
-    padding:25px;
+    width:40px;
+    height:40px;
+    padding:0px;
     display:flex;
-    margin:25px;
+    margin-right:10px;
     justify-content: center;
     align-items: center;
     cursor: pointer;
@@ -166,9 +178,10 @@ a:hover {
   }
   
   .mobilemenu img{
-    height:48px;
-    width:48px;
+    height:32px;
+    width:32px;
   }
+  
   
   #mobilename {
     justify-self: flex-start;
@@ -821,30 +834,21 @@ background-color: #131313;
   }
 
 
-  .mobileHeader{
-    display:flex
-  }
-  
   .mobilemenu{
     width:50px;
     height:50px;
-    padding:25px;
+    margin:0px 10px 0px 0px;
     display:flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-  }
-
-  .mobilemenu img{
-    height:36px;
-    width:36px;
+    background-color: #0000;
+    border: none;
+    z-index: 50;
+    
   }
   
-  #mobilename img {
-    width: 60px;
-    height:auto;
-    padding:25px;
-  }
+
 
   #mobilename {
     justify-self: flex-start;
@@ -854,6 +858,17 @@ background-color: #131313;
   }
   
 
+  .mobilemenu img{
+    height:32px;
+    width:32px;
+  }
+
+  #mobilename img {
+    width: 45px;
+    height:auto;
+    padding:25px;
+  }
+ 
   
 
 
