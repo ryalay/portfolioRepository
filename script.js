@@ -172,8 +172,8 @@ chevron.addEventListener("touchstart", mobileWorkScroll);
 
 
 
-document.getElementById("body").onscroll = function 
-myFunction() 
+document.getElementById("body").onscroll = function myFunction() 
+
 {  
     var scrolltotop = document.scrollingElement.scrollTop;
     var target = document.getElementById("work");
@@ -182,4 +182,5 @@ myFunction()
     var yvalue = scrolltotop * factor - 200;
     target.style.backgroundPosition = xvalue + " -" + yvalue + "px";
   }
+
 
