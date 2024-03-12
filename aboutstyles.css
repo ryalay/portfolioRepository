@@ -663,7 +663,7 @@ body{
   max-height:auto;
   margin:12px;
   min-width:0px;
-  padding:10px;
+  padding:0px;
 }
 
 #aboutTitle{
@@ -686,7 +686,7 @@ line-height:28px;
 }
 
 #valuetitle {
-  font-weight:300 !important;
+  font-weight:350 !important;
   color:white;
   font-size:42px !important; 
   margin:24px 18px 0px 18px !important;
