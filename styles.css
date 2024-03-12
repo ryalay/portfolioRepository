@@ -147,6 +147,8 @@ a:hover {
   margin-top:0px;
   margin-left:0px;
   padding-top:100px;
+  padding-left:0px;
+  padding-right:0px;
   top: 0;
   left: 0;
   right: 0;
@@ -159,10 +161,8 @@ a:hover {
   flex-direction:column;
   align-items: center;
   align-content: center;
-  width:100vw;
-  padding-left:auto;
-  padding-right:auto;
-  margin:0px 0px 0px -60px;
+  margin-left: -4vw;
+  margin-right:-4vw;
   margin-top: -18px;
   height:110vh;
 }
