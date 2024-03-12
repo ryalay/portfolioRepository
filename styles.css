@@ -158,12 +158,19 @@ a:hover {
   display: flex;
   flex-direction:column;
   align-items: center;
-  max-width:100%;
-  margin:0px 0px 0px 0px;
-  margin-left:-4vw;
-  margin-right:-4vw;
+  align-content: center;
+  width:100vw;
+  padding-left:auto;
+  padding-right:auto;
+  margin:0px 0px 0px -60px;
   margin-top: -18px;
   height:110vh;
+}
+
+.menuitem{
+  align-self:center;
+  justify-content: center;
+  background-color: blue;
 }
 
 
