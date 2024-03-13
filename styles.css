@@ -146,8 +146,8 @@ a:hover {
   transform: translateY(-105%);
   transition: transform 0.4s;
   margin-top:0px;
-  margin-left:-100px;
-  margin-right:-100px;
+  margin-left:-100px !important;
+  margin-right: -100px !important;
   padding-top:100px;
   padding-left:0px;
   padding-right:0px;
