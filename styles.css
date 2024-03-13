@@ -146,8 +146,8 @@ a:hover {
   transform: translateY(-105%);
   transition: transform 0.4s;
   margin-top:0px;
-  margin-left:0px;
-  margin-right:0px;
+  margin-left:-100px;
+  margin-right:-100px;
   padding-top:100px;
   padding-left:0px;
   padding-right:0px;
@@ -164,8 +164,7 @@ a:hover {
   align-items: center;
   align-content: center;
   justify-self: center;
-  border:50px;
-  border-color: rgba(0, 0, 0, 0.926);
+  border:0px;
   margin-top: -18px;
   height:110vh;
 }
