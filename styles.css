@@ -166,11 +166,27 @@ a:hover {
 
   margin-top: -18px;
   height:110vh;
-  width:1000px;
+  width:900px;
 }
 
+.mobilemenuopen li{
+  display:flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  justify-content: center;
+  width:100vw;
+
+}
 .menuItem{
   align-self:center;
+  align-items: center;
+  align-content:center;
+  justify-content: center;
+  justify-items: center;
+  width:100%;
+  text-align: center;
 }
 
 
