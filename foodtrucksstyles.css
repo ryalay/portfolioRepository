@@ -788,6 +788,7 @@ font-size: 16px !important;
 #challenge img{
   justify-self:center ;
   margin:0px;
+  display:none;
 }
 
 #firstlookshowcase{
