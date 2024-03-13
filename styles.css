@@ -164,7 +164,8 @@ a:hover {
   align-items: center;
   align-content: center;
   justify-self: center;
-
+  border:50px;
+  border-color: rgba(0, 0, 0, 0.926);
   margin-top: -18px;
   height:110vh;
 }
