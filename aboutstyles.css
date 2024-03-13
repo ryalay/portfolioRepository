@@ -137,31 +137,34 @@ a:hover {
     max-height:24px;
   }
   
-  .mobilemenuopen{
-    position: fixed;
-    transform: translateY(-105%);
-    transition: transform 0.4s;
-    margin-top:0px;
-    margin-left:0px;
-    padding-top:100px;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 10;
-    background: rgba(0, 0, 0, 0.926);
-    color: white;
-    list-style: none;
-    display: flex;
-    flex-direction:column;
-    align-items: center;
-    max-width:100%;
-    margin:0px 0px 0px 0px;
-    margin-left:-4vw;
-    margin-right:-4vw;
-    margin-top: -18px;
-    height:110vh;
-  }
+  
+.mobilemenuopen{
+  position: absolute;
+  transform: translateY(-105%);
+  transition: transform 0.4s;
+  margin-top:0px;
+  margin-left:-100px !important;
+  margin-right: -100px !important;
+  padding-top:100px;
+  padding-left:0px;
+  padding-right:0px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.926);
+  color: white;
+  list-style: none;
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  align-content: center;
+  justify-self: center;
+  border:0px;
+  margin-top: -18px;
+  height:110vh;
+}
   
   .mobilemenu{
     width:40px;
@@ -209,6 +212,18 @@ a:hover {
   .mobilemenuopen li{
     margin:25px;
   }
+
+
+.mobilemenuopen li{
+  display:flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  justify-content: center;
+  width:100vw;
+
+}
   
   .showMenu {
     transform: translateY(0);
