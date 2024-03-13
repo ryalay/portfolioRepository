@@ -109,6 +109,7 @@ a:hover {
 
 .mobileHeader
 {
+  display:flex;
   height:48px;
   width:92vw;
   justify-content: space-between;
@@ -141,7 +142,7 @@ a:hover {
 }
 
 .mobilemenuopen{
-  position: fixed;
+  position: absolute;
   transform: translateY(-105%);
   transition: transform 0.4s;
   margin-top:0px;
@@ -161,10 +162,11 @@ a:hover {
   flex-direction:column;
   align-items: center;
   align-content: center;
-  margin-left: -4vw;
-  margin-right:-4vw;
+  justify-self: center;
+
   margin-top: -18px;
   height:110vh;
+  width:1000px;
 }
 
 .menuitem{
