@@ -57,8 +57,8 @@ vid.playbackRate = 0.8;
 
 
 while (mediaQueryMobile.matches && document.getElementById("body").style.overflow === "hidden"){
-    document.getElementById("body").style.overflow = "visible";
-    document.getElementById("html").style.overflow = "visible";
+    document.getElementById("body").style.overflowY = "visible";
+    document.getElementById("html").style.overflowY = "visible";
 }
 
 
@@ -99,7 +99,7 @@ if (window.scrollY === 0){
 }
 
 function showScroll(){
-    document.getElementById("body").style.overflow = "visible";
+    document.getElementById("body").style.overflowY = "visible";
 }
 
 
@@ -116,7 +116,7 @@ window.addEventListener('wheel', (e) => {
         
         document.getElementById("body").style.overflow = "hidden";
         window.scrollTo({top:windowHeight, behavior: "smooth"})
-        document.getElementById("body").style.overflow = "visible";
+        document.getElementById("body").style.overflowY = "visible";
 
     }
     else if (delta > 0 && window.scrollY - 50 < windowHeight)
@@ -126,11 +126,11 @@ window.addEventListener('wheel', (e) => {
     }
     else if (delta > 0 && window.scrollY + 50 > windowHeight)
     {
-        document.getElementById("body").style.overflow = "visible";
+        document.getElementById("body").style.overflowY = "visible";
     }
     else if (delta < 0 && window.scrollY >= windowHeight)
     {
-        document.getElementById("body").style.overflow = "visible";
+        document.getElementById("body").style.overflowY = "visible";
 
     }
     
@@ -146,7 +146,7 @@ function handleStart(){
 
 
 while (window.scrollY === windowHeight &&  document.getElementById("body").style.overflow === "hidden") {
-    document.getElementById("body").style.overflow = "visible";
+    document.getElementById("body").style.overflowY = "visible";
 }
 
 while (window.scrollY < windowHeight && document.getElementById("body").style.overflow === "visible" && delta > 0)
@@ -156,8 +156,8 @@ while (window.scrollY < windowHeight && document.getElementById("body").style.ov
 }
 
 while (mediaQueryMobile.matches && document.getElementById("body").style.overflow === "hidden"){
-    document.getElementById("body").style.overflow = "visible";
-    document.getElementById("html").style.overflow = "visible";
+    document.getElementById("body").style.overflowY = "visible";
+    document.getElementById("html").style.overflowY = "visible";
 }
 
 var factor = 0;
@@ -182,5 +182,3 @@ document.getElementById("body").onscroll = function myFunction()
     var yvalue = scrolltotop * factor - 200;
     target.style.backgroundPosition = xvalue + " -" + yvalue + "px";
   }
-
-
