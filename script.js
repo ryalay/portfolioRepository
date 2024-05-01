@@ -140,7 +140,7 @@ window.addEventListener('wheel', (e) => {
 window.addEventListener("touchstart", handleStart);
 
 function handleStart(){
-    document.getElementById("body").style.overflow = "visible";
+    document.getElementById("body").style.overflowY = "visible";
 }
 
 
