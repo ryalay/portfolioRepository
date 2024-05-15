@@ -37,25 +37,17 @@ html{
     100% {background-position:    0% 100%,100% 100%,200% 100%}
 }
 
-
-
 .tabsgrid {
-  width: 60vw;
-  height: 55px;
+  width: 100%;
+  height: 75px;
   display: flex;
   justify-content: space-between;
-  background-color: rgba(52, 52, 52, 0.714);
-  backdrop-filter: blur(10px);
-  border-radius:100px;
-  border-style: solid;
-  border-color: rgb(41, 41, 41);
-  border-width: 1px;
-  margin-top:15px;
+  background-color: rgba(52, 52, 52, 0.045);
+  backdrop-filter: blur(5px);
   color: white;
   position: fixed;
-  left: 20vw;
   z-index: 3;
-  box-shadow: 0px 18px 28px -10px rgba(0,0,0,0.73);
+  box-shadow: 0px 18px 28px -10px rgba(0, 0, 0, 0.136);
 }
 
 .header {
@@ -70,9 +62,15 @@ html{
   text-decoration: none;
   width: 275px;
   color: white;
-  margin-right:50px;
+  margin-right:200px;
 }
 
+.name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left:200px;
+}
 
 .tabs a {
   color: white;
@@ -90,12 +88,7 @@ a:hover {
 }
 
 
-.name {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-left:50px;
-}
+
 
 .name img {
   width: 60px;
@@ -360,13 +353,17 @@ body{
   background-image: url("images/topobg.png");
   background-position: center 300px;
   background-attachment:fixed;
-
+  
   background-size: cover;
 
     }
 
 #mobilework{
   display:none;
+}
+
+#work a{
+  text-decoration: none;
 }
 
 #workCards{
@@ -393,43 +390,65 @@ font-weight: 600;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 40px 50px 40px 50px;
+  margin: 70px 50px 70px 50px;
   color: white;
-  height:450px;
+  height:400px;
   width: 950px;
+  box-shadow: 5px 5px 12px 2px rgba(0, 0, 0, 0.715);
+  background-color: #4040406a;
+  backdrop-filter: blur(5px);
+  border-radius: 30px;
+  padding:0px 15px 0px 15px;
+  transition-duration: 0.3s; 
+  transition-timing-function: ease; 
+}
+
+.workCard .line{
+background-color: #408184;
+height:5px;
+width:100px;
+margin-left:50px;
 }
 
 .mobileWorkCard{
   display:none;
 }
 
-.workCard button{
-  font-family: leagueSpartan;
-  width: 252px;
-  height: 60px;
-  background: #408184;
-  border: none;
-  border-radius: 34px;
-  color: white;
-  font-size: 22px;
-  margin: 0px 50px 50px 50px;
-}
-
-.workCard button:hover{
-  cursor: pointer;
-  filter: brightness(60%)
-}
-
 .workCard h2{
-  margin:50px;
+  margin:0px 50px 20px 50px;
   font-size: 42px;
   font-weight:600;
+  
 }
 
 .workCard p{
-  margin:50px 0px 50px 50px;
+  margin:25px 0px 15px 50px;
   font-size:24px;
   line-height: 1.2;
+}
+
+.workCard .projecttags{
+display:flex;
+flex-direction: row;
+margin:0px 0px 0px 50px;
+}
+
+.workCard .projecttag{
+  background-color: #6f6f6f74;
+  padding:12px 10px 8px 10px;
+  margin:0px 15px 0px 0px;
+  border-radius: 8px;
+}
+
+.workCard:hover{
+  cursor: pointer;
+  transform: scale(1.05);
+  box-shadow: 5px 5px 18px 4px rgba(0, 0, 0, 0.553);
+  transition: 0.5s;
+}
+
+.workCards a{
+  text-decoration: none;
 }
 
 .imgcontainer
@@ -439,14 +458,13 @@ font-weight: 600;
   display:flex;
   border-radius: 30px;
   object-fit:contain;
-  box-shadow: 5px 5px 12px 2px rgba(0, 0, 0, 0.715);
-  background-color: #2d2d2d98;
-  backdrop-filter: blur(5px);
-  padding:15px;
+  padding:0px;
+  margin-left:35px;
 }
 
 .workcardtext{
   width:550px;
+  margin-top:0px;
 }
 
 .workCard img{
@@ -454,6 +472,7 @@ height:300px;
 width:auto;
 margin-left:auto;
 margin-right:auto;
+
 }
 
 #otherWorkCards{
