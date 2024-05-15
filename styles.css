@@ -580,7 +580,7 @@ margin-top:50px;
 
 { 
   #realbackgroundvid {
-    min-height: 135vh;
+    min-height: 140vh;
     width: 200vw;
     object-fit: fill;
     left: 0;
@@ -592,7 +592,7 @@ margin-top:50px;
     margin-bottom:-100px;
   }
   }
-  
+
 
 @media screen and (max-width: 850px) {
 
