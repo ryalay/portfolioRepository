@@ -258,7 +258,7 @@ a:hover {
 }
 
 #realbackgroundvid {
-  height: 120vh;
+  min-height: 115vh;
   width: 200%;
   object-fit: fill;
   left: 0;
@@ -558,6 +558,41 @@ margin-top:50px;
   justify-content: space-between;
   margin-top:25px;
 }
+
+@media  (min-aspect-ratio: 18/9) 
+
+{ 
+  #realbackgroundvid {
+    min-height: 125vh;
+    width: 200vw;
+    object-fit: fill;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+    margin-top:-100px;
+    margin-bottom:-100px;
+  }
+  }
+
+  @media  (min-aspect-ratio: 20/9) 
+
+{ 
+  #realbackgroundvid {
+    min-height: 135vh;
+    width: 200vw;
+    object-fit: fill;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+    margin-top:-100px;
+    margin-bottom:-100px;
+  }
+  }
+  
 
 @media screen and (max-width: 850px) {
 
