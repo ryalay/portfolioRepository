@@ -259,7 +259,7 @@ a:hover {
 
 #realbackgroundvid {
   height: 120vh;
-  width: 100%;
+  width: 200%;
   object-fit: fill;
   left: 0;
   right: 0;
