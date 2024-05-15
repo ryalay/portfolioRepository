@@ -1004,12 +1004,11 @@ background-color: #131313;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 20px 50px 20px 50px;
+    margin: 70px 50px 70px 50px;
     color: white;
-    height:450px;
+    height:400px;
     width: 950px;
   }
-  
   
   #footer{
     height:300px;

@@ -248,7 +248,10 @@ body{
     margin-bottom:0px;
     width:100%;
     margin-bottom:150px;  
-
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   #aboutPage h1{
@@ -269,6 +272,14 @@ body{
       font-weight: 400;
       }
   
+      #aboutPage a{
+        text-decoration: none;
+      }
+
+      #aboutTitle{
+        margin-top:25px;
+        width:1000px;
+      }
 
   #aboutContent{
     display:flex;
@@ -277,7 +288,7 @@ body{
     justify-content: space-between;
     align-items: center;
     height:auto;
-    width:100%;
+    width:1000px;
 }
 
 #aboutImg{
@@ -306,7 +317,6 @@ body{
     background-color: #2d2d2d98;
     backdrop-filter: blur(5px);
     max-height:auto;
-    min-width:30vw;
   }
 
   #aboutText p{
@@ -314,13 +324,14 @@ body{
   font-weight: 350;
   line-height:28px;
   font-size: 20px;
-  max-width: 100%;
   height: 100%;
   }
 
   #values
   {
     margin-top:120px;
+    width:1000px;
+
   }
 
   #values p{
@@ -430,8 +441,16 @@ strong{
   gap:50px;
   margin-bottom:50px;
   margin-top: 25px;
+  width:1000px;
+
 }
-.writing{
+
+.writings a{
+  text-decoration: none;
+  color: white;
+}
+
+a .writing{
   display:flex;
   background-color: #353535ba;
   height:150px;
@@ -439,10 +458,27 @@ strong{
   gap:25px;
   border-radius:20px;
   align-items: center;
-  width:42%;
-  box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.8);
+  width:400px;
+  box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.384);
   background-color: #2d2d2d98;
   backdrop-filter: blur(5px);
+  transition-duration: 0.3s; 
+  transition-timing-function: ease; 
+}
+
+.writing:hover{
+  cursor: pointer;
+  transform: scale(1.05);
+  box-shadow: 5px 5px 18px 4px rgba(0, 0, 0, 0.333);
+  transition: 0.5s;
+}
+
+.writingtag{
+  background-color: #6f6f6f74;
+  padding:12px 10px 8px 10px;
+  margin:0px 15px 0px 0px;
+  border-radius: 8px;
+  display: inline-block;
 }
 
 .writing img{
@@ -452,30 +488,16 @@ strong{
   border-radius: 15px;
 }
 
+.writing a{
+text-decoration: none;
+}
 
 .writing h4{
 margin-bottom:10px;
 margin-top:0px;
 font-size:20px;
 font-weight: 400;
-}
-
-.writing button{
-  font-family: leagueSpartan;
-  width: 75px;
-  height: 30px;
-  background: #408184;
-  border: none;
-  border-radius: 20px;
-  color: white;
-  font-size: 20px;
-  margin: 25px 0px 0px 0px;
-  padding: 3px 0px 0px 0px;
-}
-
-.writing button:hover{
-  cursor: pointer;
-  filter: brightness(60%)
+line-height: 1.2;
 }
 
 .mobilewritings{
@@ -903,8 +925,6 @@ background-color: #131313;
 @media screen and (min-width: 850px) and (max-width: 1550px)
 {
   #aboutPage{
-    margin-left:17%;
-    margin-right:17%;
     width:auto;
     display: flex;
     flex-direction:column;
@@ -926,9 +946,6 @@ background-color: #131313;
 
 @media screen and (min-width: 1550px) and (max-width: 1850px){
   #aboutPage{
-    margin-left:22%;
-    margin-right:22%;
-    width:auto;
     display: flex;
     flex-direction:column;
     color: white;
