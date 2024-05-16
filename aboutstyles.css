@@ -295,11 +295,13 @@ body{
   border-radius: 20px;
   width:auto;
   max-height:auto;
+  
 }
 
 #aboutImg img{
   border-radius: 15px;
   margin-right:50px;
+  margin-left:10px;
   object-fit: contain;
   width:auto;
   height:50vh;
@@ -329,7 +331,7 @@ body{
   }
   
   #aboutText p{
-  margin:50px 25px 25px 25px;
+  margin:50px 25px 25px 15px;
   font-weight: 350;
   line-height:28px;
   font-size: 20px;
