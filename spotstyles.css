@@ -1363,5 +1363,14 @@ width:100%;
   max-width:100%;
 }
 
+.analyze{
+  display:flex;
+  align-items: center;
+  margin-top:150px;
+  gap: 50px;
+  margin-left:-5%;
+  margin-right:-5% ;
+}
+
 }
 
