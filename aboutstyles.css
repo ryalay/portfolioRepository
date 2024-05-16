@@ -304,7 +304,7 @@ body{
   margin-left:10px;
   object-fit: contain;
   width:auto;
-  height:50vh;
+  max-height:65vh;
 }
 
 
@@ -952,7 +952,13 @@ background-color: #131313;
     max-width:100%;
   }
 
-  
+  #aboutImg img{
+    border-radius: 10px;
+    margin-right:50px;
+    object-fit: contain;
+    width:auto;
+    height:60vh;
+  }
 
 }
 
@@ -965,9 +971,16 @@ background-color: #131313;
     padding-top:150px;
     margin-bottom:150px;
   }
+  #aboutImg img{
+    border-radius: 10px;
+    margin-right:50px;
+    object-fit: contain;
+    width:auto;
+    height:60vh;
+  }
 }
 
-@media screen and (min-width: 1850px)and (max-width: 2050px){
+@media screen and (min-width: 1850px)and (max-width: 2150px){
   #aboutPage{
     margin-left:25%;
     margin-right:25%;
@@ -986,7 +999,7 @@ background-color: #131313;
     height:45vh;
   }
 }
-  @media screen and (min-width: 2050px){
+  @media screen and (min-width: 2150px){
     #aboutPage{
       margin-left:30%;
       margin-right:30%;
