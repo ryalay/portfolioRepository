@@ -279,7 +279,6 @@ justify-self: center;
 #projectInfo{
   display:flex;
   flex-direction: row;
-    margin-top:20px;
     line-height:25px;
     gap:75px;
     width:700px;
