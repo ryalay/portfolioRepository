@@ -553,67 +553,86 @@ margin-top:50px;
 
 
 
-#spotLandingPage h1{
-    font-size: 44px !important;
-    font-weight: 600;
-}
-
-#spotLandingPage h2{
-    font-size:28px !important; 
-    font-weight: 400;
-    margin-top: -15px; 
-    max-width:40vw; 
-}
-
-#projectInfo{
-    margin-top:5px;
-    max-width:35vw;
-    line-height:22px;
-    background-color: #2b2b2bb2;
-    padding:0px 25px 25px 25px;
-    border-radius: 20px;
-    backdrop-filter: blur(10px);
-    box-shadow: 5px 5px 15px 2px rgba(0, 0, 0, 0.679);
-}
-
-
-.projectDetail 
-{
-    margin-top: 40px !important;
-    line-height:20px;
-}
-
-.projectDetail h3{
-    font-size:22px !important;
-    font-weight:400;
-    line-height:0.1px;
-}
-.statistic img{
-  width: 60% !important;
-    height:auto;
-    margin-right: 50px;
-}
-.projectDetail p{
-font-size: 16px !important;
-}
-
-
-#landingPageText{
+  #spotLandingPage{
+    background-color: #050b0e; 
+    color: white;
+    padding-top: 14vh;
     display: flex;
-    flex-direction: column;
-}
+    justify-content: center;
+    padding-bottom:100px;
+    gap:75px;
+  }
   
-#landingImage{
-  height:675px; 
-  width: auto; 
-  margin-left: 250px; 
-  position:absolute;
-  right:9vw;
-  top:9vh;
-  bottom:5vh;
-}  
-}
+  #landingPageText{
+    width:600px;
+  }
+  
+  #spotLandingPage h1{
+      font-size: 44px;
+      font-weight: 600;
+  }
+  
+  #spotLandingPage h2{
+      font-size: 36px;
+      font-weight: 400;
+      max-width: 900px;
+  }
+  
+  #spotLandingPage img{
+  width:500px;
+  height:auto;
+  align-self: center;
+  justify-self: center;
+  }
+  
+  #spotLandingPage .line{
+    background-color: #408184;
+    height:4px;
+    width:100px;
+  }
+  
+  
+  #projectInfo{
+    display:flex;
+    flex-direction: row;
+      line-height:25px;
+      gap:75px;
+      width:700px;
+      margin-top:25px;
+    }
+  
+  .projectDetail 
+  {
+      line-height:20px;
+      margin-top:60px;
+      width:250px;
+      line-height: 1.3;
+  }
+  
+  .projectDetail h3{
+      font-size:24px;
+      font-weight:400;
+      line-height:1px;
+  }
+  
+  #spotLandingPage p{
+    font-size: 20px;
+    font-weight:300;
+  }
 
+
+
+#landingImage{
+  height:auto; 
+  width: 325px; 
+  margin-left: 100px; 
+  margin-right: -400px; 
+  margin-top:-25px;
+  align-self: center;
+  justify-self: flex-end;
+}  
+
+}
 @media screen and (max-width: 850px) {
 
   .tabsgrid {
@@ -997,46 +1016,74 @@ width:100vw !important;
 
 @media screen and (min-width: 850px) and (max-width: 1675px){
 
-
-
-
-#spotLandingPage h1{
-    font-size: 48px;
-    font-weight: 600;
-    margin-top: 50px;
-}
-
-#spotLandingPage h2{
-    font-size: 32px;
-    font-weight: 400;
-    margin-top: -15px; 
-    max-width:800px; 
-}
-
-#projectInfo{
-    margin-top:25px;
-    width:35vw;
-    line-height:22px;
-}
-
-
-.projectDetail 
-{
-    margin-top: 50px;
-    line-height:20px;
-}
-
-.projectDetail h3{
-    font-size:24px;
-    font-weight:400;
-    line-height:0.1px;
-}
-
-#landingPageText{
+  #spotLandingPage{
+    background-color: #050b0e; 
+    color: white;
+    padding-top: 14vh;
     display: flex;
-    flex-direction: column;
-}
+    justify-content: center;
+    padding-bottom:100px;
+    gap:75px;
+  }
   
+  #landingPageText{
+    width:600px;
+  }
+  
+  #spotLandingPage h1{
+      font-size: 44px;
+      font-weight: 600;
+  }
+  
+  #spotLandingPage h2{
+      font-size: 36px;
+      font-weight: 400;
+      max-width: 900px;
+  }
+  
+  #spotLandingPage img{
+  width:500px;
+  height:auto;
+  align-self: center;
+  justify-self: center;
+  }
+  
+  #spotLandingPage .line{
+    background-color: #408184;
+    height:4px;
+    width:100px;
+  }
+  
+  
+  #projectInfo{
+    display:flex;
+    flex-direction: row;
+      line-height:25px;
+      gap:75px;
+      width:700px;
+      margin-top:25px;
+    }
+  
+  .projectDetail 
+  {
+      line-height:20px;
+      margin-top:75px;
+      width:250px;
+      line-height: 1.3;
+  }
+  
+  .projectDetail h3{
+      font-size:24px;
+      font-weight:400;
+      line-height:1px;
+  }
+  
+  #spotLandingPage p{
+    font-size: 20px;
+    font-weight:300;
+  }
+
+
 
 #landingImage{
   height:auto; 
@@ -1125,37 +1172,6 @@ height:auto;
 @media screen and (min-width: 1900px) and (max-width: 2250px){
 
 
-#spotLandingPage h1{
-    font-size: 52px;
-    font-weight: 600;
-}
-
-#spotLandingPage h2{
-    font-size: 42px;
-    font-weight: 400;
-    margin-top: -15px;  
-}
-
-#spotLandingPage p{
-  font-size: 20px;
-  font-weight:350;
-}
-
-
-
-
-
-.projectDetail 
-{
-    margin-top: 60px;
-    line-height:24px;
-}
-
-.projectDetail h3{
-    font-size:28px;
-    font-weight:400;
-    line-height:1px;
-}
 
 #spotCaseStudy{
   margin-left:28%;
