@@ -229,74 +229,71 @@ a:hover {
   }
 
   #gighubLandingPage{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.558), rgba(0, 0, 0, 0.558)), url("images/gighubLanding.jpg");
-    background-size:cover;
-    box-sizing: border-box;
-    background-repeat: no-repeat;
-    background-position: 0px center, 0px center;
-    height: 100vh;
+    background-color: #050b0e; 
+    color: white;
+    padding-top: 14vh;
+    display: flex;
+    justify-content: center;
+    padding-bottom:200px;
+    gap:75px;
+  }
+  
+  #landingPageText{
+    width:725px;
+  }
+  
+  #gighubLandingPage h1{
+      font-size: 52px;
+      font-weight: 600;
+  }
+  
+  #gighubLandingPage h2{
+      font-size: 42px;
+      font-weight: 400;
+      max-width: 900px;
+  }
+  
+  #gighubLandingPage img{
+  width:700px;
+  height:auto;
+  align-self: center;
+  justify-self: center;
+  }
+  
+  #gighubLandingPage .line{
+    background-color: #408184;
+    height:4px;
+    width:100px;
+  }
+  
+  
+  #projectInfo{
     display:flex;
     flex-direction: row;
-    align-items: left;
-    justify-content: flex-start;    
-    color: white;
-    padding-left:15%;
-    padding-top: 105px;
-}
-
-#gighubLandingPage h1{
-    font-size: 52px;
-    font-weight: 600;
-}
-
-#gighubLandingPage h2{
-    font-size: 42px;
-    font-weight: 400;
-    margin-top: -15px;  
-}
-
-#projectInfo{
-    margin-top:20px;
-    max-width:30vw;
-    line-height:25px;
-    background-color: #2b2b2bb2;
-    padding:0px 25px 25px 25px;
-    border-radius: 20px;
-    backdrop-filter: blur(10px);
-    box-shadow: 5px 5px 15px 2px rgba(0, 0, 0, 0.679);
-}
-
-
-.projectDetail 
-{
-    margin-top: 50px;
-    line-height:20px;
-}
-
-.projectDetail h3{
-    font-size:24px;
-    font-weight:400;
-    line-height:1px;
-}
-
-.projectDetail p{
-  font-size:18px;
-}
-
-#landingPageText{
-    display: flex;
-    flex-direction: column;
-}
-
-#landingImage{
-  height:700px; 
-  width: auto; 
-  margin-left: 250px; 
-  margin-top:-75px;
-  margin-right: 225px; 
-  align-self: center;
-}  
-
+      line-height:25px;
+      gap:75px;
+      width:700px;
+    }
+  
+  .projectDetail 
+  {
+      line-height:20px;
+      margin-top:100px;
+      width:300px;
+      line-height: 1.3;
+  }
+  
+  .projectDetail h3{
+      font-size:24px;
+      font-weight:400;
+      line-height:1px;
+  }
+  
+  #gighubLandingPage p{
+    font-size: 20px;
+    font-weight:300;
+  }
+  
 #totop{
   position: fixed;
   right:45px;
@@ -451,71 +448,83 @@ margin-top:50px;
 
 @media screen and (max-height: 800px) and (min-width:900px) and (max-width: 1700px)  {
 
-  #spotLandingPage{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.558), rgba(0, 0, 0, 0.558)), url("images/gighubLanding.jpg");
-    background-size:cover;
-    box-sizing: border-box;
-    background-repeat: no-repeat;
-    background-position: 0px center, 0px center;
-    height: 100vh;
-    display:flex;
-    flex-direction: column;
-    align-items: left;
-    justify-content: flex-start;    
+  #gighubLandingPage{
+    background-color: #050b0e; 
     color: white;
-    padding-left:15%;
-    padding-top: 10vh !important;
-}
-
-#spotLandingPage h1{
-    font-size: 42px !important;
-    font-weight: 600;
-}
-
-#spotLandingPage h2{
-    font-size:26px !important; 
-    font-weight: 400;
-    margin-top: -15px; 
-    max-width:40vw; 
-}
-
-#projectInfo{
-    margin-top:5px;
-    max-width:35vw;
-    line-height:22px;
-}
-
-
-.projectDetail 
-{
-    margin-top: 40px !important;
-    line-height:20px;
-}
-
-.projectDetail h3{
-    font-size:22px !important;
-    font-weight:400;
-    line-height:0.1px;
-}
-
-.projectDetail p{
-font-size: 16px !important;
-}
-
-
-#landingPageText{
+    padding-top: 14vh;
     display: flex;
-    flex-direction: column;
-}
+    justify-content: center;
+    padding-bottom:100px;
+    gap:75px;
+  }
   
+  #landingPageText{
+    width:600px;
+  }
+  
+  #gighubLandingPage h1{
+      font-size: 44px;
+      font-weight: 600;
+  }
+  
+  #gighubLandingPage h2{
+      font-size: 36px;
+      font-weight: 400;
+      max-width: 900px;
+  }
+  
+  #gighubLandingPage img{
+  width:500px;
+  height:auto;
+  align-self: center;
+  justify-self: center;
+  }
+  
+  #gighubLandingPage .line{
+    background-color: #408184;
+    height:4px;
+    width:100px;
+  }
+  
+  
+  #projectInfo{
+    display:flex;
+    flex-direction: row;
+      line-height:25px;
+      gap:75px;
+      width:700px;
+      margin-top:25px;
+    }
+  
+  .projectDetail 
+  {
+      line-height:20px;
+      margin-top:60px;
+      width:250px;
+      line-height: 1.3;
+  }
+  
+  .projectDetail h3{
+      font-size:24px;
+      font-weight:400;
+      line-height:1px;
+  }
+  
+  #gighubLandingPage p{
+    font-size: 20px;
+    font-weight:300;
+  }
+
+
+
 #landingImage{
-  height:550px !important; 
-  width: auto !important; 
-  margin-left: 250px; 
-  position:absolute;
-  right:9vw;
-  top:9vh;
-  bottom:5vh;
+  height:auto; 
+  width: 325px; 
+  margin-left: 100px; 
+  margin-right: -400px; 
+  margin-top:-25px;
+  align-self: center;
+  justify-self: flex-end;
 }  
 }
 
@@ -566,28 +575,10 @@ font-size: 16px !important;
     padding:25px;
   }
 
-  #gighubLandingPage{
-    background-image: linear-gradient(#000000b9, #000000b9), url("images/gighubLanding.jpg") !important;
-    background-size:cover;
-    box-sizing: border-box;
-    background-repeat: no-repeat;
-    background-position: 0px center, 0px center !important;
-    height: 100vh;
-    width:100% !important;
-    display:flex;
-    flex-direction: column;
-    align-items: left;
-    justify-content: flex-start;    
-    color: white;
-    padding-left:20px !important;
-    padding-top: 15vh;
-    scroll-snap-align: start;
-
-}
-
-#gighubLandingPage h1{
-    font-size: 32px !important;
+  #gighubLandingPage h1{
+    font-size: 34px !important;
     font-weight: 600;
+    margin-top:-10px;
 }
 
 #gighubLandingPage h2{
@@ -596,40 +587,7 @@ font-size: 16px !important;
     margin-top: -20px;  
 }
 
-#gighubLandingPage img{
-    position: absolute;
-    left: calc(50% - 30px) ;
-    bottom: 10px;
-    height:48px !important;
-    width:48px !important;
-  }
 
-  #gighubLandingPage p{
-    font-size: 16px;
-    font-weight:350;
-  }
-  
-
-#landingPageText{
-  width:100% !important;
-  margin-right:-200px !important;
-  }
-
-#projectInfo{
-    margin-top:20px;
-    max-width:93vw !important;
-    line-height:25px;
-    background-color: #0000;
-    backdrop-filter: none;
-    box-shadow: none;
-  }
-
-.projectDetail 
-{
-    margin-top: 30px !important;
-    line-height:20px;
-    width:100% !important;
-}
 
 .projectDetail h3{
     font-size:20px !important;
@@ -641,9 +599,73 @@ font-size: 16px !important;
   font-size:16px !important;
 }
 
-#landingImage{
-  display:none;
+
+
+
+#gighubLandingPage{
+  background-color: #050b0e; 
+  color: white;
+  padding-top: 14vh;
+  display: flex;
+  flex-direction: column;
+  padding-bottom:25px;
 }
+
+#landingPageText{
+  max-width:95vw;
+  margin-left:12px;
+}
+
+#gighubLandingPage h1{
+    font-size: 44px;
+    font-weight: 600;
+}
+
+
+
+#gighubLandingPage img{
+width:90vw;
+height:auto;
+
+}
+
+#gighubLandingPage .line{
+ display:none;
+}
+
+
+#projectInfo{
+  display:flex;
+  flex-direction: column;
+    line-height:25px;
+  gap:0px;
+  }
+
+.projectDetail 
+{
+    line-height:20px;
+  
+    line-height: 1.3;
+    margin-top:0px;
+}
+
+.projectDetails{
+  display:flex;
+  flex-direction: column;
+  margin-top:0px;
+}
+
+.projectDetail h3{
+    font-size:24px;
+    font-weight:400;
+    line-height:1px;
+}
+
+#gighubLandingPage p{
+  font-size: 20px;
+  font-weight:300;
+}
+
 
 #gighubCaseStudy{
     margin-left:20px !important;
@@ -878,94 +900,19 @@ width:100vw !important;
 
 }
 
-@media screen and (min-width: 850px) and (max-width: 1600px){
-
-  #gighubLandingPage{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.558), rgba(0, 0, 0, 0.558)), url("images/gighubLanding.jpg");
-    background-size:cover;
-    box-sizing: border-box;
-    background-repeat: no-repeat;
-    background-position: 0px center, 0px center;
-    height: 100vh;
-    display:flex;
-    flex-direction: row;
-    align-items: left;
-    justify-content: flex-start;    
-    color: white;
-    padding-left:5vw;
-    padding-top: 10vh !important;
-}
-
-#gighubLandingPage h1{
-    font-size: 52px;
-    font-weight: 600;
-}
-
-#gighubLandingPage h2{
-    font-size: 40px;
-    font-weight: 400;
-    margin-top: -15px;  
-}
-
-#projectInfo{
-    margin-top:-5px;
-    max-width:40vw;
-    line-height:22px;
-    background-color: #2b2b2bb2;
-    padding:0px 25px 25px 25px;
-    border-radius: 20px;
-    backdrop-filter: blur(10px);
-    box-shadow: 5px 5px 15px 2px rgba(0, 0, 0, 0.679);
-}
-
-
-.projectDetail 
-{
-    margin-top: 30px;
-    line-height:20px;
-}
-
-.projectDetail h3{
-    font-size:24px;
-    font-weight:400;
-    line-height:0.1px;
-}
-
-#landingPageText{
-    display: flex;
-    flex-direction: column;
-}
-  
-
-#landingImage{
-  height:auto; 
-  width: 325px; 
-  margin-left: 100px; 
-  margin-right: 125px; 
-  margin-top:-60px;
-  align-self: center;
-}  
-
-#gighubCaseStudy{
-  margin-left:25%;
-  margin-right:25%;
-}
-
-.designShowcaseR img
-{
-max-width:275px;
-margin: 50px 0px 50px 50px;
-}
-
-.designShowcaseL img
-{
-max-width:250px;
-margin-right:50px;
-}
-}
 
 
 @media screen and (max-width: 1700px){
+
+  #gighubLandingPage{
+    background-color: #050b0e; 
+    color: white;
+    padding-top: 14vh;
+    display: flex;
+    justify-content: center;
+    padding-bottom:100px;
+    gap:75px;
+  }
 
   #footer{
     height:300px;
@@ -981,47 +928,88 @@ margin-right:50px;
 
 }
 
-@media screen and (min-width:850px) and (max-width: 1625px){
+@media screen and (min-width:850px) and (max-width: 1675px){
 
   #gighubLandingPage{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.558), rgba(0, 0, 0, 0.558)), url("images/gighubLanding.jpg");
-    background-size:cover;
-    box-sizing: border-box;
-    background-repeat: no-repeat;
-    background-position: 0px center, 0px center;
-    height: 100vh;
-    display:flex;
-    flex-direction: column;
-    align-items: left;
-    justify-content: flex-start;    
+    background-color: #050b0e; 
     color: white;
-    padding-left:11%;
-    padding-top: 100px;
-}
+    padding-top: 14vh;
+    display: flex;
+    justify-content: center;
+    padding-bottom:75px;
+    gap:75px;
+  }
+  
+  #landingPageText{
+    width:600px;
+  }
+  
+  #gighubLandingPage h1{
+      font-size: 44px;
+      font-weight: 600;
+  }
+  
+  #gighubLandingPage h2{
+      font-size: 36px;
+      font-weight: 400;
+      max-width: 900px;
+  }
+  
+  #gighubLandingPage img{
+  width:500px;
+  height:auto;
+  align-self: center;
+  justify-self: center;
+  }
+  
+  #gighubLandingPage .line{
+    background-color: #408184;
+    height:4px;
+    width:100px;
+  }
+  
+  
+  #projectInfo{
+    display:flex;
+    flex-direction: row;
+      line-height:25px;
+      gap:75px;
+      width:700px;
+      margin-top:25px;
+    }
+  
+  .projectDetail 
+  {
+      line-height:20px;
+      margin-top:75px;
+      width:250px;
+      line-height: 1.3;
+  }
+  
+  .projectDetail h3{
+      font-size:24px;
+      font-weight:400;
+      line-height:1px;
+  }
+  
+  #gighubLandingPage p{
+    font-size: 20px;
+    font-weight:300;
+  }
 
-#gighubLandingPage h1{
-    font-size: 48px;
-    font-weight: 600;
-    margin-top: 50px;
-}
 
-#gighubLandingPage h2{
-    font-size: 32px;
-    font-weight: 400;
-    margin-top: -15px; 
-    max-width:800px; 
-}
 
-#projectInfo{
-    margin-top:30px;
-    max-width:40vw;
-    line-height:22px;
-    background-color: #2b2b2bb2;
-    padding:0px 25px 25px 25px;
-    border-radius: 20px;
-    backdrop-filter: blur(10px);
-    box-shadow: 5px 5px 15px 2px rgba(0, 0, 0, 0.679);
-}
+#landingImage{
+  height:auto; 
+  width: 325px; 
+  margin-left: 100px; 
+  margin-right: -400px; 
+  margin-top:-25px;
+  align-self: center;
+  justify-self: flex-end;
+}  
+
+
 
 
 .projectDetail 
@@ -1168,72 +1156,7 @@ margin-right:50px;
 
 @media screen and (min-width: 2250px){
 
-  #gighubLandingPage{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.558), rgba(0, 0, 0, 0.558)), url("images/gighubLanding.jpg");
-    background-size:cover;
-    box-sizing: border-box;
-    background-repeat: no-repeat;
-    background-position: 0px center, 0px center;
-    height: 100vh;
-    display:flex;
-    flex-direction: column;
-    align-items: left;
-    justify-content: flex-start;    
-    color: white;
-    padding-left:14vw;
-    padding-top: 15vh;
-    scroll-snap-align: start;
-}
 
-#gighubLandingPage h1{
-    font-size: 54px;
-    font-weight: 600;
-}
-
-#gighubLandingPage h2{
-    font-size: 44px;
-    font-weight: 400;
-    margin-top: -15px;  
-}
-
-#gighubLandingPage p{
-  font-size: 22px;
-  font-weight:350;
-}
-
-
-  #landingImage{
-    height:900px; 
-    width: auto; 
-    margin-left: 300px; 
-    position:absolute;
-    right:1vw;
-    top:18vh;
-  }  
-
-
-#projectInfo{
-    margin-top:35px;
-    width:30vw;
-    line-height:27px;
-    background-color: #2b2b2bb2;
-    padding:0px 25px 25px 25px;
-    border-radius: 20px;
-    backdrop-filter: blur(10px);
-    box-shadow: 5px 5px 15px 2px rgba(0, 0, 0, 0.679);
-  }
-
-.projectDetail 
-{
-    margin-top: 60px;
-    line-height:26px;
-}
-
-.projectDetail h3{
-    font-size:28px;
-    font-weight:400;
-    line-height:4px;
-}
 
 #gighubCaseStudy{
   margin-left:33%;
