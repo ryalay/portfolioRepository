@@ -346,13 +346,13 @@ justify-self: center;
 
 #spotCaseStudy h1{
   font-size: 40px;
-  font-weight: 550;
+  font-weight: 450;
   line-height:32px;
 }
 
 #spotCaseStudy h2{
   font-size:32px;
-  font-weight:450;
+  font-weight:400;
 }
 
 #spotCaseStudy h3{
@@ -365,6 +365,29 @@ justify-self: center;
   font-size:16px;
   }
 
+#problemlist {
+  list-style-type: "❌ ";
+  margin-top: 50px;
+}
+#problemlist li
+{
+font-size:24px;
+line-height:2.4;
+}
+
+#howMightWe{
+margin-top:100px;
+margin-bottom: 200px;
+font-size: 36px;
+font-weight:400;
+line-height: 1.2;
+text-align: center;
+}
+
+#howMightWe strong{
+color:#417DF0;
+font-weight:400;
+}
 strong{
   font-weight:600;
 }
