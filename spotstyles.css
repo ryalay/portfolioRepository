@@ -318,8 +318,9 @@ justify-self: center;
 
 
 #spotCaseStudy{
-    margin-left:30%;
-    margin-right:30%;
+    margin-left:auto;
+    margin-right:auto;
+    max-width:925px;
     padding-top:150px;
     background-color: white;
 }
@@ -1282,10 +1283,6 @@ max-width: 35% !important;
 
 
 
-#spotCaseStudy{
-  margin-left:31%;
-  margin-right:31%;
-}
 
 .statistic img{
   height:auto;
