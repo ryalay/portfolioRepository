@@ -315,9 +315,6 @@ a:hover {
 }
 
 #challenge{
-    background-color: #EDEDED;
-    padding: 15px 30px 15px 30px;
-    border-radius: 10px;
     margin-bottom:100px;
     display:flex;
     flex-direction: column;
@@ -334,6 +331,23 @@ a:hover {
 #challenge p{
     line-height:20px;
 }
+
+#howMightWe{
+  margin-top:100px;
+  margin-bottom: 200px;
+  margin-left:auto;
+  margin-right:auto;
+  font-size: 36px;
+  font-weight:400;
+  line-height: 1.2;
+  text-align: center;
+  width:700px;
+  }
+  
+  #howMightWe strong{
+  color:#CC0033;
+  font-weight:400;
+  }
 
 .solution{
   display:flex;
@@ -361,13 +375,14 @@ a:hover {
 }
 
 #foodtruckCaseStudy h1{
-    font-size: 32px;
-    font-weight: 550;
+  font-size: 40px;
+  font-weight: 450;
+  line-height:32px;
 }
 
 #foodtruckCaseStudy h2{
-    font-size:28px;
-    font-weight:450;
+  font-size:32px;
+  font-weight:400;
 }
 
 #foodtruckCaseStudy h3{
@@ -411,9 +426,10 @@ strong{
 }
 
 #finalDesigns{
-  margin-left:20%;
-  margin-right:20%;
+  margin-left:auto;
+  margin-right:auto;
   margin-top:100px;
+  max-width:1200px;
 }
 #finalDesigns p{
   font-weight: 350;
@@ -1194,11 +1210,7 @@ width:100vw !important;
   width:100%;
    height:auto;
    }
-  
-   #finalDesigns{
-    margin-left:24vw;
-    margin-right:24vw;
-  }
+
   
   #finalDesigns img {
     max-width:290px;
