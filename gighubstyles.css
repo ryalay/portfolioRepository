@@ -318,11 +318,20 @@ a:hover {
 }
 
 #gighubCaseStudy h1{
-    font-size: 32px;
-    font-weight: 550;
-    line-height: 36px;
+  font-size: 36px;
+  font-weight: 450;
+  line-height:1.1;
 }
 
+#gighubCaseStudy h2{
+  font-size:30px;
+  font-weight:400;
+}
+
+#gighubCaseStudy h3{
+  font-size:22px;
+  font-weight: 550;
+}
 #gighubCaseStudy ul{
 line-height:28px;
 font-size:18px;
@@ -334,6 +343,21 @@ font-size:18px;
     border-radius: 10px;
     margin-bottom:100px;
 }
+
+#howMightWe{
+  margin-top:100px;
+  margin-bottom: 200px;
+  font-size: 36px;
+  font-weight:400;
+  line-height: 1.2;
+  text-align: center;
+  max-width:800px;
+  }
+
+  #howMightWe strong{
+    color:#C53F3F;
+    font-weight:400;
+    }
 
 .imageShowcase
 {
