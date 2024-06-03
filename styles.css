@@ -398,7 +398,7 @@ font-weight: 600;
   background-color: #4040406a;
   backdrop-filter: blur(5px);
   border-radius: 30px;
-  padding:0px 15px 0px 15px;
+  padding:0px 25px 0px 0px;
   transition-duration: 0.3s; 
   transition-timing-function: ease; 
 }
@@ -453,13 +453,23 @@ margin:0px 0px 0px 50px;
 
 .imgcontainer
 {
-  width: 400px;
-  height: 300px;
+  width: 500px;
+  min-width:500px;
+  max-width:500px;
+  height: 400px;
   display:flex;
-  border-radius: 30px;
-  object-fit:contain;
+  justify-content: center;
+  border-radius: 30px 0px 0px 30px;
   padding:0px;
-  margin-left:35px;
+  background-color: #363636;
+  object-fit: scale-down;
+}
+
+.imgcontainer img
+{
+max-width: 500px;
+margin:25px 25px 25px 25px;
+object-fit: scale-down;
 }
 
 .workcardtext{
@@ -467,13 +477,10 @@ margin:0px 0px 0px 50px;
   margin-top:0px;
 }
 
-.workCard img{
-height:300px;
-width:auto;
-margin-left:auto;
-margin-right:auto;
 
-}
+
+
+
 
 #otherWorkCards{
   display: flex;
