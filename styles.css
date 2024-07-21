@@ -461,7 +461,7 @@ margin:0px 0px 0px 50px;
   justify-content: center;
   border-radius: 30px 0px 0px 30px;
   padding:0px;
-  background-color: #363636;
+  background: linear-gradient(130deg, #4E4553, #402A4E);
   object-fit: scale-down;
 }
 
