@@ -1124,6 +1124,13 @@ width:100vw !important;
   justify-self: center;
   }
   
+  #finalDesigns{
+    margin-left:auto !important;
+    margin-right:auto !important;
+    max-width:1200px;
+  
+  }
+
   #spotLandingPage .line{
     background-color: #408184;
     height:4px;
@@ -1172,8 +1179,8 @@ width:100vw !important;
 }  
 
 #spotCaseStudy{
-  margin-left:25%;
-  margin-right:25%;
+  margin-left:auto;
+  margin-right:auto;
 }
 
 
@@ -1190,7 +1197,7 @@ width:100vw !important;
 
 .designShowcaseR img
 {
-max-width:225px;
+max-width:700px !important;
 } 
 
 .designShowcaseR p{
@@ -1211,7 +1218,7 @@ max-width:225px;
 
 .designShowcaseL img
 {
-max-width:225px;
+max-width:700px !important;
 } 
 
 .designShowcaseL p{
