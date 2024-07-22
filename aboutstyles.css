@@ -232,11 +232,12 @@ body{
     padding:0px;
     font-family: leagueSpartan;
     min-height:100vh;
-    background-image: url("images/topobgabout3.png");
-    background-position: center 0px;
-    background-attachment:fixed;
+    background-image: url("images/topobgtest1.png");
+    background-position-x:-300px;
+    background-position-y: -300px !important;
+    background-color: #050B0E;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: fill;
     
     }
 
@@ -299,8 +300,8 @@ body{
 }
 
 #aboutImg img{
-  border-radius: 15px 0px 0px 15px;
-  margin-right:50px;
+  border-radius: 15px;
+  margin-right:100px;
   margin-left:0px;
   object-fit: contain;
   width:auto;
@@ -309,15 +310,12 @@ body{
 
 
   #aboutText {
-    background-color: #252525;
     display:flex;
     align-items: center;
     height: 100%;
     padding:0px 25px 0px 0px;
     border-radius: 30px;
-    box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.8);
-    background-color: #2d2d2d98;
-    backdrop-filter: blur(5px);
+
     max-height:auto;
     margin-top:50px;
   }
@@ -327,9 +325,18 @@ body{
     height:4px;
     width:100px;
     margin-left:15px;
-
   }
   
+  .line2{
+    background-color: #408184;
+    height:4px;
+    width:100px;
+    margin-left:0 !important;
+    margin-bottom: 50px;
+    margin-top:-10px;
+  }
+  
+
   #aboutText p{
   margin:50px 25px 25px 15px;
   font-weight: 350;
@@ -342,28 +349,25 @@ body{
   {
     margin-top:120px;
     width:1000px;
-
   }
 
 
-  #values h3{
-    margin:25px 25px 0px 25px;
-  }
+
+
 
   .bigvalue{
     display:flex;
     flex-direction: column;
     margin-bottom:100px;
     margin-top:100px;
+    margin-left:0px;
   }
 
   .bigvaluetext{
     border-radius: 30px 0px 0px 30px;
-    padding:10px 30px 10px 30px; 
-    background-color: #00000055;
-    backdrop-filter: blur(5px);
+
     margin:0px 0px 0px 0px;
-    width:650px;
+    margin-top:-25px;
   }
 
   .bigvaluetext p{
@@ -373,7 +377,6 @@ body{
     font-size: 22px;
     max-width: 100%;
     height: 100%;
-    margin:45px 0px 35px 25px;
   }
 
 strong{
@@ -385,22 +388,23 @@ strong{
   }
 
   .bigvalue .valuecard{
-  background-image: linear-gradient(rgba(0, 0, 0, 0.448), rgba(0, 0, 0, 0.448)), url("images/bigvaluetest.png");
-  flex-direction: row;
+  flex-direction: row-reverse;
   padding:0px;
+  margin:0;
+  margin-left:0px;
   }
 
   #valuetitle {
     font-weight:400 !important;
     color:white;
     font-size:52px !important; 
-    padding:20px 25px 20px 25px !important; 
-    margin:25px 25px 5px 0px !important;
     line-height:52px !important;
+    margin-bottom:30px;
   }
 
 .value{
   display:flex;
+  flex-direction: row-reverse;
   justify-content: space-between;
   align-items: space-between;
   align-content: space-between;
@@ -409,6 +413,7 @@ strong{
   margin-top:100px;
   margin-bottom:100px;
   display:none;
+  margin-left:0px;
 }
 
 
@@ -416,14 +421,28 @@ strong{
 .valuecard{
   width:100%;
   display: flex;
+  flex-direction: row-reverse;
   align-items:center;
-  gap:25px;
+  gap:75px;
   height:auto;
-  background-color: #353535ba;
   border-radius: 30px;
-  box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.8);
-  background-color: #2d2d2d98;
-  backdrop-filter: blur(5px);
+  margin-left:0px;
+}
+
+.imagestack{
+  display: flex;
+  flex-direction: column;
+  gap:25px;
+  justify-content: space-between;
+
+}
+
+.imagestack img
+{
+  object-fit: cover;
+  border-radius:30px;
+  width:150px;
+  height:150px;
 }
 
 .value h3{
@@ -465,16 +484,15 @@ strong{
 
 a .writing{
   display:flex;
-  background-color: #353535ba;
   height:150px;
   padding:0px;
   gap:25px;
   border-radius:20px;
   align-items: center;
-  width:425px;
-  box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.384);
-  background-color: #2d2d2d98;
+  width:475px;
   backdrop-filter: blur(5px);
+  border-color: #cb3939 !important;
+  stroke-width: 1px;
   transition-duration: 0.3s; 
   transition-timing-function: ease; 
 }
@@ -498,7 +516,7 @@ a .writing{
   height:150px;
   width:150px;
   object-fit: cover;
-  border-radius: 15px 0px 0px 15px;
+  border-radius: 15px;
 }
 
 .writing a{
@@ -946,14 +964,24 @@ background-color: #131313;
     margin-bottom:150px;
   }
 
+  body{
+    background-position-x:-200px;
+    background-position-y: -300px !important;
+    background-color: #050B0E;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+  }
+
+
   #aboutContent{
     display:flex;
     margin-top:0px;
-    max-width:100%;
+    max-width:1000px;
   }
 
   #aboutImg img{
-    border-radius: 30px 0px 0px 30px;
+    border-radius: 30px;
     margin-right:50px;
     object-fit: contain;
     width:auto;
@@ -973,13 +1001,23 @@ background-color: #131313;
     margin-bottom:150px;
   }
   #aboutImg img{
-    border-radius: 30px 0px 0px 30px;
+    border-radius: 30px;
     margin-right:50px;
     object-fit: contain;
     width:auto;
     height:600px;
     margin-bottom:-4px !important;
 
+  }
+
+
+  body{
+    background-position-x:-200px;
+    background-position-y: -300px !important;
+    background-color: #050B0E;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
   }
 }
 
@@ -995,12 +1033,20 @@ background-color: #131313;
     margin-bottom:150px;
   }
   #aboutImg img{
-    border-radius: 30px 0px 0px 30px;
+    border-radius: 30px;
     margin-right:50px;
     object-fit: contain;
     width:auto;
     margin-bottom:-4px !important;
     height:600px;
+  }
+  body{
+    background-position-x:-200px;
+    background-position-y: -300px !important;
+    background-color: #050B0E;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
   }
 }
   @media screen and (min-width: 2150px){
@@ -1019,7 +1065,7 @@ background-color: #131313;
       margin-top:50px;
     }
     #aboutImg img{
-      border-radius: 30px 0px 0px 30px;
+      border-radius: 30px;
       margin-right:50px;
       margin-top:0px;
       margin-bottom:-4px !important;
