@@ -523,12 +523,13 @@ color:white;
 }
 
 #footer{
-  height:300px;
+  height:250px;
   background-color: #131313;
   color: white;
   padding-left: 20%;
   padding-right:20%;
   display: flex;
+  flex-direction: row;
 }
 
 #footerTitle{
@@ -544,7 +545,7 @@ color:white;
 
 #footer h3
 {
-  font-weight:400;
+  font-weight:300;
   margin-top:25px;
 }
 
@@ -560,6 +561,7 @@ color:white;
   text-decoration: none;
   color: white;
   font-size: 20px;
+  font-weight:300;
 }
 
 
@@ -570,11 +572,21 @@ color:white;
 {
 width:100%;
 margin-top:50px;
-
+display:flex;
+flex-direction: row;
+justify-content: space-between;
+width:1000px;
+margin-left:auto;
+margin-right:auto;
 }
 
 #footerTitle{
   width:auto;
+  margin-top:25px;
+}
+
+#footerNote{
+  font-weight:200;
 }
 
 #footerText
@@ -582,7 +594,7 @@ margin-top:50px;
   width: auto;  
   display:flex;
   justify-content: space-between;
-  margin-top:25px;
+  flex-direction: row;
 }
 
 @media  (min-aspect-ratio: 18/9) 
@@ -1018,7 +1030,7 @@ background-color: #131313;
   }
   
   #footer{
-    height:300px;
+    height:250px;
     background-color: #131313;
     color: white;
     padding-left: 15%;
