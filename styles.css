@@ -104,7 +104,7 @@ a:hover {
 {
   display:flex;
   height:48px;
-  width:92vw;
+  width:100vw;
   justify-content: space-between;
   top:0;
   position: fixed;
@@ -112,13 +112,6 @@ a:hover {
   display:none;
   background-color: rgba(52, 52, 52, 0.714);
   backdrop-filter: blur(10px);
-  border-radius:100px;
-  border-style: solid;
-  border-color: rgb(41, 41, 41);
-  border-width: 1px;
-  margin-top:12px;
-  margin-left:4vw;
-  margin-right:4vw;
   z-index: 3;
   box-shadow: 0px 18px 28px -10px rgba(0,0,0,0.73);
 }
@@ -278,7 +271,7 @@ a:hover {
 
 body{
   height:100%;
-  background-color: black;
+  background-color: #050B0E;
   margin: 0px;
   font-family: leagueSpartan;
 
@@ -732,7 +725,6 @@ margin-right:auto;
   
 #body{
   height:100%;
-  max-width:100vw;
   background-color: black;
   margin: 0px;
   font-family: leagueSpartan;
@@ -745,22 +737,17 @@ display:none;
 
 #mobilework{
   display:initial;
-  position:relative;
   display: flex;
+  width:auto;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding-left:12px;
   padding-right:12px;
-  max-width: 100vw;
   padding-bottom:48px;
-  overflow-x: hidden;
   padding-top: 0px;
-  background-repeat:no-repeat;
-  background-image: url("images/topobgmobile.png");
   padding-top:96px;
-  background-size: auto 100%;
-  background-attachment: scroll;
+  background-color:#050B0E;
 }
 
 .workTitle
@@ -776,6 +763,7 @@ display:none;
   margin-left:auto;
   margin-right:auto;
   margin-bottom:48px;
+  width:auto;
 }
 
 #mobilework h1{
@@ -804,6 +792,7 @@ color: white;
 margin-top:56px;
 margin-bottom:56px;
 border-radius: 15px;
+width:auto !important;
 }
 
 .mobileWorkCard button{
@@ -848,74 +837,22 @@ border-radius: 15px;
 .imgcontainer
 {
   width: auto;
-  height: 300px;
+  height: auto;
   display:flex;
   border-radius: 30px;
-  object-fit:contain;
+  object-fit:scale-down;
   box-shadow: 5px 5px 12px 2px rgba(0, 0, 0, 0.715);
   background-color: #2d2d2d98;
   backdrop-filter: blur(5px);
   padding:15px;
 }
 
-.mobileWorkCard img{
-  width: 100%;
+.imgcontainer img{
+  max-width: 80vw;
   height: auto;
-  border-radius: 30px;
-  object-fit: contain;
-}
-
-#otherWorkCards{
-  width:100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: top;
-  color: white;
-  margin-bottom:0px;
-}
-
-#otherWorkCards h3 {
-text-decoration: none;
-color:white;
-font-size:16px;
-}
-
-.otherWorkCard{
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  align-content: center;
-  justify-items: center;
-  color: white;
-  width:45%;
-  margin-top:24px;
-  margin-bottom:12px;
-}
-
-.otherWorkCard a{
-  display: flex;
-  flex-direction: column;
-  align-items:flex-start;
-  justify-content: flex-start;
 }
 
 
-.otherWorkCard:hover{
-  cursor: pointer;
-  filter: brightness(60%)
-}
-
-
-.otherWorkCard img{
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  aspect-ratio: 1/1;
-  border-radius:30px;
-  box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
-}
 
 #footer{
   height:auto;
