@@ -728,7 +728,7 @@ margin-right:auto;
   background-color: black;
   margin: 0px;
   font-family: leagueSpartan;
-
+width:100%;
 }
 
 #work{
@@ -737,17 +737,8 @@ display:none;
 
 #mobilework{
   display:initial;
-  display: flex;
-  width:auto;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding-left:12px;
-  padding-right:12px;
-  padding-bottom:48px;
-  padding-top: 0px;
-  padding-top:96px;
   background-color:#050B0E;
+  width:100%;
 }
 
 .workTitle
@@ -757,13 +748,10 @@ display:none;
 }
 
 
-#workCards{
+#mobileWorkCards{
   display:flex;
   flex-direction: column;
-  margin-left:auto;
-  margin-right:auto;
-  margin-bottom:48px;
-  width:auto;
+width:100%;
 }
 
 #mobilework h1{
@@ -786,13 +774,8 @@ font-weight: 600;
 .mobileWorkCard{
 display:flex;
 flex-direction: column;
-justify-content: center;
-align-items: center;
-color: white;
-margin-top:56px;
-margin-bottom:56px;
-border-radius: 15px;
-width:auto !important;
+width:100%;
+
 }
 
 .mobileWorkCard button{
@@ -806,15 +789,9 @@ width:auto !important;
   color: white;
   font-size: 18px;
   box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
-  
-}
-
-.mobileWorkCard a{
-  width:100%;
-  padding-left:12px;
-  padding-right:12px;
 
 }
+
 
 .mobileworkCard button:hover{
   cursor: pointer;
@@ -834,22 +811,24 @@ width:auto !important;
   line-height: 24px;
 }
 
-.imgcontainer
+.mobileImgContainer
 {
-  width: auto;
-  height: auto;
+
   display:flex;
+  justify-content: center;
   border-radius: 30px;
-  object-fit:scale-down;
   box-shadow: 5px 5px 12px 2px rgba(0, 0, 0, 0.715);
   background-color: #2d2d2d98;
   backdrop-filter: blur(5px);
-  padding:15px;
-}
+  margin-left:12px;
+  margin-right:12px;
+  }
 
-.imgcontainer img{
-  max-width: 80vw;
-  height: auto;
+
+.mobileImgContainer img{
+width:95%;
+margin:25px;
+
 }
 
 
