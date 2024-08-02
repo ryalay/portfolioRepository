@@ -573,6 +573,10 @@ margin-left:auto;
 margin-right:auto;
 }
 
+.footerLinks{
+  margin-left:150px;
+}
+
 #footerTitle{
   width:auto;
   margin-top:25px;
@@ -700,7 +704,8 @@ margin-right:auto;
 
 #landingScreen{
   background-color: rgba(0, 13, 30, 0.787);
- 
+ overflow-y:hidden;
+ overflow-x:hidden;
 }
 #landingScreen img{
   height:48px !important;
@@ -745,6 +750,8 @@ display:none;
 {
   justify-self: flex-start;
   align-self: flex-start;
+  margin-top:50px;
+  margin-left:12px;
 }
 
 
@@ -752,6 +759,7 @@ display:none;
   display:flex;
   flex-direction: column;
 width:100%;
+color: white;
 }
 
 #mobilework h1{
@@ -774,14 +782,15 @@ font-weight: 600;
 .mobileWorkCard{
 display:flex;
 flex-direction: column;
-width:100%;
+width:98%;
+margin-top:100px;
 
 }
 
 .mobileWorkCard button{
   font-family: leagueSpartan;
   margin: 18px 0px 0px 0px;
-  width:100%;
+  width:98%;
   height: 40px;
   background: #408184;
   border: none;
@@ -834,24 +843,25 @@ margin:25px;
 
 
 #footer{
-  height:auto;
+  height:150px;
   background-color: #131313;
   color: white;
   display: flex;
   padding-left:20px;
   padding-right:20px;
   flex-wrap: wrap;
+  margin-top: 40px;
 }
 
 #footerTitle{
-  font-size:26px;
+  font-size:20px;
   background-color: #131313;
 }
 #footer h2
 {
   font-weight:400;
   margin-top:42px;
-  font-size:20px;
+  font-size:18px;
   margin-bottom:12px;
   background-color: #131313;
 }
@@ -860,10 +870,19 @@ margin:25px;
 {
   font-weight:400;
   margin-top:42px;
-  font-size:18px;
+  font-size:14px;
   margin-bottom:64px;
   background-color: #131313;
 
+}
+
+.footerLinks{
+  margin-left:0px;
+  margin-top:-45px !important;
+}
+
+#footerContact{
+  margin-bottom:40px;
 }
 
 #footerimg{
@@ -873,7 +892,7 @@ margin:25px;
 #footer a{
   text-decoration: none;
   color: white;
-  font-size: 18px;
+  font-size: 14px;
   background-color: #131313;
 }
 
@@ -883,7 +902,8 @@ margin:25px;
 }
 #allFooterText
 {
-  
+display: flex;
+flex-direction: column;
 width:100%;
 margin-top:32px;
 background-color: #131313;
@@ -892,13 +912,16 @@ background-color: #131313;
 #footerTitle{
   width:auto;
   background-color: #131313;
+  margin-bottom:0px;
 }
+
+
 
 #footerText
 {
   width: auto;  
   display:flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
   margin-top:12px;
   background-color: #131313;
