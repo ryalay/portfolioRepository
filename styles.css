@@ -685,10 +685,21 @@ margin-right:auto;
     top: 0;
     bottom: 0;
     z-index: -1;
-    display:initial;
+    display:none;
   }
 
-
+  #realbackgroundvid {
+    min-height: 115vh;
+    width: 430%;
+    object-fit: fill;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+    margin-top:-100px;
+    margin-bottom:-100px;
+  }
 
 #backgroundvid {
   width: 100%;
