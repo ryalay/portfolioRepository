@@ -468,6 +468,10 @@ strong{
   border-radius: 30px 0px 0px 30px;
 }
 
+.writingtitle{
+width:1000px
+}
+
 .writings{
   display:flex;
   gap:50px;
@@ -661,22 +665,15 @@ margin-right:auto;
   height:100%;
   margin-left:0px !important;
   margin-right:0px !important;
-  max-width:100% !important;
   background-color:  rgb(0, 13, 14);
   margin: 0px;
   font-family: leagueSpartan;
   padding: 0px !important;
-  overflow-x: hidden;
 }
 
 body{
   height:100%;
-  background-color: rgb(0, 13, 14);
   font-family: leagueSpartan;
-  background-image: url("images/topobgmobile.png");
-  background-position-y:0px;
-  background-position-x:0px;
-  background-attachment:scroll !important;
   display: flex;
   flex-direction: column;  
   align-items: center;
@@ -684,8 +681,9 @@ body{
   padding: 50px 0px 0px 0px !important;
   left:0px;
   right:0px;
-  overflow-x: hidden;
-  width:100vw;
+  background-color: #050B0E;
+  background-image: none;
+
   }
 
 #aboutPage{
@@ -697,9 +695,6 @@ body{
   padding-left:12px !important;
   padding-right:12px !important;
   padding-top:75px;
-  max-width:100%;
-  background-image: url("images/topobgmobile.png");
-  background-repeat:repeat-y !important;
 }
 #aboutPage p{
   font-weight: 350;
@@ -732,7 +727,9 @@ body{
   align-items: center;
   justify-content: center;
   margin-bottom:48px;
+  width:90vw;
 }
+
 
 #aboutImg{
   margin:0px;
@@ -748,7 +745,6 @@ body{
 #aboutText {
   display:flex;
   flex-direction: column-reverse;
-  background-color: #252525;
   height: 100%;
   border-radius: 20px;
   box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
@@ -771,24 +767,47 @@ line-height:28px;
 
 #values{
   margin:0px;
+  width:90vw;
+}
+
+.line2{
+  width:75px;
+  margin-top:24px;
+}
+
+#values h2{
+  font-size: 36px;
 }
 
 .bigvalue{
   margin-top:24px;
+  gap:0px;
 }
 
 #valuetitle {
   font-weight:350 !important;
   color:white;
-  font-size:42px !important; 
-  margin:24px 18px 0px 18px !important;
-  line-height:48px !important;
+  font-size:28px !important; 
+  margin:24px 18px 18px 0px !important;
+  line-height:30px !important;
 }
 
 .bigvaluetext{
 margin:0px;
 padding:0px;
 font-size: 22px !important;
+margin-left:-32px;
+}
+
+.imagestack{
+margin-right:0px;
+gap:50px;
+}
+
+.imagestack img{
+  width:120px;
+  height: 120px;
+  border-radius: 15px;
 }
 
 .bigvaluetext p{
@@ -802,7 +821,11 @@ font-size: 22px !important;
   gap:40px;
   margin-bottom:40px;
   margin-top: 25px;
+  width:90vw;
 }
+.writingtitle{
+  width:90vw;
+  }
 
 .writing{
   display:flex;
@@ -831,26 +854,28 @@ font-size: 22px !important;
 }
 
 #footer{
-  height:auto;
-  width:91%;
+  height:150px;
   background-color: #131313;
   color: white;
   display: flex;
-  padding-left:20px;
-  padding-right:20px;
+  padding-left:0px !important;
+  padding-right:0px;
+  padding-bottom: 100px !important;
   flex-wrap: wrap;
-  overflow-x: hidden;
+  margin-top: 40px;
+  margin-left:0px;
+  width:100%;
 }
 
 #footerTitle{
-  font-size:26px;
+  font-size:20px;
   background-color: #131313;
 }
 #footer h2
 {
   font-weight:400;
   margin-top:42px;
-  font-size:20px;
+  font-size:18px;
   margin-bottom:12px;
   background-color: #131313;
 }
@@ -859,10 +884,18 @@ font-size: 22px !important;
 {
   font-weight:400;
   margin-top:42px;
-  font-size:18px;
-  margin-bottom:64px;
+  font-size:14px;
+  margin-bottom:24px;
   background-color: #131313;
+  
+}
 
+.footerLinks{
+  margin-left:0px !important;
+}
+
+#footerContact{
+  margin-bottom:40px;
 }
 
 #footerimg{
@@ -872,7 +905,7 @@ font-size: 22px !important;
 #footer a{
   text-decoration: none;
   color: white;
-  font-size: 18px;
+  font-size: 14px;
   background-color: #131313;
 }
 
@@ -882,27 +915,31 @@ font-size: 22px !important;
 }
 #allFooterText
 {
-  
+display: flex;
+flex-direction: column;
 width:100%;
 margin-top:32px;
 background-color: #131313;
+margin-left:12px;
 }
 
 #footerTitle{
   width:auto;
   background-color: #131313;
+  margin-bottom:0px;
 }
+
+
 
 #footerText
 {
   width: auto;  
   display:flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
   margin-top:12px;
   background-color: #131313;
 }
-
 
 }
 
