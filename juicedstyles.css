@@ -696,6 +696,11 @@ margin-right:auto;
 }
 @media screen and (max-width: 850px) {
 
+  body {
+    overflow-x: hidden;
+  }
+
+  
   .tabsgrid {
     display:none;
   }
