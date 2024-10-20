@@ -8,7 +8,7 @@ const mediaQueryDesktop = window.matchMedia('(min-width: 850px)');
 
 var toworkbutton = document.getElementById("workarrow");
 
-
+/*
 function scrollToWork(){
     window.scrollTo({top:windowHeight, behavior: "smooth"})
   }
@@ -16,18 +16,20 @@ function scrollToWork(){
 toworkbutton.addEventListener("click", scrollToWork)
 
 window.scrollTo({top:0, behavior: "instant"})
+*/
+
+
 
 if (window.scrollY === 0){
-    document.getElementById("body").style.overflow = "hidden";
+    document.getElementById("body").style.overflow = "hidden";      
 }
 
 
 document.onreadystatechange = function () {
     if (document.readyState !== "complete") {
-        document.querySelector(
-            "#loader").style.visibility = "visible";
-            document.getElementById("body").style.overflow = "hidden";
+        /*
         window.scrollTo({top:0, behavior: "instant"})
+        */
         document.querySelector(
             "html").style.visibility = "hidden";
         document.querySelector(
@@ -35,7 +37,6 @@ document.onreadystatechange = function () {
 
             
     } else {
-        window.scrollTo({top:0, behavior: "instant"})
         
         document.querySelector(
             "html").style.visibility = "visible";
@@ -94,13 +95,17 @@ function jump(){
     window.scrollTo({top:windowHeight, behavior: "smooth"})
 }
 
+
 if (window.scrollY === 0){
     document.getElementById("body").style.overflow = "hidden";
 }
 
+
+
 function showScroll(){
     document.getElementById("body").style.overflowY = "visible";
 }
+
 
 
 window.addEventListener('wheel', (e) => {
@@ -137,6 +142,8 @@ window.addEventListener('wheel', (e) => {
     lastTime = currentTime;
 })
 
+
+
 window.addEventListener("touchstart", handleStart);
 
 function handleStart(){
@@ -149,11 +156,13 @@ while (window.scrollY === windowHeight &&  document.getElementById("body").style
     document.getElementById("body").style.overflowY = "visible";
 }
 
+
 while (window.scrollY < windowHeight && document.getElementById("body").style.overflow === "visible" && delta > 0)
 {
     document.getElementById("body").style.overflow = "hidden";
     window.scrollTo({top:windowHeight, behavior: "smooth"})
 }
+
 
 while (mediaQueryMobile.matches && document.getElementById("body").style.overflow === "hidden"){
     document.getElementById("body").style.overflowY = "visible";
