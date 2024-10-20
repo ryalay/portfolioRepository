@@ -343,7 +343,7 @@ body{
   padding-bottom:150px;
 
 
-  background-image: url("images/topobg.png");
+  background: #050B0E;
   background-position: center 300px;
   background-attachment:fixed;
   

@@ -170,15 +170,3 @@ var chevron = document.getElementById('chevron');
 
 chevron.addEventListener("touchstart", mobileWorkScroll);
 
-
-
-document.getElementById("body").onscroll = function myFunction() 
-
-{  
-    var scrolltotop = document.scrollingElement.scrollTop;
-    var target = document.getElementById("work");
-    var xvalue = "center";
-    factor = 0.5;
-    var yvalue = scrolltotop * factor - 200;
-    target.style.backgroundPosition = xvalue + " -" + yvalue + "px";
-  }
