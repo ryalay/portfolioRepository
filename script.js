@@ -1,6 +1,6 @@
 const animationDuration = 500;
 let lastTime = 0;
-
+window.scrollTo({left: 0, top:window.scrollY, behavior: 'instant' });
 const windowHeight = window.innerHeight;
 
 const mediaQueryMobile = window.matchMedia('(max-width: 850px)');
@@ -26,6 +26,7 @@ if (window.scrollY === 0){
 
 
 document.onreadystatechange = function () {
+    window.scrollTo(0, window.scrollY);
     if (document.readyState !== "complete") {
         /*
         window.scrollTo({top:0, behavior: "instant"})
@@ -34,6 +35,7 @@ document.onreadystatechange = function () {
             "html").style.visibility = "hidden";
         document.querySelector(
             "body").style.visibility = "hidden";
+ 
 
             
     } else {
@@ -44,7 +46,7 @@ document.onreadystatechange = function () {
             "body").style.visibility = "visible";
         document.querySelector(
             "#loader").style.display = "none";
-
+        window.scrollTo(0, window.scrollY);
     }
 };
 
