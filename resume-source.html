@@ -1,0 +1,175 @@
+<!--
+  Ryan Layton Resume (HTML source)
+  Architectural Narrative system, print-optimized for US Letter.
+  TO EXPORT: open in Chrome → Cmd+P → Destination: Save as PDF →
+  Margins: None → check "Background graphics" → Save as resume.pdf
+  Then verify text is selectable in the PDF.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Ryan Layton Resume</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  @page { size: letter; margin: 0; }
+  :root {
+    --canvas: #F5F2EE; --ink: #141414; --slate: #5D737E;
+    --warm-gray: #8D8D8D; --hairline: #D8D3CB; --muted: #4C4A47;
+  }
+  * { box-sizing: border-box; margin: 0; }
+  html, body { background: #fff; }
+  body {
+    font-family: "Inter", sans-serif; color: var(--ink);
+    font-size: 9.3pt; line-height: 1.42;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  .page {
+    width: 8.5in; min-height: 11in; margin: 0 auto;
+    background: #fff; padding: 0.25in 0.6in 0.4in;
+  }
+
+  /* Header */
+  .head { display: flex; justify-content: space-between; align-items: flex-end; }
+  h1 { font-family: "Poppins", sans-serif; font-weight: 700; font-size: 24pt; line-height: 1.05; letter-spacing: -0.01em; }
+  .subtitle { font-size: 8pt; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--slate); margin-top: 7px; }
+  .contact { text-align: right; font-size: 8.5pt; color: var(--muted); line-height: 1.55; }
+  .contact a { color: var(--ink); text-decoration: none; }
+
+  /* Columns */
+  .cols { display: flex; gap: 0.38in; margin-top: 16px; }
+  .main { flex: 1.9; }
+  .side { flex: 1; }
+
+  /* Sections */
+  h2 { font-size: 8.5pt; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--ink); border-bottom: 1px solid var(--hairline); padding-bottom: 4px; margin-bottom: 8px; }
+  section + section { margin-top: 13px; }
+
+  /* Roles */
+  .role { margin-bottom: 9px; }
+  .role--compact { margin-bottom: 5px; }
+  .role-head { display: block; }
+  h3 { font-family: "Poppins", sans-serif; font-weight: 600; font-size: 10.5pt; }
+  h3 .co { color: var(--slate); }
+  .dates { display: block; font-size: 8pt; color: var(--warm-gray); margin-top: 1px; }
+  ul { padding-left: 13px; margin-top: 3px; }
+  li { margin-bottom: 2px; color: var(--ink); }
+  li::marker { color: var(--warm-gray); }
+
+  /* Side column */
+  .side p { margin-bottom: 3px; }
+  .side .item { margin-bottom: 8px; }
+  .side .b { font-weight: 600; }
+  .side .m { color: var(--muted); font-size: 8.7pt; }
+  .side .sm { color: var(--muted); font-size: 8.7pt; line-height: 1.5; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="head">
+    <div>
+      <h1>Ryan Layton</h1>
+      <div class="subtitle">UX &amp; Product Designer</div>
+    </div>
+    <div class="contact">
+      <a href="https://ryanlayton.com">ryanlayton.com</a><br>
+      <a href="https://www.linkedin.com/in/laytonryan">linkedin.com/in/laytonryan</a><br>
+      <a href="mailto:ryanlaytondesign@gmail.com">ryanlaytondesign@gmail.com</a><br>
+      908-200-1083
+    </div>
+  </div>
+
+  <div class="cols">
+    <div class="main">
+
+      <section>
+        <h2>Experience</h2>
+
+        <div class="role">
+          <div class="role-head"><h3>UX Manager <span class="co">| Leverage Companies</span></h3><span class="dates">May 2025 – Present</span></div>
+          <ul>
+            <li>Own the websites, SEO, and email marketing for two brands: Brick City Capital, a national DSCR lender, and Leverage Homes, a NJ cash homebuyer</li>
+            <li>Designed and built both brand websites, including design systems and 50+ location- and situation-specific SEO pages; partnered with the creative marketing manager on brand identity and page concepts</li>
+            <li>Designed and built additional sites across the organization, including the parent company site and an executive's personal brand site</li>
+            <li>Built marketing and sales infrastructure in Salesforce across two orgs: lead routing and segmentation automation, email verification, and a partner portal on Experience Cloud</li>
+            <li>Rebuilt cold email deliverability end to end, including domain isolation, authentication, and list verification, across multi-sequence outbound programs</li>
+          </ul>
+        </div>
+
+        <div class="role role--compact">
+          <div class="role-head"><h3>IT &amp; Marketing Manager <span class="co">| Leverage Companies</span></h3><span class="dates">Jan 2025 – May 2025</span></div>
+        </div>
+
+        <div class="role role--compact">
+          <div class="role-head"><h3>Tech &amp; Marketing Analyst <span class="co">| Leverage Companies</span></h3><span class="dates">Oct 2024 – Jan 2025</span></div>
+        </div>
+
+        <div class="role">
+          <div class="role-head"><h3>UX Design Intern <span class="co">| Henry Schein One</span></h3><span class="dates">Sep 2022 – Jan 2023</span></div>
+          <ul>
+            <li>Contributed to the creation of a design system to modernize the cloud-based version of Dentrix, the most popular dental software, used by over 35,000 practices</li>
+            <li>Leveraged data and iterative feedback from hundreds of customers to guide the direction of designs</li>
+          </ul>
+        </div>
+
+        <div class="role">
+          <div class="role-head"><h3>UX Design Intern <span class="co">| KeHE Distributors</span></h3><span class="dates">Jun 2022 – Aug 2022</span></div>
+          <ul>
+            <li>Designed distribution software connecting 8,500 natural food brands like KIND Bars to 30,000 retailers like Target while collaborating on a cross-functional team</li>
+            <li>Led usability testing sessions which provided valuable insights on the user journey</li>
+            <li>Developed UX copywriting for user flows to enhance client navigation and reinforce brand voice</li>
+          </ul>
+        </div>
+
+        <div class="role">
+          <div class="role-head"><h3>UX Design Intern <span class="co">| Clocky</span></h3><span class="dates">Sep 2021 – Dec 2021</span></div>
+          <ul>
+            <li>Led all redesign initiatives at the startup, including the e-commerce website and Amazon store page, in an effort to increase sales</li>
+            <li>Experimented with A/B testing to determine the best method of increasing user engagement, presenting findings to leadership and the CEO</li>
+          </ul>
+        </div>
+      </section>
+
+    </div>
+    <div class="side">
+
+      <section>
+        <h2>Education</h2>
+        <div class="item">
+          <p class="b">Rutgers University, New Brunswick</p>
+          <p class="m">Sep 2019 – May 2023</p>
+          <p class="sm">B.S. Information Technology &amp; Informatics – Web Design</p>
+          <p class="sm">Minors in Digital Communication &amp; Media, Business Administration</p>
+          <p class="sm">3.8/4.0 GPA</p>
+        </div>
+        <div class="item">
+          <p class="b">Google UX Design Certificate</p>
+          <p class="m">Coursera</p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Skills &amp; Tools</h2>
+        <p class="sm">Visual Design<br>Wireframing<br>Prototyping<br>UX Research<br>User Flows<br>Accessibility<br>Information Architecture<br>Journey Mapping</p>
+        <p class="sm" style="margin-top:8px">Figma<br>Webflow<br>Salesforce<br>Adobe Creative Suite<br>Sketch · InVision</p>
+        <p class="sm" style="margin-top:8px">HTML/CSS<br>JavaScript</p>
+      </section>
+
+      <section>
+        <h2>Selected Projects</h2>
+        <div class="item">
+          <p class="b">Juiced IO <span style="font-weight:400; color:var(--warm-gray)">/ UX Design Collaboration</span></p>
+          <p class="m">May 2024 – Jul 2024</p>
+          <p class="sm">Designed the app experience for a reselling platform in active development, working directly with leadership and developers; alpha-tested the build against the designs.</p>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</div>
+</body>
+</html>

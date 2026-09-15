@@ -1,12 +1,12 @@
 <!--
-  GigHub / Interface Design Showcase
-  Reframed from ryanlayton.com/gighub.html as a visual/UI craft page (same format as StreetEats).
-  Image-forward, minimal text. Warm portfolio theme. Real images from ryanlayton.com.
-  Same class names as the other pages.
+  StreetEats / Interface Design Showcase
+  Reframed from ryanlayton.com/foodtrucks.html as a visual/UI craft page (NOT a process case study).
+  Image-forward, minimal text, shorter than the UX case studies by design.
+  Warm portfolio theme. Real images from ryanlayton.com. Same class names as the other pages.
 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>GigHub / Interface Design</title>
+<title>StreetEats / Interface Design</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
@@ -98,7 +98,7 @@
   .frame img { width: 100%; height: auto; }
   .frame--bare { padding: 0; border: none; background: transparent; }
 
-  /* Screen sets */
+  /* Screen sets: image pair/trio rows with a single craft note */
 
   /* Phone mockups are portrait, and several are SMALL natively (showcase2 is 358px wide,
      gighubmock1 is 471px). Letting them fill a half-width column both oversized them and
@@ -114,11 +114,6 @@
   .set-media .duo { display: grid; grid-template-columns: 1fr 1fr; gap: var(--gutter); }
   .set-title { margin-bottom: var(--stack-md); }
   .set-note { color: var(--muted); }
-  /* NO NUMBERS ON THESE. GigHub's four are areas of the app (Home, Discovery, Artists, The
-     Night Out) and nothing breaks if you reorder them, so 01-04 implied a progression the
-     content does not have. StreetEats KEEPS its numbers on purpose: 01 Discovery through 05
-     Confirmation is a real checkout flow and you cannot confirm before you order. The test is
-     whether the order carries information, not whether numbers look tidy. */
   /* ONE LABEL SYSTEM. Ryan: "they should all have the exact same style." The 12px uppercase
      label had drifted to five treatments across the site — ink, warm-gray, slate and olive —
      with no rule behind which was which, so the colour read as decoration. Two roles only:
@@ -129,6 +124,9 @@
      do elsewhere, and those are ink. It was warm-gray, so identical labels changed colour
      depending on which page you were on. */
   .set-eyebrow { display: flex; align-items: center; gap: var(--stack-md); color: var(--ink); margin-bottom: var(--stack-md); }
+
+  /* Full-bleed screen rows */
+  .row-duo { display: grid; grid-template-columns: 1fr 1fr; gap: var(--gutter); }
 
   .sec + .sec { border-top: 1px solid var(--hairline); }
 
@@ -151,7 +149,7 @@
     .headline-md { font-size: 25px; line-height: 33px; }
     .body-lg { font-size: 18px; line-height: 29px; }
     .context-item + .context-item { padding-left: 0; }
-    .set-media .duo { grid-template-columns: 1fr; }
+    .row-duo, .set-media .duo { grid-template-columns: 1fr; }
   }
   /* NAV */
   .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 50; background: transparent; transition: background .3s ease, border-color .3s ease; border-bottom: 1px solid transparent; }
@@ -209,13 +207,13 @@
     </svg>
     <div class="padding-global"><div class="container-large">
       <div class="hero-eyebrow ui-label">Interface Design</div>
-      <h1 class="display-name">GigHub</h1>
-      <p class="statement hero-statement">A gateway to the local underground music scene.</p>
+      <h1 class="display-name">StreetEats</h1>
+      <p class="statement hero-statement">A full ordering experience for food trucks, designed end to end.</p>
       <p class="body-lg hero-sub measure">
-        New Brunswick has a vibrant underground music scene and tens of thousands of students
-        looking for something to do on a Friday night, with no easy way to find each other. GigHub
-        connects them: shows to discover, artists to follow, nights out to plan. Designed under
-        designathon time pressure, by a drummer who knows the scene firsthand.
+        Food trucks are convenient by nature and hard to use in practice: locations change daily,
+        menus live nowhere, and lines erase the convenience. StreetEats is a complete interface
+        for finding a truck, learning its menu, and ordering ahead. This page is a tour of the
+        screens themselves.
       </p>
     </div></div>
   </header>
@@ -225,8 +223,8 @@
     <div class="padding-global"><div class="container-large">
       <div class="context">
         <div class="context-item"><span class="ui-label">Focus</span><div class="val">UI &amp; visual design</div></div>
-        <div class="context-item"><span class="ui-label">Context</span><div class="val">CreateRU designathon submission</div></div>
-        <div class="context-item"><span class="ui-label">Scope</span><div class="val">Discovery, artist profiles, gig pages</div></div>
+        <div class="context-item"><span class="ui-label">Context</span><div class="val">Solo project</div></div>
+        <div class="context-item"><span class="ui-label">Scope</span><div class="val">Full ordering flow, browse to checkout</div></div>
         <div class="context-item"><span class="ui-label">Tools</span><div class="val">Figma</div></div>
       </div>
     </div></div>
@@ -235,7 +233,7 @@
   <!-- HERO IMAGE -->
   <section class="section section--flush-top">
     <div class="padding-global"><div class="container-large">
-      <div class="frame frame--bare"><img src="images/gighublanding.webp" alt="The GigHub app"></div>
+      <div class="frame frame--bare"><img src="images/foodtrucklanding.webp" alt="StreetEats app"></div>
     </div></div>
   </section>
 
@@ -244,41 +242,56 @@
     <div class="padding-global"><div class="container-large">
 
       <div class="set">
-        <div class="set-media"><div class="frame frame--bare"><img src="images/gighubmock1.webp" alt="Home screen" loading="lazy"></div></div>
+        <div class="set-media"><div class="duo">
+          <div class="frame frame--bare"><img src="images/foodtruckmock1.webp" alt="Browse screen" loading="lazy"></div>
+          <div class="frame frame--bare"><img src="images/foodtruckmock2.webp" alt="Explore map screen" loading="lazy"></div>
+        </div></div>
         <div class="set-text">
-          <div class="set-eyebrow ui-label">Home</div>
-          <h2 class="headline-md set-title">Your scene at a glance</h2>
-          <p class="body-lg set-note">The home screen keeps users up to date with the artists they follow and the gigs they care about most. Venues are split into three categories, restaurants, bars and clubs, and shows, so the card itself hints at what kind of night each event will be.</p>
+          <div class="set-eyebrow ui-label">01 / Discovery</div>
+          <h2 class="headline-md set-title">Browse and explore</h2>
+          <p class="body-lg set-note">Two ways into the same decision. The browse page organizes nearby trucks into food categories for craving-first discovery, while the map leans into the thing that makes food trucks special: they're wherever you already are. I used the same card on both screens, so a truck feels consistent no matter how you found it.</p>
+        </div>
+      </div>
+
+      <div class="set set--flip">
+        <div class="set-media"><div class="frame frame--bare"><img src="images/foodtruckmock3.webp" alt="Truck info page" loading="lazy"></div></div>
+        <div class="set-text">
+          <div class="set-eyebrow ui-label">02 / The Truck Page</div>
+          <h2 class="headline-md set-title">Everything a customer needs on one page</h2>
+          <p class="body-lg set-note">Everything a customer needs to commit lives on a single screen: hours, location, menu, and the visual identity of the truck itself given room to breathe. I ordered the page to answer questions the way people actually ask them.</p>
+        </div>
+      </div>
+
+      <div class="set">
+        <div class="set-media"><div class="duo">
+          <div class="frame frame--bare"><img src="images/foodtruckmock4.webp" alt="Menu with category tabs" loading="lazy"></div>
+          <div class="frame frame--bare"><img src="images/foodtruckmock5.webp" alt="Item detail and customization" loading="lazy"></div>
+        </div></div>
+        <div class="set-text">
+          <div class="set-eyebrow ui-label">03 / Ordering</div>
+          <h2 class="headline-md set-title">Menus built for speed</h2>
+          <p class="body-lg set-note">Menu items are grouped into categories with matching tabs, so browsing a long menu takes seconds. The item screen carries ingredients, calories, and allergen information, with full ingredient customization and special instructions, detail work that makes the experience inclusive without cluttering the happy path.</p>
         </div>
       </div>
 
       <div class="set set--flip">
         <div class="set-media"><div class="duo">
-          <div class="frame frame--bare"><img src="images/gighubmock2.webp" alt="Explore screen" loading="lazy"></div>
-          <div class="frame frame--bare"><img src="images/gighubmock3.webp" alt="Liked gigs screen" loading="lazy"></div>
+          <div class="frame frame--bare"><img src="images/foodtruckmock6.webp" alt="Current order screen" loading="lazy"></div>
+          <div class="frame frame--bare"><img src="images/foodtruckmock7.webp" alt="Checkout overview" loading="lazy"></div>
         </div></div>
         <div class="set-text">
-          <div class="set-eyebrow ui-label">Discovery</div>
-          <h2 class="headline-md set-title">Feel out the local scene</h2>
-          <p class="body-lg set-note">The explore screen lists every gig nearby, soonest first, making it effortless to see what the scene is up to this weekend. Liking a gig saves it to its own screen, a lightweight way to hold onto plans without committing to them yet.</p>
+          <div class="set-eyebrow ui-label">04 / Checkout</div>
+          <h2 class="headline-md set-title">A cart that always has a next step</h2>
+          <p class="body-lg set-note">A persistent floating button keeps the current order one tap away from anywhere. The order screen lets every aspect of the order be edited in place, no backtracking through the menu, and the final overview confirms price and payment before anything is placed. Checkout patterns people already know, executed cleanly.</p>
         </div>
       </div>
 
       <div class="set">
-        <div class="set-media"><div class="frame frame--bare"><img src="images/gighubmock5.webp" alt="Artist profile" loading="lazy"></div></div>
+        <div class="set-media"><div class="frame frame--bare"><img src="images/foodtruckmock8.webp" alt="Order confirmed" loading="lazy"></div></div>
         <div class="set-text">
-          <div class="set-eyebrow ui-label">Artists</div>
-          <h2 class="headline-md set-title">A stage for every artist</h2>
-          <p class="body-lg set-note">Tapping any artist opens their profile: bio, photos, and upcoming gigs in one place. For underground musicians with no other web presence, this page is their promotional platform, so I gave their identity the most room on it.</p>
-        </div>
-      </div>
-
-      <div class="set set--flip">
-        <div class="set-media"><div class="frame frame--bare"><img src="images/gighubmock4.webp" alt="Gig info page" loading="lazy"></div></div>
-        <div class="set-text">
-          <div class="set-eyebrow ui-label">The Night Out</div>
-          <h2 class="headline-md set-title">Everything you need to show up</h2>
-          <p class="body-lg set-note">The gig page holds everything needed to plan the night. The "interested" button doubles as a signal in both directions, telling attendees how big the crowd will be and telling the band how many people to expect.</p>
+          <div class="set-eyebrow ui-label">05 / Confirmation</div>
+          <h2 class="headline-md set-title">The handoff to the real world</h2>
+          <p class="body-lg set-note">Order confirmed. The truck's address is a live link that opens the user's default maps app, closing the loop between the interface and the sidewalk where the food actually is.</p>
         </div>
       </div>
 
@@ -289,8 +302,9 @@
   <section class="section sec">
     <div class="padding-global"><div class="container-large">
       <p class="body-lg measure text-muted">
-        GigHub was designed and delivered within a designathon's time limit, a complete concept
-        for connecting bands, venues, and music-lovers, where every party wins.
+        StreetEats began as an app for the Rutgers food trucks and grew into a platform for food
+        trucks anywhere, a full product designed solo, from the first sketch to the confirmation
+        screen.
       </p>
       <div class="close-actions mt-lg">
         <a href="index.html#work" class="btn btn-ghost ui-label">Back to work</a>

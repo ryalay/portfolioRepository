@@ -1,235 +1,563 @@
-<!DOCTYPE html>
-<html lang="en" id="html">
-  <style>@font-face {
-    font-family: leagueSpartan;
-    src: url(League_Spartan/LeagueSpartan-VariableFont_wght.ttf);
-  }</style>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Spot | Ryan Layton</title>
-    <link rel="stylesheet" href="spotstyles.css"/>
-    <link rel="icon" href="images/initials.png">
-  </head>
+<!--
+  Spot / UX Case Study Page
+  Rebuilt from ryanlayton.com/spot.html into the "Architectural Narrative" portfolio system.
+  Warm portfolio theme throughout (Selected UX Work project). Real images pulled from ryanlayton.com.
+  Same Client-First-style class names as the other case studies / reuse the same Webflow classes.
+-->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Spot / Case Study</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&amp;family=Inter:wght@400;600;800&amp;display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --canvas: #F5F2EE;
+    --ink: #141414;
+    --slate: #5D737E;
+    --olive: #707A5E;
+    --warm-gray: #8D8D8D;
+    --link-hover: #51656F;   /* slate, darkened to clear AA on canvas and field */
+    --obsidian: #1A1A1A;
+    --field: #EBE8E4;
+    --hairline: #D8D3CB;
+    --muted: #4C4A47;
 
+    --container-max: 1200px;
+    --gutter: 32px;
+    --section-pad: 80px;
+    --stack-sm: 8px;
+    --stack-md: 16px;
+    --stack-lg: 48px;
+  }
 
+  * { box-sizing: border-box; }
+  /* The nav is fixed at 68px, and nothing offset the anchor targets, so every in-page jump
+     (#work, #about, #contact, and the case-study nav links back to index.html#work) landed
+     the target flush at the viewport top, underneath the nav. scroll-padding-top on the
+     scroll container fixes all of them at once; per-element scroll-margin would need adding
+     to every new anchor. 88px is the nav plus 20px of air. */
+  html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+  body { margin: 0; background: var(--canvas); color: var(--ink); font-family: "Inter", sans-serif; -webkit-font-smoothing: antialiased; font-size: 16px; line-height: 26px; }
+  img { display: block; max-width: 100%; }
 
-  <section class="tabsgrid">
-    <div class="name">
-      <a href="./index.html"><img src="./images/initials.png" /></a>
-    </div>
-    <div class="tabs">
-      <a id = "worklink" href="./index.html#work">Work</a>  
-      <a href="./about.html">About</a>
-      <a href="images/RYAN-LAYTON-RESUME.pdf" target="_blank">Resume</a>
-    </div>
-  </section>
+  .padding-global { padding-left: var(--gutter); padding-right: var(--gutter); }
+  .container-large { max-width: var(--container-max); margin: 0 auto; width: 100%; }
 
-  <section class="mobileHeader">
-    <div id="mobilename">
-      <a href="./index.html"><img src="./images/initials.png" /></a>
-    </div>
-    <div>
-    <ul class="mobilemenuopen">
-      <li><a class="menuItem" href="./index.html#work">Work</a></li>
-      <li><a class="menuItem" href="./about.html">About</a></li>
-      <li><a class="menuItem" href="images/RYAN-LAYTON-RESUME.pdf">Resume</a></li>
-    </ul>
-    <button class="mobilemenu">
-      <i class ="menuIcon"><img src="images/mobilemenu.png" alt=""></i>
-      <i class ="closeIcon"><img src="images/close.png" alt=""></i>
-      </button>
-    </div>
-  
+  .section { padding-top: var(--section-pad); padding-bottom: var(--section-pad); }
+  .section--flush-top { padding-top: 0; }
 
-  </section>
+  .display-name { font-family: "Inter", sans-serif; font-weight: 800; font-size: 80px; line-height: 0.98; letter-spacing: -0.02em; text-transform: uppercase; margin: 0; }
+  .statement { font-family: "Playfair Display", serif; font-weight: 600; font-size: 44px; line-height: 52px; margin: 0; }
+  /* HEADLINES ARE SANS. Playfair stays for the display and editorial moments — the 44px hero
+     statement, pull quotes, stat numbers — but not for headlines, which are full sentences a
+     reader actually reads. Ryan: "it's just hard to read actual content with this font".
+     The tell was that .headline-lg is stepped DOWN to 36px inside a two-column row, i.e.
+     Playfair used below the size a Didone wants, for layout reasons. Inter 600 with -0.02em
+     tracking reads instantly and sits in a clear hierarchy under the Playfair statement. */
+  .headline-lg { font-family: "Inter", sans-serif; font-weight: 600; font-size: 44px; line-height: 54px; letter-spacing: -0.02em; margin: 0; }
+  .headline-md { font-family: "Inter", sans-serif; font-weight: 600; font-size: 30px; line-height: 40px; letter-spacing: -0.02em; margin: 0; }
+  .body-lg { font-size: 20px; line-height: 32px; }
+  .body-md { font-size: 16px; line-height: 26px; }
+  .ui-label { font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; }
+  .caption { font-size: 14px; line-height: 20px; color: var(--warm-gray); }
+  /* FULL WIDTH, STACKED. These blocks were capped narrow (headings 24-26ch, prose 62ch) inside a
+     1200px container, which left roughly half of every text section empty. Ryan asked for them
+     stacked and spanning the full width, so the caps are gone. Hero statements keep their caps on
+     purpose, since a deliberately short hero line is a different thing. */
+  /* ONE reading measure on the page. The split body column lands near 763px, so standalone
+     prose gets the same 78ch and every paragraph reads at one width whether it sits in a split
+     or at the container's left edge. Full width was 123 characters per line. */
+  .measure { max-width: 78ch; }
+  /* the hero deck sits at a larger size, so 78ch there is 868px and about 89 characters. */
+  .hero-sub.measure { max-width: 62ch; }
+  .mt-lg { margin-top: var(--stack-lg); }
+  strong { font-weight: 600; }
 
-<div id="loader" class="center"></div>
+  .dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; flex: 0 0 8px; background: var(--slate); }
 
-<section id="spotLandingPage">
+  /* Hero */
+  .hero { position: relative; padding-top: calc(var(--section-pad) + 68px); padding-bottom: var(--section-pad); overflow: hidden; }
+  .hero-topo { position: absolute; top: -30px; right: -40px; width: 640px; max-width: 66%; opacity: 0.06; pointer-events: none; }
+  .hero-eyebrow { display: flex; align-items: center; gap: var(--stack-md); color: var(--ink); margin-bottom: var(--stack-lg); }
+  .hero-statement { margin-top: var(--stack-lg); max-width: 22ch; }
 
-  <div id="landingPageText">
-    <h1>Spot</h1>
-  <h2>The mobile app that erases all doubt about where you can park</h2>
-  <div class="line"></div>
-  
-  
-    <div id="projectInfo">
-      <div class="projectDetails">
-      <div class="projectDetail">
-    <h3>My Role</h3>
-    <p>Primary UX Designer</p>
-    </div>
-    <div class="projectDetail">
-      <h3>Context</h3>
-      <p>For Creative Labs, a semester-long program with Rutgers design club</p>
+  /* Context strip */
+  .context { display: flex; flex-wrap: wrap; border-bottom: 1px solid var(--hairline); }
+  .context-item { flex: 1 1 200px; padding: 24px var(--gutter) 24px 0; }
+  .context-item + .context-item { padding-left: var(--gutter); }
+  .context-item .ui-label { color: var(--warm-gray); display: block; margin-bottom: var(--stack-sm); }
+  /* Context-strip VALUES are data, not display: "UX Manager, full brand ownership",
+     "~12 months", "Brand \u00b7 Web \u00b7 SEO". They were Playfair at 20px, which is the same
+     Didone-too-small problem as the old figure titles and headlines, and it sat directly
+     under the hero. Inter 500 at 19px. Playfair is reserved for the display and editorial
+     moments now: the 44px statement, pull quotes, stat numbers, card titles, the footer. */
+  .context-item .val { font-family: "Inter", sans-serif; font-weight: 500; font-size: 19px; line-height: 27px; letter-spacing: -0.01em; }
 
-  </div>
-    </div>
-    <div  class="projectDetails">
-    <div class="projectDetail">
-      <h3>Responsibilities</h3>
-      <p>Interaction design, UX design, UX research</p>
+  /* Media frames */
+  .frame { background: var(--field); border: 1px solid var(--hairline); padding: 24px; display: flex; align-items: center; justify-content: center; }
+  .frame img { width: 100%; height: auto; }
+  .frame-caption { color: var(--warm-gray); margin-top: var(--stack-md); }
+  /* Prose that belongs to the image above it rather than to a heading. Shares the image's and
+     caption's left edge so the group reads as one unit.
+     .measure (78ch) is tuned for the 8fr body COLUMN; at full container width the same 78ch
+     runs 1014px and about 95 characters a line. 59ch lands it on 763px — the exact width the
+     body column resolves to — so this paragraph reads at the same measure as every other
+     paragraph on the page. */
+  .image-note { margin: var(--stack-lg) 0 0; max-width: 59ch; }
+  .frame--bare { padding: 0; border: none; background: transparent; }
 
-      </div>
-      <div class="projectDetail">
-        <h3>Tools</h3>
-        <p>Figma, Figjam, Google Forms</p>
+  /* Narrative sections */
+  .sec-eyebrow { display: flex; align-items: center; gap: var(--stack-md); color: var(--ink); margin-bottom: var(--stack-md); }
+  .sec-head { margin-bottom: var(--stack-lg); }
+
+  /* SPLIT ROWS: the label side on the left, its content on the right, repeated down a section.
+     Ryan's request: "what is juiced on the left, body on the right, then my role on the left,
+     that body on the right". It ONLY works as a STACK. One two-column row sitting among
+     full-width blocks reads as a broken layout, which is why a one-off attempt at this was
+     reverted earlier. Every label-and-content pair becomes a row, so the left column reads as a
+     deliberate label column.
+     It also fixes the reading measure for free: the right column lands near 760px, about 78
+     characters, where full-width prose was running about 123.
+     BUILT WITH AN HTML PARSER, NOT REGEX. A regex pass at this silently swallowed closing tags
+     and detached three paragraphs from .container-large entirely. If this ever needs redoing,
+     use a parser. */
+  .split { display: grid; grid-template-columns: 4fr 8fr; gap: var(--stack-lg) 56px;
+    align-items: start; }
+  /* MORE VERTICAL AIR. Ryan: "still feels disorganized here. maybe vertically space everything
+     more". Rows were 36px apart, which is close enough to the gap inside a row that the section
+     read as one dense block. 64px between rows, and the component bands get 80px so they read as
+     their own beat rather than as another row. */
+  .split + .split { margin-top: 64px; }
+  .split--body { margin-top: 64px; }
+  /* A continuation block hugs the row it continues, so it reads as the same thought rather than
+     as a new row with a missing label. */
+  .split > :first-child { margin-bottom: 0; }
+  /* A big display line in a ~383px column wraps to four cramped lines, so headings step down
+     inside a split. Same move the two brand pages make in .intro-cols. */
+  .split .headline-lg { font-size: 32px; line-height: 42px; }
+  .split .headline-md { font-size: 26px; line-height: 34px; }
+  .split .sec-eyebrow { margin-bottom: var(--stack-sm); }
+  .split .prose p + p { margin-top: var(--stack-md); }
+  /* A continuation block with no label of its own still lines up with the text column, so every
+     paragraph on the page shares one left edge. */
+  @media (max-width: 900px) { .split { grid-template-columns: 1fr; gap: var(--stack-md); }
+}
+  .sec + .sec { border-top: 1px solid var(--hairline); }
+  /* ALTERNATING SECTION BANDS, matching the two brand pages. Narrative sections alternate
+     canvas / field so a long scroll reads as chapters instead of one undifferentiated column.
+     The colour change IS the divider, so the .sec + .sec hairline is suppressed at every
+     boundary touching a tinted section — a rule AND a tone change at the same edge reads as
+     an accident. With strict alternation that removes all of them between .sec blocks.
+     Plain .frame boxes are var(--field) too, so on a tinted band they would vanish into the
+     background and leave their 24px padding reading as a random gap. They flip to canvas
+     there, which makes the frame a lighter surface raised off the band. .frame--bare is
+     excluded because it is deliberately transparent. */
+  .sec--tint { background: var(--field); }
+  .sec--tint + .sec, .sec + .sec--tint { border-top: none; }
+  .sec--tint .frame:not(.frame--bare) { background: var(--canvas); }
+  .subhead { margin-top: var(--stack-lg); margin-bottom: var(--stack-md); }
+  .split .subhead { margin-top: 0; }
+  .prose p { color: var(--ink); }
+  .prose p + p { margin-top: var(--stack-md); }
+  .prose ul { margin: var(--stack-md) 0 0; padding-left: 22px; }
+  .prose li { margin-top: var(--stack-sm); }
+
+  /* Stat row */
+  /* No rules, no dividers, no boxes. Ryan: "you can remove all these lines and boxes". These
+     were decorative ink rules framing a stat band and the how-might-we block, plus vertical
+     hairlines between stats. Spacing carries the separation instead. The subtler structural
+     hairlines between sections (.sec + .sec) and between .insight rows are a different device
+     and are left in place. */
+  /* The stats sit in the BODY COLUMN with the rest of the prose, not across the full page.
+     Two up rather than three, so two on the top row and one on the bottom, which is what Ryan
+     asked for and what a 763px column takes without cramping a 48px Playfair number.
+     Margin is 0 because the .split--body wrapper already carries the 64px row spacing. */
+  .stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px var(--gutter); margin: 0; }
+  .stat { padding: 0; }
+  .stat .num { font-family: "Playfair Display", serif; font-weight: 600; font-size: 48px; line-height: 56px; }
+  .stat .desc { color: var(--muted); margin-top: var(--stack-sm); }
+
+  /* How-might-we highlight */
+  /* Full container width, and "How might we" is folded into the sentence rather than sitting
+     above it as a small-caps label. Ryan asked for both. This is the one block on the page that
+     is deliberately NOT a two-column row: it is a single display line and it should command the
+     whole measure. */
+  .hmw { margin-top: 80px; }
+  .hmw .statement { max-width: none; }
+  .hmw .statement { max-width: none; }
+  /* ONE LABEL SYSTEM. Ryan: "they should all have the exact same style." The 12px uppercase
+     label had drifted to five treatments across the site — ink, warm-gray, slate and olive —
+     with no rule behind which was which, so the colour read as decoration. Two roles only:
+     a label that NAMES the thing directly below it is var(--ink); a label that is quiet
+     metadata bolted to an image or a data strip (.context-item, .shot, .state-item) is
+     var(--warm-gray). No third colour. */
+  .hmw .ui-label { color: var(--ink); display: block; margin-bottom: var(--stack-md); }
+
+  /* Research findings */
+  /* margin-bottom was 0, so the chart captions ran straight into the heading of the next
+     block with no gap at all. 64px is this page's standard between-block rhythm — the same
+     value .split + .split and .split--body use. */
+  .findings { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--gutter);
+    margin-top: var(--stack-lg); margin-bottom: 64px; }
+  /* No padded box around a chart. The .frame chrome put a bordered grey card around an image
+     that already has its own white plate and edge, so it read as a border inside a border. */
+  .finding .frame { aspect-ratio: 4 / 3; padding: 0; border: none; background: transparent; }
+  .finding .frame img { width: 100%; height: 100%; object-fit: contain; }
+  .finding .desc { margin-top: var(--stack-md); color: var(--muted); }
+  .finding .desc strong { color: var(--ink); }
+
+  /* Insight-to-feature pairs */
+  /* No border-top. With a header row the table already announces itself, so the rule above it
+     was a fifth horizontal line in a block that only needed four. */
+  .insights { margin: 80px 0; }
+  /* Same 4fr / 8fr as .split, so every two-column row on the page shares one grid. These were
+     1fr 1fr, which put the right column in a different place from the row directly above it. */
+  /* The insight list is CONTENT UNDER the heading above it, so the group is set off with more
+     air than sits between its own rows. Rows were 48px top and bottom, which spaced them as far
+     apart as the heading was from the group, and that is what flattened the hierarchy. */
+  /* The row separators STAY. Ryan: "some lines here are ok". These were removed with the stats
+     framing, which was the wrong call: the stats rules were decorative, but these divide a list
+     into its items and do real work. The list also keeps its top cap so it reads as one list. */
+  .insight { display: grid; grid-template-columns: 4fr 8fr; gap: var(--stack-md) 56px; padding: 28px 0; border-bottom: 1px solid var(--hairline); }
+  /* These are three full research findings — content the reader has to actually read, not a
+     display moment. Playfair at 21px was the smallest body-weight serif on the site. Inter 600
+     matches the headline voice used everywhere else and still outweighs the .answer column. */
+  .insight .pain { font-family: "Inter", sans-serif; font-weight: 600; font-size: 21px; line-height: 30px; letter-spacing: -0.01em; }
+  .insight .answer { color: var(--muted); align-self: start; }
+  /* Column header for the insight table. Same 4fr/8fr tracks as .insight so the two labels sit
+     exactly over the columns they name. Replaces the per-row .answer .ui-label. */
+  .insights-head { display: grid; grid-template-columns: 4fr 8fr; gap: var(--stack-md) 56px;
+    padding: var(--stack-md) 0; border-bottom: 1px solid var(--hairline); color: var(--ink); }
+
+  /* Feature walkthrough */
+
+  /* Phone mockups are portrait, and several are SMALL natively (showcase2 is 358px wide,
+     gighubmock1 is 471px). Letting them fill a half-width column both oversized them and
+     upscaled them past their own resolution, so they read blurry as well as huge.
+     Capping HEIGHT handles portrait and landscape with one rule: a tall phone shrinks to fit,
+     a wide screenshot is still bounded by max-width. width:auto is what guarantees nothing is
+     ever scaled UP beyond its intrinsic size. The .frame is already a centering flex box, so
+     a narrower image sits centred in its column with no extra rule. */
+  .feature-media img { width: auto; max-width: 100%; max-height: 640px; }
+  .feature { display: grid; grid-template-columns: 1fr 1fr; gap: var(--stack-lg) 64px; align-items: center; }
+  .feature + .feature { margin-top: var(--section-pad); }
+  .feature-lead { margin-top: var(--section-pad); }
+  .feature--flip .feature-media { order: 2; }
+  .feature-title { margin-bottom: var(--stack-md); }
+  .feature-text .body-lg { color: var(--muted); }
+
+  /* Takeaways */
+  .takeaways { display: grid; grid-template-columns: 1fr 1fr; gap: var(--stack-lg) 64px; margin-top: var(--stack-lg); }
+  .takeaway .headline-md { margin-bottom: var(--stack-md); }
+  .takeaway p { color: var(--muted); }
+
+  /* Close */
+  .close-actions { display: flex; gap: var(--stack-md); flex-wrap: wrap; }
+  .btn { display: inline-flex; align-items: center; padding: 14px 32px; text-decoration: none; border: 1px solid transparent; }
+  .btn-ghost { border-color: var(--ink); color: var(--ink); }
+  .btn-ghost:hover { background: var(--ink); color: var(--canvas); }
+
+  a { color: var(--slate); }
+  a:focus-visible, .btn:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+  @media (max-width: 900px) {
+    .stats { grid-template-columns: 1fr; }
+    .findings { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 800px) {
+    .feature, .insight, .takeaways { grid-template-columns: 1fr; }
+    /* Once the rows stack, a two-column header has nothing to head — "Solution" would float
+       above a single stacked column. Hide it and give each answer its own label back,
+       generated rather than duplicated in the markup, so the wide layout keeps its one header
+       and the narrow layout still says which half of the row it is reading. */
+    .insights-head { display: none; }
+    .insight .answer::before { content: "Solution"; display: block;
+      font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--ink); margin-bottom: var(--stack-sm); }
+    .feature--flip .feature-media { order: 0; }
+    .feature-media { margin-bottom: var(--stack-md); }
+  }
+  @media (max-width: 640px) {
+    :root { --gutter: 24px; --section-pad: 40px; }
+    .display-name { font-size: 44px; }
+    .statement { font-size: 28px; line-height: 34px; }
+    .headline-lg { font-size: 30px; line-height: 38px; }
+    .headline-md { font-size: 25px; line-height: 33px; }
+    .body-lg { font-size: 18px; line-height: 29px; }
+    .stat .num { font-size: 36px; line-height: 42px; }
+    .insight .pain { font-size: 22px; line-height: 30px; }
+    .context-item + .context-item { padding-left: 0; }
+  }
+  /* NAV */
+  .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 50; background: transparent; transition: background .3s ease, border-color .3s ease; border-bottom: 1px solid transparent; }
+  .nav.is-scrolled { background: rgba(245,242,238,0.95); border-bottom: 1px solid var(--hairline); }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+  .nav-name { font-weight: 600; font-size: 15px; letter-spacing: 0.02em; text-decoration: none; color: var(--ink); }
+  .nav-links { display: flex; gap: 32px; }
+  /* Nav hover is a COLOUR SHIFT, not a growing underline. --link-hover is the site's slate
+     darkened from #5D737E: slate itself measures 4.46:1 on the canvas and 4.08:1 on the tinted
+     hero, both under the 4.5:1 AA floor for 16px text. #51656F is the same hue and clears it on
+     both (5.47:1 and 5.00:1). Focus is still handled by the global a:focus-visible outline, so
+     removing the underline costs nothing for keyboard users. */
+  .nav-links a { color: var(--ink); text-decoration: none; transition: color .2s ease; }
+  .nav-links a:hover, .nav-links a:focus-visible { color: var(--link-hover); }
+  @media (max-width: 640px) { .nav-links { display: none; } }
+  /* Site footer, shared with the homepage. Added to every page so a reader who lands on a
+     case study from search has the same way to reach Ryan as one who came through the home
+     page. Uses only tokens every page already defines. */
+  .footer { background: var(--obsidian); color: var(--canvas); }
+  .footer-inner { display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: var(--stack-lg); }
+  .footer .lets { font-family: "Playfair Display", serif; font-style: italic; font-weight: 500; font-size: 28px; }
+  .footer .connect { font-family: "Playfair Display", serif; font-size: 22px; }
+  .footer .links { margin-top: var(--stack-sm); }
+  .footer .links a { color: rgba(245,242,238,0.6); text-decoration: none; margin-right: 16px; }
+  .footer .links a:hover, .footer .links a:focus-visible { color: var(--canvas); }
+</style>
+<!-- NAV -->
+<nav class="nav" id="nav">
+<div class="padding-global"><div class="container-large">
+<div class="nav-inner">
+<a class="nav-name" href="index.html">Ryan Layton</a>
+<div class="nav-links ui-label">
+<a href="index.html#work">Work</a>
+<a href="index.html#about">About</a>
+<a href="resume.pdf" rel="noopener" target="_blank">Resume</a>
+</div>
+</div>
+</div></div>
+</nav>
+<main id="top">
+<!-- HERO -->
+<header class="hero">
+<svg aria-hidden="true" class="hero-topo" fill="none" viewbox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+<g fill="none" stroke="#141414" stroke-width="0.5">
+<path d="M40 300 C160 180 300 160 420 240 C520 306 560 420 500 520"></path>
+<path d="M70 330 C180 220 310 200 430 275 C520 335 555 435 500 525"></path>
+<path d="M100 360 C200 262 320 244 440 312 C520 362 550 448 500 528"></path>
+<path d="M135 392 C225 306 332 290 448 350 C518 392 545 460 500 532"></path>
+<path d="M175 424 C255 352 348 338 456 390 C516 424 540 470 500 536"></path>
+<path d="M220 456 C290 398 366 388 464 430 C512 456 536 480 500 540"></path>
+</g>
+</svg>
+<div class="padding-global"><div class="container-large">
+<div class="hero-eyebrow ui-label">Selected UX Work</div>
+<h1 class="display-name">Spot</h1>
+<p class="statement hero-statement">The mobile app that erases all doubt about where you can park.</p>
+</div></div>
+</header>
+<!-- CONTEXT STRIP -->
+<section class="section section--flush-top">
+<div class="padding-global"><div class="container-large">
+<div class="context">
+<div class="context-item"><span class="ui-label">Role</span><div class="val">Primary UX Designer</div></div>
+<div class="context-item"><span class="ui-label">Context</span><div class="val">Creative Labs, a semester-long Rutgers design program</div></div>
+<div class="context-item"><span class="ui-label">Responsibilities</span><div class="val">Interaction &amp; UX design, research</div></div>
+<div class="context-item"><span class="ui-label">Tools</span><div class="val">Figma, Figjam, Google Forms</div></div>
+</div>
+</div></div>
+</section>
+<!-- HERO IMAGE -->
+<section class="section section--flush-top">
+<div class="padding-global"><div class="container-large">
+<div class="frame frame--bare"><img alt="The Spot app" src="images/spotlanding.webp"/></div>
+</div></div>
+</section>
+<!-- THE PROBLEM -->
+<section class="section sec">
+<div class="padding-global"><div class="container-large">
+<div class="split"><div><div class="sec-eyebrow ui-label">The Problem</div><h2 class="headline-lg sec-head">Finding parking downtown is stressful, time-wasting, and disorderly.</h2></div><div class="prose measure">
+<p class="body-lg">Say you found parallel parking downtown, but there are no meters or signs with instructions. Did you really get free parking, or will you come back to a ticket on your windshield?</p>
+<p class="body-lg">Or take a curbside spot in a busy city that does have signs, several of them, with convoluted rules you can't piece together. Do you take the risk of parking there, or keep circling for another spot and waste even more time?</p>
+<p class="body-lg">These experiences are shared by millions of drivers across the U.S. A study from transportation analytics company INRIX puts numbers on the pain:</p>
+</div></div>
+<div class="split split--body"><div></div><div class="stats">
+<div class="stat"><div class="num">17 hrs</div><div class="desc body-md">the average American spends searching for parking, per year. In New York City it's 107 hours.</div></div>
+<div class="stat"><div class="num">$97</div><div class="desc body-md">overpaid on parking annually per driver, driven by a lack of knowledge about nearby spots.</div></div>
+<div class="stat"><div class="num">$20B+</div><div class="desc body-md">the total that overpayment adds up to for all Americans, every year.</div></div>
+</div></div>
+<div class="split split--body"><div></div><div class="prose measure mt-lg">
+<p class="body-lg">So an open spot is hard to find, and even once found, its legality and value are a gray area. There's no simple process for finding and understanding parking anywhere. That leads to being late to or missing events entirely, wasted money on tickets, gas, and overpriced parking, and unnecessary stress every time a driver has to decide on a spot.</p>
+</div></div>
+<div class="hmw">
+
+<p class="statement">How might we help drivers make a quick, informed decision on where they should park?</p>
+</div>
+</div></div>
+</section>
+<!-- THE SOLUTION -->
+<section class="section sec sec--tint">
+<div class="padding-global"><div class="container-large">
+<div class="split"><div><div class="sec-eyebrow ui-label">The Solution</div><h2 class="headline-lg sec-head">An app that assists with every step of the parking process.</h2></div><p class="body-lg measure">Spot gives the user all possible information to park in the best spot for their needs, before they ever start circling the block.</p></div>
+<div class="frame frame--bare mt-lg"><img alt="Spot app overview" loading="lazy" src="images/spotstudymock.webp"/></div>
+</div></div>
+</section>
+<!-- USER RESEARCH -->
+<section class="section sec">
+<div class="padding-global"><div class="container-large">
+<div class="split"><div><div class="sec-eyebrow ui-label">User Research</div><h2 class="headline-lg sec-head">Learning where parking actually hurts.</h2></div><div class="prose measure">
+<p class="body-lg">We started with a survey built to understand which parts of the parking experience cause anxiety and confusion, what motivates people to park where they do, what they look for first when searching, when and where they'd actually use an app like this, and which issues were prominent enough to build around.</p>
+<p class="body-lg">The 70+ responses strongly supported our initial read on the problem:</p>
+</div></div>
+<div class="findings">
+<div class="finding">
+<div class="frame"><img alt="Survey chart: time to find parking" loading="lazy" src="images/chart1.webp"/></div>
+<p class="desc body-md"><strong>Less than 25%</strong> of people find parking right away in a new place. 60% say it takes 5 to 10 minutes.</p>
+</div>
+<div class="finding">
+<div class="frame"><img alt="Survey chart: legality confidence" loading="lazy" src="images/chart2.webp"/></div>
+<p class="desc body-md"><strong>Only 12%</strong> always know if their spot is legal. Half know only some of the time or less.</p>
+</div>
+<div class="finding">
+<div class="frame"><img alt="Survey chart: sign confusion" loading="lazy" src="images/chart3.webp"/></div>
+<p class="desc body-md"><strong>80% of respondents</strong> have experienced confusion trying to comprehend parking signs.</p>
+</div>
+</div>
+<!-- The interview sentence used to sit alone in a .split--body: empty 4fr column, paragraph
+     stranded in the 8fr column 64px below the charts, belonging to no heading. It is the
+     bridge between the research and the themes, so it is the first paragraph under the
+     heading that covers exactly that. -->
+<div class="split"><h3 class="headline-md subhead">Translating research insights into features</h3><div class="prose measure">
+<p class="body-lg">We followed the survey with in-depth interviews, which surfaced the specific pain points in people's parking process and rounded out our research goals.</p>
+<p class="body-lg">Across the survey and interviews, the biggest hardships fell into three themes: time, information about legality, and money. Grouping the recurring insights under those themes pointed us directly at the features that mattered most.</p>
+</div></div>
+<!-- "SO THE APP SHOULD" was repeated on all three rows. Three identical labels down one column
+     is a column HEADER wearing three hats. Said once, at the top, where it also earns the left
+     column a name. Ryan's wording for the two columns: Problem / Solution. -->
+<div class="insights">
+<div class="insights-head">
+<span class="ui-label">Problem</span>
+<span class="ui-label">Solution</span>
+</div>
+<div class="insight">
+<div class="pain">Looking for parking takes too much time.</div>
+<div class="answer body-md">Make browsing every nearby option fast and easy, on an interactive map, with the ability to check parking ahead of time.</div>
+</div>
+<div class="insight">
+<div class="pain">It's hard to get clear information about parking rules.</div>
+<div class="answer body-md">Give every spot a details section where all the important legality information lives in one place.</div>
+</div>
+<div class="insight">
+<div class="pain">There's no easy way to compare the cost of parking options.</div>
+<div class="answer body-md">Clearly show the cost of parking in different areas, and make free parking stand out.</div>
+</div>
+</div>
+</div></div>
+</section>
+<!-- BEGINNING THE DESIGN -->
+<section class="section sec sec--tint">
+<div class="padding-global"><div class="container-large">
+<div class="split"><div><div class="sec-eyebrow ui-label">Process</div><h2 class="headline-lg sec-head">Beginning the design.</h2></div><div class="prose measure">
+<p class="body-lg">With the key features outlined, we started brainstorming. A crazy-eights exercise got everyone's main ideas down fast and showcased each person's thought process, and from there we discussed variations on the app's structure and features, then compiled the common themes into one main design we collaborated on as a group.</p>
+</div></div>
+<div class="frame mt-lg"><img alt="The team and our sketches" loading="lazy" src="images/spotsketches.webp"/></div>
+<p class="frame-caption caption">The team and our messy (but super important) sketches.</p>
+<!-- This paragraph was in a .split--body: empty 4fr column on the left, prose in the 8fr
+     column. On this page the left column is the LABEL column, so an empty one reads as a
+     missing label and the paragraph looks unmoored. It is not moved after both images,
+     because it is the reason the wireframes look the way they do — sentence one is about the
+     sketches above it, sentence two is the decision the wireframes below it implement. It is
+     now a note belonging to the image it follows: same left edge as that image and its
+     caption, at the page's reading measure. -->
+<p class="body-lg image-note measure">Most of our individual sketches revolved around an interactive map, with nearly every function living on that single map screen. We committed to that approach for the final design: people use this app while driving or sitting in their car, and features buried behind menus would be impossible to navigate without a user's full attention.</p>
+<div class="frame mt-lg"><img alt="Spot wireframes" loading="lazy" src="images/spotwireframes.webp"/></div>
+<p class="frame-caption caption">Wireframes locked the layout and the placement of the core features.</p>
+</div></div>
+</section>
+<!-- FINAL DESIGN -->
+<section class="section sec">
+<div class="padding-global"><div class="container-large">
+<div class="sec-eyebrow ui-label">Final Design</div>
+<h2 class="headline-lg sec-head">Every detail a driver needs before parking</h2>
+<div class="feature feature-lead">
+<div class="feature-media"><div class="frame frame--bare"><img alt="Explore all parking nearby" loading="lazy" src="images/showcase1.webp"/></div></div>
+<div class="feature-text">
+<h3 class="headline-md feature-title">Explore all parking nearby</h3>
+<p class="body-lg">Free curbside parking shows in green and paid parking in blue, so they're distinguishable at a glance. Curbsides where parking isn't legal or available show as gray dotted lines, so even the absence of parking is explicit. Everything visible on the road in real life is explained, leaving no room for doubt or overthinking.</p>
+</div>
+</div>
+<div class="feature feature--flip">
+<div class="feature-media"><div class="frame frame--bare"><img alt="Spot details" loading="lazy" src="images/showcase2.webp"/></div></div>
+<div class="feature-text">
+<h3 class="headline-md feature-title">Learn about parking spots</h3>
+<p class="body-lg">Tapping an icon or a highlighted curbside opens the spot details, all the in-depth information in one glance, so the user immediately knows whether a spot works for their needs. From there they can navigate with their default maps app or pay the meter with Parkmobile.</p>
+</div>
+</div>
+<div class="feature">
+<div class="feature-media"><div class="frame frame--bare"><img alt="Filters" loading="lazy" src="images/showcase3.webp"/></div></div>
+<div class="feature-text">
+<h3 class="headline-md feature-title">Show only spots that are useful</h3>
+<p class="body-lg">The filters cover every aspect of a parking spot, so users can narrow down to exactly the spots that suit their needs.</p>
+</div>
+</div>
+<div class="feature feature--flip">
+<div class="feature-media"><div class="frame frame--bare"><img alt="Search ahead of time" loading="lazy" src="images/showcase4.webp"/></div></div>
+<div class="feature-text">
+<h3 class="headline-md feature-title">Find parking ahead of time</h3>
+<p class="body-lg">The search bar lets users look up any destination and see what parking looks like there, how far the best options are, and navigate straight to them, eliminating the search entirely on arrival.</p>
+</div>
+</div>
+</div></div>
+</section>
+<!-- TAKEAWAYS -->
+<section class="section sec sec--tint">
+<div class="padding-global"><div class="container-large">
+<div class="sec-eyebrow ui-label">Takeaways</div>
+<h2 class="headline-lg sec-head">What I learned.</h2>
+<div class="takeaways">
+<div class="takeaway">
+<h3 class="headline-md">What was new to me?</h3>
+<p class="body-md">Working on a team, every week, on the same project and schedule was new in this context. Brainstorming ideas and deciding which problems to solve together taught me to cooperate under pressure and make sure everyone had equal contribution.</p>
+</div>
+<div class="takeaway">
+<h3 class="headline-md">What was most challenging?</h3>
+<p class="body-md">Choosing which problems to focus on, and making sure the app cleared up all the confusion around parking. Designing something that presented that much information while staying simple, clean, and easy to use was a real challenge, and I'm happy with the result.</p>
+</div>
+<div class="takeaway">
+<h3 class="headline-md">How does the solution help users?</h3>
+<p class="body-md">Spot shows every possible place to park on one map, where similar apps only cover some kinds of parking. That saves users time and money, relieves the stress of deciding on a spot, and can even be the encouragement to go out when parking would usually be the excuse not to.</p>
+</div>
+<div class="takeaway">
+<h3 class="headline-md">How would I measure success?</h3>
+<p class="body-md">Given more time to develop and launch, success would mean peace of mind after parking: certainty that the spot is legal, no more circling blocks, safer roads with fewer illegally parked cars, and parking no longer being a reason to be late or miss out.</p>
+</div>
+</div>
+</div></div>
+</section>
+<!-- CLOSE -->
+<section class="section sec">
+<div class="padding-global"><div class="container-large">
+<div class="close-actions">
+<a class="btn btn-ghost ui-label" href="index.html#work">Back to work</a>
+</div>
+</div></div>
+</section>
+</main>
+
+<footer class="section footer" id="contact">
+  <div class="padding-global">
+    <div class="container-large">
+      <div class="footer-inner">
+        <div class="lets">Let&rsquo;s get in touch</div>
+        <div>
+          <div class="connect">Connect</div>
+          <div class="links caption">
+            <a href="https://www.linkedin.com/in/laytonryan" rel="noopener">LinkedIn</a>
+            <a href="mailto:ryanlaytondesign@gmail.com">Email</a>
           </div>
         </div>
+      </div>
     </div>
   </div>
-    <img src="images/spotLanding.png" alt="">
-  
-  </section>
+</footer>
 
-<button id="totop"><img src="images/chevrondown.png" style="transform: rotate(180deg); filter: invert(.5); height:50px; width:auto;" alt=""></button>
-
-
-
-<body id="body">
-<section id ="spotCaseStudy">
-<div><h1>The Problem</h1>
-<p style="font-size:28px; line-height:1.1; margin-bottom:50px;">Finding somewhere to park downtown and in cities is often a stressful, time-wasting, and disorderly process.</p></div>
-
-
-
-<h2 style="margin-top:100px;">Understanding the current parking process</h2>
-
-
-<div class="imagetext">
-<p>Let’s say you found parallel parking downtown, but don’t see any parking meters or signs with instructions. Did you really get free parking, or will you come back to your car with a parking ticket?</p>
-<img src="images/spotcar.png" alt="">
-</div>
-
-<div class="imagetext2">
-  <img src="images/spotsign.png" alt="">
-  <p>What about a spot, curbside in a busy city, that does have signs with parking rules listed. However, there are multiple signs with convoluted rules and regulations you can’t piece together. Do you take the risk of parking there when you’re unsure if it’s allowed, or do you keep driving around to find another spot, possibly wasting more time?</p>
-</div>
-<br>
-<br>
-<br>
-<br>
-<p>These experiences are shared with millions of drivers across the U.S.</p>
-<p>According to a study from transportation analytics company INRIX, Americans spend an average of <strong>17 hours per year</strong> searching for parking. In New York City, the average is <strong>107 hours per year</strong>.</p>
-<p>This <a href="https://inrix.com/wp-content/uploads/2017/07/INRIX_Parking_Pain_Infog_US_HR.pdf" target ="_blank">report</a> also states that a lack of knowledge about parking spots around them causes drivers to pay an average of <strong>$97 annually</strong> more on parking than they should. This totals to over <strong>$20 billion </strong>per year for all Americans.</p>
-
-<p>So, not only can finding an open spot be difficult, but it’s legality and value for the price can also be a gray area. There is currently no streamlined, quick, process for finding and understanding parking spots in any location.</p>
-
-<p>This leads to:</p>
-<ul id="problemlist">
-<li>  Being late to, or even missing events</li>
-<li>  Wasting money on tickets, gas, and expensive parking</li>
-<li>  Unnecessary stress and anxiety when deciding on spots</li>
-</ul>
-
-<div id="howMightWe">How might we help drivers make a <strong>quick and informed decision</strong> on <strong>where they should park?</strong></div>
-
-<h1>The Solution: SPOT</h1>
-<img src="images/spotstudymock.png" alt="" style="width:100%; height:auto;">
-<p>An app that assists the user with <strong>every step</strong> of the parking process, providing <strong>all possible information</strong> to park in the best spot for their needs. </p> 
-
-
-<h1 style="margin-top:100px;">User Research</h1>
-<h2 style="margin-top:50px;">Learning about common pain points when parking</h2>
-<p>First, we created a survey to gain insights into:</p>
-<ul>
-    <li>Which aspects of the parking experience cause anxiety and confusion</li>
-    <li>What motivates people to park in certain areas and in certain parking spots</li>
-    <li>What people first look for when trying to find parking</li>
-    <li>Exactly when and where people would want to use this app</li>
-    <li>Which issues are prominent enough to focus on for our app</li>
-</ul>
-<br>
-<br>
-<p>The 70+ responses from our survey strongly supported our initial perception of people’s experience with parking.</p>
-
-<div class="statistic"> <img src="images/chart1.png" alt="" loading = "lazy"><div class="line"></div><p><strong>Less than 25%</strong> of people say they <strong>find parking right away</strong> in a new place. 60% say it takes 5-10 minutes.</p></div>
-<div class="statistic"> <img src="images/chart2.png" alt="" loading = "lazy"><div class="line"></div><p><strong>Only 12%</strong> of respondents said that they <strong>always know if their spot is legal.</strong> Half of respondents know if their parking is legal only some of the time or less.</p></div>
-<div class="statistic"> <img src="images/chart3.png" alt="" loading = "lazy"><div class="line"></div><p><strong>80% of the respondents</strong> have <strong>experienced confusion</strong> when trying to comprehend signs with parking information.</p></div>
-<p style="margin-top:50px;">We followed the survey distribution with some in-depth interviews. These gave us integral information about specific aspects of parking that are common pain points, as well as what people’s process of finding parking is - ultimately achieving our research goals.</p>
-<br>
-<h2 style="margin-top:100px;">Analyzing Data: Translating research insights into features</h2>
-<p>Taking insights from our survey, as well as interviews and what participants shared, we found the biggest hardships people had with parking could mostly fall into 3 themes: time, information about legality of spaces, and money.</p>
-<p>We organized lots of thoughts and ideas discussed by people we interviewed into these three themes - many of these ideas/insights were shared by multiple respondents. Grouping these similar insights together allowed us to focus on and pinpoint important features that would solve the main problems users have with the current parking process.</p>
-
-<div class="analyze"><img src="images/timevisual.png" alt="" id="quotes"><img src="images/arrow.png" alt="" class="arrow"><p><strong>Looking for parking takes too much time</strong> - ensure UI allows for quick and easy browsing/discovery of all parking options nearby (like an interactive map), and  ability to check in advance</p></div>
-<div class="analyze"><img src="images/infovisual.png" alt="" id="quotes"><img src="images/arrow.png" alt="" class="arrow"><p><strong>It can be difficult to get clear information about parking rules</strong> - have a section where all important information about when parking is legal is shown</p></div>
-<div class="analyze"><img src="images/moneyvisual.png" alt="" id="quotes"><img src="images/arrow.png" alt="" class="arrow"><p><strong>There is no easy way to compare the cost of different parking options</strong> - clearly show the cost of parking in different areas and make free parking stand out in the app</p></div>
-
-
-<h1 style ="margin-top:100px;">Beginning the Design</h1>
-<p>After outlining the most important features of our app, we started brainstorming designs. First, with a crazy eights exercise which helped showcase everyones' thought process, and quickly get everyone’s main ideas down. We were also able to discuss variations of the structure and features of the app.</p>
-<p>Then, we compiled common themes from our individual drawings to one main design which we collaborated on as a group:</p>
-<img src="images/spotsketches.png" alt="" style="width:100%; height:auto; margin-top:25px;" loading="lazy">
-<p>The team and our messy (but super important) sketches.</p>
-<br>
-<p>The designs in most of our individual sketches revolved around an interactive map, and most app functions and features could be found on this single map screen. We went with this approach for our final design. People would be using this app while driving or in their car, and an app with features buried behind menus and different screens would be very difficult to navigate without users’ full attention.</p>
-<br>
-<br>
-<img src="images/spotwireframes.png" alt="" style="width:100%; height:auto;" loading="lazy">
-<p>We then translated these ideas and more into cleaner wireframes. This allowed us to get down the layout of the app, and a general location of the features we wanted to focus on.</p>
-
-<section id="finalDesigns">
-  <div id="finalDesignsTitle">
-<h1 style="margin-top:100px;">Final Design</h1></div>
-
-<img src="images/showcase1.png" alt="" class="wideshowcase">
-<h3>Explore all parking nearby</h3>
-<p>Free curbside parking is shown in green, and paid parking is shown in blue to easily differentiate them at a glance. Curbsides where parking isn’t legal or available is shown by gray dotted lines, so even a lack of parking is clear to users. All of these design choices were made to ensure that everything seen on the road in real life is explained, leaving no room for doubt or overthinking on the user’s part.</p>
-
-<div class="designShowcaseL"><img src="images/showcase2.png" alt=""loading="lazy"><div><h3>Learn about parking spots</h3><p>Tapping on an icon or highlighted curbside for parking opens up the spot details, where the user can see all in-depth information about the spot. In one glance, the user is able to see if a spot works for their parking needs.</p><p>The user can navigate to the spot with their default maps app, and pay for the meters with Parkmobile.</p></div>
-</div>
-
-<div class="designShowcaseR"><div><h3>Show only spots that are useful</h3><p>For the filters screen, we wanted to ensure that all aspects of a parking spot are covered, to allow users to narrow down the exact spots that suits their needs.</p></div>
-<img src="images/showcase3.png" alt="" loading="lazy">
-</div>
-
-<img src="images/showcase4.png" alt="" class="wideshowcase" style="margin-top:100px;">
-<h3>Find parking ahead of time</h3>
-<p>The search bar allows the user to search anywhere they want, to see what parking looks like there. They can see how far the best parking is from their desired location, then choose to navigate there to eliminate any time looking for parking when arriving.</p>
-
-</section>
-
-<h1 style="margin-top:100px">Takeaways</h1>
-
-<h2 style="margin-top:75px;">What was new to me?</h2>
-<p>Working on a team every week on the same project on a schedule was new to me in this context. From brainstorming ideas to figuring out which problems to solve together really helped me be cooperative with teammates under pressure and ensure that everyone is able to have equal contribution.</p>
-
-<h2 style="margin-top:75px;">What was the most challenging?</h2>
-<p>Figuring out which problems to focus on, as well as ensuring the app clears up all confusion on parking was difficult. There are so many aspects in the process of parking somewhere that can be hard for users, and we wanted to ensure the app was able to solve them in a clear, easy to understand way. Coming up with a design that not only presented the large amount of information for parking, but was still simple, clean, and easy to use, was a challenge, but I am happy with the result.</p>
-
-<h2 style="margin-top:75px;" >How does my solution help users?</h2>
-<p>Spot shows all parking around the user's location on a map. It is unique as it shows every possible place where users can park, as opposed to similar apps, which don't cover all kinds of parking. Overall, this saves users time, leading to less late or even missed appointments and events. It saves users money, ensuring that they can find the best value, and free, parking spots. It also can relieve the stress that users experience while parking, which can be encouragement to go out more often, when they would usually be dissuaded by parking.</p>
-
-<h2 style="margin-top:75px;" >How would I measure success?</h2>
-<p style="margin-bottom: 150px;">Given we had more time to develop and launch this app, success would mean peace of mind for users after parking their car - they'd be sure that their spot is legal. It would mean no more stress because of wasting time, aimlessly circling blocks. This could mean roads that are safer to drive on as cars aren’t blocking the road because they parked where they shouldn’t. Parking would no longer be an excuse for being late to or missing opportunities.</p>
-
-
-
-
-</section>
-<section id="footer">
-  <div id="allFooterText">
-  <div><div id="footerTitle">Let's get in touch!</div>    <div>
-  <h3 id="footerNote">Portfolio designed and coded by Ryan Layton</h3>
-</div>  </div>
-<div id="footerConnect">
-  <h2>Connect</h2>
-      <a href="https://www.linkedin.com/in/laytonryan/" target="_blank" style="margin-right:8px;"><img src="images/linkedin.svg" alt="" style ="height: 32px; width:32px;"></a>
-      <a href="https://medium.com/@rylay" target="_blank" ><img src="images/medium.svg" alt="" style ="height: 32px; width:32px;"></a>
-</div>
-<div id="footerContact">
-
-  <h2>Contact</h2>
-  <a href="mailto:ryanlaytondesign@gmail.com" target="_blank">ryanlaytondesign@gmail.com</a>
-  
-</div>
-
-
-</div>
-</section>
-<script src="projectscript.js"></script>
-  </body>
-</html>
+<script>
+  (function(){
+    var nav = document.getElementById('nav');
+    if (!nav) return;
+    function onScroll(){ nav.classList.toggle('is-scrolled', window.scrollY > 20); }
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+  })();
+</script>

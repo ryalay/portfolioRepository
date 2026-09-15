@@ -1,138 +1,634 @@
+<!--
+  Ryan Layton / Portfolio Homepage (index.html)
+  Ninth file in the set. Architectural Narrative system.
+  - Hero uses Ryan's interactive waves canvas (script included verbatim at end of body).
+  - Card tags and section order per final decisions. RPEC was removed from the site.
+  - Fixes baked in: Leverage Companies in Experience, bio opener, Instagram typo.
+  - Image srcs use local repo paths (images/...) / see notes for the export list.
+  - Case study links keep old-site filenames where they existed (juiced, spot, kehe, gighub)
+    to avoid breaking circulating links.
+-->
 <!DOCTYPE html>
-<html lang="en" id="html">
-  <style>@font-face {
-    font-family: leagueSpartan;
-    src: url(League_Spartan/LeagueSpartan-VariableFont_wght.ttf);
-  }</style>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Ryan Layton - Portfolio</title>
-    <link rel="stylesheet" href="styles.css"/>
-    <link rel="icon" href="images/initials.png">
-  </head>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ryan Layton / UX, Growth &amp; Brand</title>
+<meta name="description" content="Ryan Layton designs thoughtful digital experiences where product, growth, and brand meet. UX, web, SEO, email, and CRM systems.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 
+<style>
+  :root {
+    --canvas: #F5F2EE;
+    --ink: #141414;
+    --slate: #5D737E;
+    --olive: #707A5E;
+    --warm-gray: #8D8D8D;
+    --link-hover: #51656F;   /* slate, darkened to clear AA on canvas and field */
+    --obsidian: #1A1A1A;
+    --field: #EBE8E4;
+    --hairline: #D8D3CB;
+    --muted: #4C4A47;
 
+    --container-max: 1200px;
+    --gutter: 32px;
+    --section-pad: 80px;
+    --stack-sm: 8px;
+    --stack-md: 16px;
+    --stack-lg: 48px;
+  }
 
-  <section class="tabsgrid">
-    <div class="name">
-      <a href="./index.html"><img src="./images/initials.png" /></a>
+  * { box-sizing: border-box; }
+  /* The nav is fixed at 68px, and nothing offset the anchor targets, so every in-page jump
+     (#work, #about, #contact, and the case-study nav links back to index.html#work) landed
+     the target flush at the viewport top, underneath the nav. scroll-padding-top on the
+     scroll container fixes all of them at once; per-element scroll-margin would need adding
+     to every new anchor. 88px is the nav plus 20px of air. */
+  html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+  body { margin: 0; background: var(--canvas); color: var(--ink); font-family: "Inter", sans-serif; -webkit-font-smoothing: antialiased; font-size: 16px; line-height: 26px; }
+  img { display: block; max-width: 100%; }
+
+  .padding-global { padding-left: var(--gutter); padding-right: var(--gutter); }
+  .container-large { max-width: var(--container-max); margin: 0 auto; width: 100%; }
+  .section { padding-top: var(--section-pad); padding-bottom: var(--section-pad); }
+
+  .display-name { font-family: "Inter", sans-serif; font-weight: 800; font-size: 96px; line-height: 0.98; letter-spacing: -0.02em; text-transform: uppercase; margin: 0; }
+  .display-sm { font-family: "Inter", sans-serif; font-weight: 800; font-size: 44px; line-height: 1; letter-spacing: -0.01em; text-transform: uppercase; margin: 0; }
+  .statement { font-family: "Playfair Display", serif; font-weight: 600; font-size: 40px; line-height: 50px; margin: 0; }
+  /* Project card titles. Playfair at 24px — and at 20px in .grid-4 — was the worst offender on
+     the page: seven of them, all set at a size where the hairline strokes go weak. Inter 600
+     matches the headline voice used across all eight case study pages.
+     .about-row-title shares the rule rather than copying the numbers: "Experience" and "Resume"
+     are subheads at the same depth as a project card title (both sit one level under a section
+     h2), so they are the same step of the scale and can never drift apart. They were 12px
+     uppercase labels, which put a real subhead in the same voice as a caption. */
+  .card-title,
+  .about-row-title { font-family: "Inter", sans-serif; font-weight: 600; font-size: 24px; line-height: 32px; letter-spacing: -0.01em; margin: 0; }
+  .body-lg { font-size: 20px; line-height: 32px; }
+  .body-md { font-size: 16px; line-height: 26px; }
+  .ui-label { font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; }
+  .caption { font-size: 14px; line-height: 20px; color: var(--warm-gray); }
+  .measure { max-width: 62ch; }
+  .mt-lg { margin-top: var(--stack-lg); }
+
+  /* Nav */
+  .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 50; background: transparent; transition: background .3s ease, border-color .3s ease; border-bottom: 1px solid transparent; }
+  .nav.is-scrolled { background: rgba(245,242,238,0.95); border-bottom: 1px solid var(--hairline); }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+  .nav-name { font-weight: 600; font-size: 15px; letter-spacing: 0.02em; text-decoration: none; color: var(--ink); }
+  .nav-links { display: flex; gap: 32px; }
+  /* Nav hover is a COLOUR SHIFT, not a growing underline. --link-hover is the site's slate
+     darkened from #5D737E: slate itself measures 4.46:1 on the canvas and 4.08:1 on the tinted
+     hero, both under the 4.5:1 AA floor for 16px text. #51656F is the same hue and clears it on
+     both (5.47:1 and 5.00:1). Focus is still handled by the global a:focus-visible outline, so
+     removing the underline costs nothing for keyboard users. */
+  .nav-links a { color: var(--ink); text-decoration: none; transition: color .2s ease; }
+  .nav-links a:hover, .nav-links a:focus-visible { color: var(--link-hover); }
+
+  /* Hero with waves background */
+  .hero { position: relative; padding-top: 180px; padding-bottom: 140px; overflow: hidden; }
+  .waves { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: transparent; pointer-events: none; }
+  .waves-canvas { width: 100%; height: 100%; display: block; }
+  .hero-content { position: relative; z-index: 1; }
+  /* Fade overlay: sits in front of the waves, behind the text.
+     Opaque areas use the page canvas color; the transparent window is where the waves shine through.
+     Tune the window with the ellipse size (60% 70%) and position (at 70% 45%). */
+  .hero-fade {
+    position: absolute; inset: 0; pointer-events: none;
+    background: radial-gradient(
+      ellipse 60% 70% at 70% 45%,
+      rgba(245, 242, 238, 0) 0%,
+      rgba(245, 242, 238, 0) 40%,
+      rgba(245, 242, 238, 0.9) 80%,
+      #F5F2EE 100%
+    );
+  }
+  .hero-statement { margin-top: var(--stack-lg); max-width: 24ch; }
+
+  /* Buttons */
+  .btn { display: inline-flex; align-items: center; padding: 14px 32px; text-decoration: none; border: 1px solid transparent; }
+  .btn-primary { background: var(--slate); color: #fff; }
+  .btn-primary:hover { background: #536771; }
+  .btn-ghost { border-color: var(--ink); color: var(--ink); }
+  .btn-ghost:hover { background: var(--ink); color: var(--canvas); }
+
+  /* Work sections */
+  .work-section + .work-section { padding-top: 0; }
+  /* SECTION TITLES ARE HEADINGS, NOT EYEBROWS. They were .ui-label — 12px uppercase — which
+     put the three section titles in the same voice as every caption, chip and button label on
+     the site. Ryan's read: the eyebrow is overused and it reads as generated.
+     They were then set in Playfair, which broke the site-wide rule: Playfair is for the big,
+     display, artistic moments only (.display-name's companion .statement, the footer line).
+     At 30px a Didone's thin strokes are still fighting the reader for no gain. This is now
+     exactly .headline-md from the case study pages, so the two scales are literally the same. */
+  .section-label { font-family: "Inter", sans-serif; font-weight: 600; font-size: 30px;
+    line-height: 40px; letter-spacing: -0.02em; text-transform: none; color: var(--ink);
+    margin: 0 0 var(--stack-lg); display: block; }
+  @media (max-width: 720px) { .section-label { font-size: 26px; line-height: 34px; } }
+
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: var(--gutter); }
+  .grid-4 { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--gutter); }
+
+  /* Cards */
+  /* Cards in a row are EQUAL HEIGHT. Grid stretches the item, but display:block left the body
+     at content height, so a card whose tag line wrapped to two lines made its neighbours look
+     short. Flex column with the body growing means every card in a row ends level. */
+  .card { text-decoration: none; color: var(--ink); display: flex; flex-direction: column; }
+  .card-body { flex: 1 1 auto; }
+  .card-media { background: var(--field); border: 1px solid var(--hairline); aspect-ratio: 3 / 2; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+  .card-media img { width: 100%; height: 100%; object-fit: cover; transition: opacity .25s ease; opacity: 0.95; }
+  .card:hover .card-media img { opacity: 1; }
+  .card-media--dark { background: var(--obsidian); border-color: var(--obsidian); }
+  .card-body { background: var(--field); border: 1px solid var(--hairline); border-top: none; padding: 20px var(--stack-md) 24px; }
+  .card-tags { margin-top: var(--stack-sm); color: var(--warm-gray); }
+  .grid-4 .card-title { font-size: 20px; line-height: 26px; }
+  .grid-4 .card-media { aspect-ratio: 1 / 1; }
+
+  /* About */
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--stack-lg) 64px; }
+  .about-grid .prose p { color: var(--ink); }
+  .about-grid .prose p + p { margin-top: var(--stack-md); }
+  .about-row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--stack-md) 64px; border-top: 1px solid var(--hairline); padding-top: var(--stack-lg); margin-top: var(--section-pad); }
+  /* .about-row .ui-label removed: those two labels are now <h3> subheads. */
+  .exp-item { margin: 0 0 var(--stack-md); }
+  .exp-item .role { color: var(--muted); }
+  .link-arrow { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--ink); padding-bottom: 2px; }
+  .link-arrow:hover { color: var(--slate); border-color: var(--slate); }
+
+  /* Footer */
+  .footer { background: var(--obsidian); color: var(--canvas); }
+  .footer-inner { display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: var(--stack-lg); }
+  .footer .lets { font-family: "Playfair Display", serif; font-style: italic; font-weight: 500; font-size: 28px; }
+  .footer .connect { font-family: "Playfair Display", serif; font-size: 22px; }
+  .footer .links { margin-top: var(--stack-sm); }
+  .footer .links a { color: rgba(245,242,238,0.6); text-decoration: none; margin-right: 16px; }
+  .footer .links a:hover { color: var(--canvas); }
+
+  a:focus-visible, .btn:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+
+  @media (max-width: 900px) {
+    .grid-4 { grid-template-columns: 1fr 1fr; }
+    .about-grid, .about-row { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 640px) {
+    :root { --gutter: 24px; --section-pad: 40px; }
+    .display-name { font-size: 52px; }
+    .display-sm { font-size: 32px; }
+    .statement { font-size: 28px; line-height: 36px; }
+    .body-lg { font-size: 18px; line-height: 29px; }
+    .hero { padding-top: 130px; padding-bottom: 80px; }
+    .nav-links { gap: 20px; }
+    .grid-2 { grid-template-columns: 1fr; }
+    .grid-4 { grid-template-columns: 1fr; }
+    .grid-4 .card-media { aspect-ratio: 3 / 2; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="padding-global"><div class="container-large">
+    <div class="nav-inner">
+      <a href="#top" class="nav-name">Ryan Layton</a>
+      <div class="nav-links ui-label">
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="resume.pdf" target="_blank" rel="noopener">Resume</a>
+      </div>
     </div>
-    <div class="tabs">
-      <a id = "worklink" href="index.html#work" onclick="showScroll()">Work</a>  
-      <a href="./about.html">About</a>
-      <a href="images/RYAN-LAYTON-RESUME.pdf" target="_blank">Resume</a>
+  </div></div>
+</nav>
+
+<main id="top">
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="waves" id="waves-bg">
+      <canvas class="waves-canvas" id="waves-canvas"></canvas>
     </div>
+    <div class="hero-fade" aria-hidden="true"></div>
+    <div class="padding-global"><div class="container-large">
+      <div class="hero-content">
+        <h1 class="display-name">Ryan<br>Layton</h1>
+        <p class="statement hero-statement">Designing thoughtful digital experiences where product, growth, and brand meet.</p>
+        <div class="mt-lg">
+          <a href="#work" class="btn btn-primary ui-label">View Work</a>
+        </div>
+      </div>
+    </div></div>
+  </header>
+
+  <!-- BRAND OWNERSHIP -->
+  <section class="section work-section" id="work">
+    <div class="padding-global"><div class="container-large">
+      <h2 class="section-label">Brand Ownership</h2>
+      <div class="grid-2">
+        <a class="card" href="leverage-homes.html">
+          <div class="card-media"><img src="images/card-leverage-homes.webp" alt="Leverage Homes website on a laptop" loading="lazy"></div>
+          <div class="card-body">
+            <h3 class="card-title">Leverage Homes</h3>
+            <p class="card-tags body-md">Brand · Web · SEO · Email · CRM</p>
+          </div>
+        </a>
+        <a class="card" href="brick-city-capital.html">
+          <div class="card-media card-media--dark"><img src="images/card-brick-city.webp" alt="Brick City Capital website on a laptop" loading="lazy"></div>
+          <div class="card-body">
+            <h3 class="card-title">Brick City Capital</h3>
+            <p class="card-tags body-md">Brand · Web · SEO · Email · CRM</p>
+          </div>
+        </a>
+      </div>
+    </div></div>
   </section>
 
-  <section class="mobileHeader">
-    <div id="mobilename">
-      <a href="./index.html"><img src="./images/initials.png" /></a>
-    </div>
-    <div>
-    <ul class="mobilemenuopen">
-      <li><a class="menuItem" href="#work">Work</a></li>
-      <li><a class="menuItem" href="./about.html">About</a></li>
-      <li><a class="menuItem" href="images/RYAN-LAYTON-RESUME.pdf">Resume</a></li>
-    </ul>
-    <button class="mobilemenu">
-      <i class ="menuIcon"><img src="images/mobilemenu.png" alt=""></i>
-      <i class ="closeIcon"><img src="images/close.png" alt=""></i>
-      </button>
-    </div>
-  
-
+  <!-- FEATURED UX WORK -->
+  <section class="section work-section">
+    <div class="padding-global"><div class="container-large">
+      <h2 class="section-label">Featured UX Work</h2>
+      <div class="grid-2">
+        <a class="card" href="juiced.html">
+          <div class="card-media"><img src="images/card-juiced.webp" alt="The Juiced app" loading="lazy"></div>
+          <div class="card-body">
+            <h3 class="card-title">Juiced.io</h3>
+            <p class="card-tags body-md">UX Design · Client Collaboration</p>
+          </div>
+        </a>
+        <a class="card" href="spot.html">
+          <div class="card-media"><img src="images/card-spot.webp" alt="The Spot app" loading="lazy"></div>
+          <div class="card-body">
+            <h3 class="card-title">Spot</h3>
+            <p class="card-tags body-md">UX Design · User Research</p>
+          </div>
+        </a>
+      </div>
+    </div></div>
   </section>
 
-
-  <div id="loader" class="center"></div>
-
-
-
-
-  <section id ="landingScreen">
-
-    
-    <video id="backgroundvid" autoplay loop muted poster="images/oceanstill.png">
-      <source src="" type="video/mp4">
-      </video>
-
-      <iframe id ="realbackgroundvid" poster="images/oceanstill.png"
-        src="https://www.youtube.com/embed/sc1GUArbsXk?modestbranding=1&fs=0&autoplay=1&mute=1&controls=0&loop=1&rel=0&showinfo=0&playlist=sc1GUArbsXk" title="YouTube video player"
-        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-      <video id="backgroundvidmobile" autoplay loop muted playsinline poster="images/oceanstill.png">
-        <source src="" type="video/mp4">
-        </video>
-
-      <div id="landingText">
-    <h1>Ryan Layton</h1>
-    <h2>a curiosity-driven ux designer</h2>
+  <!-- INTERFACE DESIGN & SELECTED PROJECTS -->
+  <section class="section work-section">
+    <div class="padding-global"><div class="container-large">
+      <h2 class="section-label">Interface Design &amp; Selected Projects</h2>
+      <div class="grid-4">
+        <a class="card" href="kehe.html">
+          <div class="card-media"><img src="images/card-kehe.webp" alt="KeHE platform work" loading="lazy"></div>
+          <div class="card-body">
+            <h3 class="card-title">KeHE Distributors</h3>
+            <p class="card-tags body-md">Enterprise UX · Professional Work</p>
+          </div>
+        </a>
+        <a class="card" href="streeteats.html">
+          <div class="card-media"><img src="images/card-streeteats.webp" alt="The StreetEats app" loading="lazy"></div>
+          <div class="card-body">
+            <h3 class="card-title">StreetEats</h3>
+            <p class="card-tags body-md">Interface Design · Mobile App</p>
+          </div>
+        </a>
+        <a class="card" href="gighub.html">
+          <div class="card-media"><img src="images/card-gighub.webp" alt="The GigHub app" loading="lazy"></div>
+          <div class="card-body">
+            <h3 class="card-title">GigHub</h3>
+            <p class="card-tags body-md">Interface Design · Mobile App</p>
+          </div>
+        </a>
       </div>
-    <a href="#work" id ="workarrow"><img src="images/chevrondown.png" alt=""></a>
+    </div></div>
   </section>
 
-
-    <body id="body">
-
-    <section id="work">
-      <div id="realwork"></div>
-      <div class="workTitle">      
-        <h1>Case Studies</h1>
-      </div>
-      
-      <div id="workCards">
-
-        <a href="juiced.html"><div class="workCard"><div class = "imgcontainer"><img src="images/juicedthumbtest.png"loading="lazy"></div><div class="workcardtext"><h2>Juiced</h2><div class="line"></div><p>Giving secondhand sellers the tools they need to maximize profit</p><div class="projecttags"><div class="projecttag">UX Design</div></div></div></div></a>
-        <!--
-        <a href="leverage.html"><div class="workCard"><div class = "imgcontainer"><img src="images/juicedthumbtest.png"loading="lazy"></div><div class="workcardtext"><h2>Leverage Homes</h2><div class="line"></div><p>Giving secondhand sellers the tools they need to maximize profit</p><div class="projecttags"><div class="projecttag">UX Design</div><div class="projecttag">Web Design</div></div></div></div></a>
-        -->
-        <a href="kehe.html"><div class="workCard"><div class = "imgcontainer" style="background: linear-gradient(130deg, #3A3D56, #14194E);"><img src="images/kehethumb.png"loading="lazy"></div><div class="workcardtext"><h2>KeHE Distributors</h2><div class="line"></div><p>Designing a platform that connects brands like KIND Bars to retailers like Target</p><div class="projecttags"><div class="projecttag">UX Design</div><div class="projecttag">Internship</div></div></div></div></a>
-        <a href="spot.html"><div class="workCard"><div class = "imgcontainer" style="background: linear-gradient(130deg, #4B5660, #183541);"><img src="images/spotthumbnew.png"loading="lazy"></div><div class="workcardtext"><h2>Spot</h2><div class="line"></div><p>The mobile app that erases all doubt about where you can park</p><div class="projecttags"><div class="projecttag">UX Design</div><div class="projecttag">Rutgers Creative Labs</div></div></div></div></a>
-        <a href="foodtrucks.html"><div class="workCard"><div class = "imgcontainer" style="background: linear-gradient(130deg, #523742, #3c1023);"><img src="images/foodtruckthumbtest.png"loading="lazy"></div><div class="workcardtext"><h2>StreetEats</h2><div class="line"></div><p>The convenient platform for finding and ordering from food trucks</p><div class="projecttags"><div class="projecttag">UX Design</div><div class="projecttag">Solo Project</div></div></div></div></a>
-        <a href="gighub.html"><div class="workCard"><div class = "imgcontainer" style="padding:0; background: linear-gradient(130deg, #4a3131, #3d1313)"><img src="images/gighubthumbtest.png"loading="lazy"></div><div class="workcardtext"><h2>GigHub</h2><div class="line"></div><p>A gateway to the vibrant local music scene	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><div class="projecttags"><div class="projecttag">UX Design</div><div class="projecttag">Designathon</div></div></div></div></a>
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="padding-global"><div class="container-large">
+      <div class="about-grid">
+        <h2 class="display-sm">About</h2>
+        <div class="prose">
+          <p class="body-md">I'm Ryan, a designer working across product, growth, and brand in the NYC metro area.</p>
+          <p class="body-md">My eye for design and attention to detail have developed with me since I was a kid, when I was customizing and tinkering with the software on devices around the house.</p>
+          <p class="body-md">My experience, which spans UX, web design, and marketing technology, has allowed me to blend creative and technical skills to solve business challenges. From SaaS businesses to e-commerce and real estate, I've designed intuitive experiences, optimized digital systems, and driven business growth. I'm looking forward to creating more digital experiences that are impactful, attractive, and intuitive.</p>
+          <p class="body-md">When I'm not designing, I am an avid skier, and love traveling. I also like surfing and enjoy going to concerts and music festivals.</p>
+        </div>
       </div>
 
-      </section>
-
- <section id="mobilework">
-
-      <div class="workTitle">      
-        <h1>Case Studies</h1>
-      </div>
-      
-      <div id="mobileWorkCards">
-        <div class="mobileWorkCard"><div><div class = "mobileImgContainer"><img src="images/juicedthumbtest.png" loading="lazy" style="max-width:100%; height:auto;"></div><div><h2>Juiced</h2><p>Giving secondhand sellers the tools they need to maximize profit</p></div></div><a href="juiced.html"><button>View Case Study</button></a></div>
-        <div class="mobileWorkCard"><div><div class = "mobileImgContainer"><img src="images/kehethumb.png" loading="lazy"></div><div><h2>KeHE Distributors</h2><p>Designing a platform that connects brands like KIND Bars to retailers like Target</p></div></div><a href="kehe.html"><button>View Case Study</button></a></div>
-        <div class="mobileWorkCard"><div><div class = "mobileImgContainer"><img src="images/spotthumbnew.png" loading="lazy" style="max-width:100%; height:auto;"></div><div><h2>Spot</h2><p>The mobile app that erases all doubt about where you can park</p></div></div><a href="spot.html"><button>View Case Study</button></a></div>
-        <div class="mobileWorkCard"><div><div class = "mobileImgContainer"><img src="images/foodtruckthumbtest.png" loading="lazy" style="max-width:80%; height:auto; margin-left:auto; margin-right:auto;"></div><div><h2>StreetEats</h2><p>The convenient platform for finding and ordering from food trucks</p></div></div><a href="foodtrucks.html"><button>View Case Study</button></a></div>
-        <div class="mobileWorkCard"><div><div class = "mobileImgContainer" style="padding:0px;"><img src="images/gighubthumbtest.png" loading="lazy" style="max-width:80%; height:auto; margin-left:auto; margin-right:auto;"></div><div><h2>GigHub</h2><p>A gateway to the vibrant local music scene</p></div></div><a href="gighub.html"><button>View Case Study</button></a></div>
+      <div class="about-row">
+        <h3 class="about-row-title">Experience</h3>
+        <div>
+          <p class="exp-item body-md">Leverage Companies <span class="role">/ UX Manager</span></p>
+          <p class="exp-item body-md">Henry Schein One <span class="role">/ UX Design Intern</span></p>
+          <p class="exp-item body-md">KeHE Distributors <span class="role">/ UX Design Intern</span></p>
+          <p class="exp-item body-md">Clocky <span class="role">/ UX Design Intern</span></p>
+        </div>
       </div>
 
-    
+      <div class="about-row">
+        <h3 class="about-row-title">Resume</h3>
+        <div>
+          <a href="resume.pdf" class="link-arrow body-md" target="_blank" rel="noopener">View Full Resume</a>
+        </div>
+      </div>
+    </div></div>
+  </section>
 
-    </section>
+  <!-- FOOTER -->
+  <footer class="section footer" id="contact">
+    <div class="padding-global"><div class="container-large">
+      <div class="footer-inner">
+        <div class="lets">Let's get in touch</div>
+        <div>
+          <div class="connect">Connect</div>
+          <div class="links caption">
+            <a href="https://www.linkedin.com/in/laytonryan" rel="noopener">LinkedIn</a>
+            <a href="mailto:ryanlaytondesign@gmail.com">Email</a>
+          </div>
+        </div>
+      </div>
+    </div></div>
+  </footer>
 
-    <section id="footer">
-      <div id="allFooterText">
-      <div><div id="footerTitle">Let's get in touch!</div>    <div>
-      <h3 id="footerNote">Portfolio designed and coded by Ryan Layton</h3>
-    </div>  </div>
-        <div class="footerLinks">
-          <h2>Connect</h2>
-          <a href="https://www.linkedin.com/in/laytonryan/" target="_blank" style="margin-right:8px;"><img src="images/linkedin.svg" alt="" style ="height: 32px; width:32px;"></a>
-          <a href="https://medium.com/@rylay" target="_blank" ><img src="images/medium.svg" alt="" style ="height: 32px; width:32px;"></a>
-    </div>
-    <div id="footerContact">
-      <h2>Contact</h2>
-      <a href="mailto:ryanlaytondesign@gmail.com" target="_blank">ryanlaytondesign@gmail.com</a>
-      
-    </div>
+</main>
 
+<script>
+  // Nav: transparent until scroll
+  var nav = document.getElementById('nav');
+  function onScroll(){ nav.classList.toggle('is-scrolled', window.scrollY > 20); }
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+</script>
 
-  </div>
-    </section>
-    <script src="script.js"></script>
-    </body>
-    </html>
+<script>
+(() => {
+  // Respect reduced motion
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (prefersReducedMotion) return;
+
+  const container = document.getElementById("waves-bg");
+  const canvas = document.getElementById("waves-canvas");
+  if (!container || !canvas) return;
+
+  // ========= SETTINGS =========
+  const config = {
+    lineColor: "rgba(93, 115, 126, 0.15)",
+    backgroundColor: "rgba(252, 249, 245, 0)",
+    waveSpeedX: 0.0200,
+    waveSpeedY: 0.0100,
+    waveAmpX: 40,
+    waveAmpY: 20,
+    xGap: 24,
+    yGap: 24,
+    friction: 0.800,
+    tension: 0.005,
+    maxCursorMove: 10
+  };
+
+  container.style.background = config.backgroundColor;
+
+  // ========= ORIGINAL SUPPORT CLASSES =========
+  class Grad {
+    constructor(x, y, z) {
+      this.x = x; this.y = y; this.z = z;
+    }
+    dot2(x, y) { return this.x * x + this.y * y; }
+  }
+
+  class Noise {
+    constructor(seed = 0) {
+      this.grad3 = [
+        new Grad(1, 1, 0), new Grad(-1, 1, 0), new Grad(1, -1, 0), new Grad(-1, -1, 0),
+        new Grad(1, 0, 1), new Grad(-1, 0, 1), new Grad(1, 0, -1), new Grad(-1, 0, -1),
+        new Grad(0, 1, 1), new Grad(0, -1, 1), new Grad(0, 1, -1), new Grad(0, -1, -1)
+      ];
+      this.p = [
+        151,160,137,91,90,15,131,13,201,95,96,53,194,233,7,225,140,36,103,30,69,142,8,99,37,240,
+        21,10,23,190,6,148,247,120,234,75,0,26,197,62,94,252,219,203,117,35,11,32,57,177,33,88,
+        237,149,56,87,174,20,125,136,171,168,68,175,74,165,71,134,139,48,27,166,77,146,158,231,83,
+        111,229,122,60,211,133,230,220,105,92,41,55,46,245,40,244,102,143,54,65,25,63,161,1,216,
+        80,73,209,76,132,187,208,89,18,169,200,196,135,130,116,188,159,86,164,100,109,198,173,186,
+        3,64,52,217,226,250,124,123,5,202,38,147,118,126,255,82,85,212,207,206,59,227,47,16,58,
+        17,182,189,28,42,223,183,170,213,119,248,152,2,44,154,163,70,221,153,101,155,167,43,172,9,
+        129,22,39,253,19,98,108,110,79,113,224,232,178,185,112,104,218,246,97,228,251,34,242,193,
+        238,210,144,12,191,179,162,241,81,51,145,235,249,14,239,107,49,192,214,31,181,199,106,157,
+        184,84,204,176,115,121,50,45,127,4,150,254,138,236,205,93,222,114,67,29,24,72,243,141,128,
+        195,78,66,215,61,156,180
+      ];
+      this.perm = new Array(512);
+      this.gradP = new Array(512);
+      this.seed(seed);
+    }
+    seed(seed) {
+      if (seed > 0 && seed < 1) seed *= 65536;
+      seed = Math.floor(seed);
+      if (seed < 256) seed |= seed << 8;
+      for (let i = 0; i < 256; i++) {
+        const v = (i & 1) ? (this.p[i] ^ (seed & 255)) : (this.p[i] ^ ((seed >> 8) & 255));
+        this.perm[i] = this.perm[i + 256] = v;
+        this.gradP[i] = this.gradP[i + 256] = this.grad3[v % 12];
+      }
+    }
+    fade(t) { return t * t * t * (t * (t * 6 - 15) + 10); }
+    lerp(a, b, t) { return (1 - t) * a + t * b; }
+    perlin2(x, y) {
+      let X = Math.floor(x), Y = Math.floor(y);
+      x -= X; y -= Y;
+      X &= 255; Y &= 255;
+      const n00 = this.gradP[X + this.perm[Y]].dot2(x, y);
+      const n01 = this.gradP[X + this.perm[Y + 1]].dot2(x, y - 1);
+      const n10 = this.gradP[X + 1 + this.perm[Y]].dot2(x - 1, y);
+      const n11 = this.gradP[X + 1 + this.perm[Y + 1]].dot2(x - 1, y - 1);
+      const u = this.fade(x);
+      return this.lerp(this.lerp(n00, n10, u), this.lerp(n01, n11, u), this.fade(y));
+    }
+  }
+
+  // ========= STATE =========
+  const ctx = canvas.getContext("2d");
+
+  let bounding = { width: 0, height: 0, left: 0, top: 0 };
+  const noise = new Noise(Math.random());
+  let lines = [];
+  let rafId = null;
+
+  const mouse = {
+    x: -10, y: 0,
+    lx: 0, ly: 0,
+    sx: 0, sy: 0,
+    v: 0, vs: 0,
+    a: 0,
+    set: false
+  };
+
+  // ========= HELPERS =========
+  function setSize() {
+    bounding = container.getBoundingClientRect();
+
+    // Handle HiDPI canvas scaling
+    const dpr = window.devicePixelRatio || 1;
+    canvas.width = Math.floor(bounding.width * dpr);
+    canvas.height = Math.floor(bounding.height * dpr);
+
+    // Keep drawing in CSS pixels
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+
+  function setLines() {
+    const { width, height } = bounding;
+    lines = [];
+
+    const oWidth = width + 200;
+    const oHeight = height + 30;
+
+    const totalLines = Math.ceil(oWidth / config.xGap);
+    const totalPoints = Math.ceil(oHeight / config.yGap);
+
+    const xStart = (width - config.xGap * totalLines) / 2;
+    const yStart = (height - config.yGap * totalPoints) / 2;
+
+    for (let i = 0; i <= totalLines; i++) {
+      const pts = [];
+      for (let j = 0; j <= totalPoints; j++) {
+        pts.push({
+          x: xStart + config.xGap * i,
+          y: yStart + config.yGap * j,
+          wave: { x: 0, y: 0 },
+          cursor: { x: 0, y: 0, vx: 0, vy: 0 }
+        });
+      }
+      lines.push(pts);
+    }
+  }
+
+  function movePoints(time) {
+    const { waveSpeedX, waveSpeedY, waveAmpX, waveAmpY, friction, tension, maxCursorMove } = config;
+
+    lines.forEach(pts => {
+      pts.forEach(p => {
+        const move =
+          noise.perlin2(
+            (p.x + time * waveSpeedX) * 0.002,
+            (p.y + time * waveSpeedY) * 0.0015
+          ) * 12;
+
+        p.wave.x = Math.cos(move) * waveAmpX;
+        p.wave.y = Math.sin(move) * waveAmpY;
+
+        const dx = p.x - mouse.sx;
+        const dy = p.y - mouse.sy;
+        const dist = Math.hypot(dx, dy);
+        const l = Math.max(175, mouse.vs);
+
+        if (dist < l) {
+          const s = 1 - dist / l;
+          const f = Math.cos(dist * 0.001) * s;
+          p.cursor.vx += Math.cos(mouse.a) * f * l * mouse.vs * 0.00065;
+          p.cursor.vy += Math.sin(mouse.a) * f * l * mouse.vs * 0.00065;
+        }
+
+        p.cursor.vx += (0 - p.cursor.x) * tension;
+        p.cursor.vy += (0 - p.cursor.y) * tension;
+        p.cursor.vx *= friction;
+        p.cursor.vy *= friction;
+
+        p.cursor.x += p.cursor.vx * 2;
+        p.cursor.y += p.cursor.vy * 2;
+
+        p.cursor.x = Math.min(maxCursorMove, Math.max(-maxCursorMove, p.cursor.x));
+        p.cursor.y = Math.min(maxCursorMove, Math.max(-maxCursorMove, p.cursor.y));
+      });
+    });
+  }
+
+  function moved(point, withCursor = true) {
+    const x = point.x + point.wave.x + (withCursor ? point.cursor.x : 0);
+    const y = point.y + point.wave.y + (withCursor ? point.cursor.y : 0);
+    return { x: Math.round(x * 10) / 10, y: Math.round(y * 10) / 10 };
+  }
+
+  function drawLines() {
+    const { width, height } = bounding;
+
+    ctx.clearRect(0, 0, width, height);
+    ctx.beginPath();
+    ctx.strokeStyle = config.lineColor;
+
+    lines.forEach(points => {
+      let p1 = moved(points[0], false);
+      ctx.moveTo(p1.x, p1.y);
+
+      points.forEach((p, idx) => {
+        const isLast = idx === points.length - 1;
+        p1 = moved(p, !isLast);
+        const p2 = moved(points[idx + 1] || points[points.length - 1], !isLast);
+
+        ctx.lineTo(p1.x, p1.y);
+        if (isLast) ctx.moveTo(p2.x, p2.y);
+      });
+    });
+
+    ctx.stroke();
+  }
+
+  function updateMouse(clientX, clientY) {
+    mouse.x = clientX - bounding.left;
+    mouse.y = clientY - bounding.top;
+
+    if (!mouse.set) {
+      mouse.sx = mouse.x; mouse.sy = mouse.y;
+      mouse.lx = mouse.x; mouse.ly = mouse.y;
+      mouse.set = true;
+    }
+  }
+
+  function tick(t) {
+    mouse.sx += (mouse.x - mouse.sx) * 0.1;
+    mouse.sy += (mouse.y - mouse.sy) * 0.1;
+
+    const dx = mouse.x - mouse.lx;
+    const dy = mouse.y - mouse.ly;
+    const d = Math.hypot(dx, dy);
+
+    mouse.v = d;
+    mouse.vs += (d - mouse.vs) * 0.1;
+    mouse.vs = Math.min(100, mouse.vs);
+
+    mouse.lx = mouse.x;
+    mouse.ly = mouse.y;
+    mouse.a = Math.atan2(dy, dx);
+
+    container.style.setProperty("--x", `${mouse.sx}px`);
+    container.style.setProperty("--y", `${mouse.sy}px`);
+
+    movePoints(t);
+    drawLines();
+
+    rafId = requestAnimationFrame(tick);
+  }
+
+  function onResize() {
+    setSize();
+    setLines();
+  }
+
+  function onMouseMove(e) {
+    updateMouse(e.clientX, e.clientY);
+  }
+
+  function onTouchMove(e) {
+    if (!e.touches || !e.touches[0]) return;
+    const touch = e.touches[0];
+    updateMouse(touch.clientX, touch.clientY);
+  }
+
+  // ========= INIT =========
+  setSize();
+  setLines();
+  rafId = requestAnimationFrame(tick);
+
+  window.addEventListener("resize", onResize);
+  window.addEventListener("mousemove", onMouseMove);
+  window.addEventListener("touchmove", onTouchMove, { passive: true });
+
+  window.addEventListener("beforeunload", () => cancelAnimationFrame(rafId));
+})();
+</script>
+</body>
+</html>

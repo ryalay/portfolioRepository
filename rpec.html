@@ -1,12 +1,16 @@
 <!--
-  Juiced / UX Case Study Page
-  Rebuilt from ryanlayton.com/juiced.html into the "Architectural Narrative" portfolio system.
-  Warm portfolio theme throughout (Selected UX Work project). Real screenshots pulled from ryanlayton.com.
-  Same Client-First-style class names as the other case studies / reuse the same Webflow classes.
+  RPEC Portal / Professional Work
+  Compact professional-work entry (same format as KeHE).
+  Centerpiece: end-to-end ownership / one person designed and built a production platform
+  an entire remote job function lived on.
+  Placeholder frames until scrubbed screenshots are available (internal ops platform:
+  scrub or stage mock records before capturing).
+  Warm portfolio theme. Same class names as the other pages.
+  DRAFT NOTES: acronym expansion unknown (written around); program timeline/team size TBD.
 -->
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>Juiced / Case Study</title>
+<title>RPEC Portal / Professional Work</title>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&amp;family=Inter:wght@400;600;800&amp;display=swap" rel="stylesheet"/>
@@ -55,7 +59,6 @@
      The tell was that .headline-lg is stepped DOWN to 36px inside a two-column row, i.e.
      Playfair used below the size a Didone wants, for layout reasons. Inter 600 with -0.02em
      tracking reads instantly and sits in a clear hierarchy under the Playfair statement. */
-  .headline-lg { font-family: "Inter", sans-serif; font-weight: 600; font-size: 44px; line-height: 54px; letter-spacing: -0.02em; margin: 0; }
   .headline-md { font-family: "Inter", sans-serif; font-weight: 600; font-size: 30px; line-height: 40px; letter-spacing: -0.02em; margin: 0; }
   .body-lg { font-size: 20px; line-height: 32px; }
   .body-md { font-size: 16px; line-height: 26px; }
@@ -71,15 +74,18 @@
   .measure { max-width: 78ch; }
   /* the hero deck sits at a larger size, so 78ch there is 868px and about 89 characters. */
   .hero-sub.measure { max-width: 62ch; }
+  .mt-lg { margin-top: var(--stack-lg); }
+  .text-muted { color: var(--muted); }
   strong { font-weight: 600; }
 
-  .dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; flex: 0 0 8px; background: var(--slate); }
+  .dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; flex: 0 0 8px; background: var(--olive); }
 
   /* Hero */
   .hero { position: relative; padding-top: calc(var(--section-pad) + 68px); padding-bottom: var(--section-pad); overflow: hidden; }
   .hero-topo { position: absolute; top: -30px; right: -40px; width: 640px; max-width: 66%; opacity: 0.06; pointer-events: none; }
   .hero-eyebrow { display: flex; align-items: center; gap: var(--stack-md); color: var(--ink); margin-bottom: var(--stack-lg); }
-  .hero-statement { margin-top: var(--stack-lg); max-width: 22ch; }
+  .hero-statement { margin-top: var(--stack-lg); max-width: 24ch; }
+  .hero-sub { margin-top: var(--stack-lg); color: var(--muted); }
 
   /* Context strip */
   .context { display: flex; flex-wrap: wrap; border-bottom: 1px solid var(--hairline); }
@@ -93,14 +99,15 @@
      moments now: the 44px statement, pull quotes, stat numbers, card titles, the footer. */
   .context-item .val { font-family: "Inter", sans-serif; font-weight: 500; font-size: 19px; line-height: 27px; letter-spacing: -0.01em; }
 
-  /* Media frames (light) */
+  /* Frames */
   .frame { background: var(--field); border: 1px solid var(--hairline); padding: 24px; display: flex; align-items: center; justify-content: center; }
-  .frame img { width: 100%; height: auto; border: 1px solid var(--hairline); background: #fff; }
+  .frame img { width: 100%; height: auto; }
+  .frame--bare { padding: 0; border: none; background: transparent; }
+  .frame.is-anchor { aspect-ratio: 16 / 9; }
+  .shot { background: #fff; border: 1px solid var(--hairline); width: 100%; height: 100%; min-height: 120px; display: flex; align-items: center; justify-content: center; text-align: center; padding: 20px; }
+  .shot .ui-label { color: var(--warm-gray); }
   .frame-caption { color: var(--warm-gray); margin-top: var(--stack-md); }
 
-  /* Narrative sections */
-  .sec-eyebrow { display: flex; align-items: center; gap: var(--stack-md); color: var(--ink); margin-bottom: var(--stack-md); }
-  .sec-head { margin-bottom: var(--stack-lg); }
 
   /* SPLIT ROWS: the label side on the left, its content on the right, repeated down a section.
      Ryan's request: "what is juiced on the left, body on the right, then my role on the left,
@@ -140,78 +147,68 @@
   .sec--tint { background: var(--field); }
   .sec--tint + .sec, .sec + .sec--tint { border-top: none; }
   .sec--tint .frame:not(.frame--bare) { background: var(--canvas); }
-  .subhead { margin-top: var(--stack-lg); margin-bottom: var(--stack-md); }
+  .sec-eyebrow { display: flex; align-items: center; gap: var(--stack-md); color: var(--ink); margin-bottom: var(--stack-md); }
+  .sec-head { margin-bottom: var(--stack-lg); }
   .prose p { color: var(--ink); }
   .prose p + p { margin-top: var(--stack-md); }
 
-  /* How-might-we highlight */
-  /* No rules, no dividers, no boxes. Ryan: "you can remove all these lines and boxes". These
-     were decorative ink rules framing a stat band and the how-might-we block, plus vertical
-     hairlines between stats. Spacing carries the separation instead. The subtler structural
-     hairlines between sections (.sec + .sec) and between .insight rows are a different device
-     and are left in place. */
-  /* Full container width, and "How might we" is folded into the sentence rather than sitting
-     above it as a small-caps label. Ryan asked for both. This is the one block on the page that
-     is deliberately NOT a two-column row: it is a single display line and it should command the
-     whole measure. */
-  .hmw { margin-top: 80px; }
-  .hmw .statement { max-width: none; }
-  .hmw .statement { max-width: none; }
+  /* Ownership strip: what "designed and built" covered */
+  .owned { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--gutter); margin-top: var(--stack-lg); }
+  .owned-item { border: 1px solid var(--hairline); padding: var(--stack-lg) var(--gutter); }
   /* ONE LABEL SYSTEM. Ryan: "they should all have the exact same style." The 12px uppercase
      label had drifted to five treatments across the site — ink, warm-gray, slate and olive —
      with no rule behind which was which, so the colour read as decoration. Two roles only:
      a label that NAMES the thing directly below it is var(--ink); a label that is quiet
      metadata bolted to an image or a data strip (.context-item, .shot, .state-item) is
      var(--warm-gray). No third colour. */
-  .hmw .ui-label { color: var(--ink); display: block; margin-bottom: var(--stack-md); }
+  .owned-item .ui-label { color: var(--ink); display: block; margin-bottom: var(--stack-md); }
+  /* Card titles, same job and same size as .card-title on the homepage — so, same treatment.
+     Playfair is display-and-editorial only. */
+  .owned-item h3 { font-family: "Inter", sans-serif; font-weight: 600; font-size: 24px; line-height: 32px; letter-spacing: -0.01em; margin: 0 0 var(--stack-md); }
+  .owned-item p { color: var(--muted); margin: 0; }
 
-  /* Feature walkthrough (alternating) */
+  /* Compact work rows */
+  .work { display: grid; grid-template-columns: 1fr 1fr; gap: var(--stack-lg) 64px; align-items: center; }
+  .work + .work { margin-top: var(--section-pad); }
+  .work--flip .work-media { order: 2; }
+  .work-title { margin-bottom: var(--stack-md); }
+  .work-note { color: var(--muted); }
 
-  /* Phone mockups are portrait, and several are SMALL natively (showcase2 is 358px wide,
-     gighubmock1 is 471px). Letting them fill a half-width column both oversized them and
-     upscaled them past their own resolution, so they read blurry as well as huge.
-     Capping HEIGHT handles portrait and landscape with one rule: a tall phone shrinks to fit,
-     a wide screenshot is still bounded by max-width. width:auto is what guarantees nothing is
-     ever scaled UP beyond its intrinsic size. The .frame is already a centering flex box, so
-     a narrower image sits centred in its column with no extra rule. */
-  .feature-media img { width: auto; max-width: 100%; max-height: 640px; }
-  /* The media column is WIDER than the text column, and the size follows the media on flipped
-     rows too: with .feature--flip .feature-media { order: 2 } the media lands in grid cell 2, so
-     the flipped template is reversed to keep 6fr under it. These are 1600px-wide app screenshots
-     and they were rendering about 518px after the frame padding, so they read small and were
-     heavily downscaled. 6fr of a 1136px row is 682px. */
-  .feature { display: grid; grid-template-columns: 6fr 4fr; gap: var(--stack-lg) 64px; align-items: center; }
-  .feature--flip { grid-template-columns: 4fr 6fr; }
-  /* No padded box around a screenshot. The image keeps its own 1px edge, which is what defines
-     it as a screenshot; the outer .frame chrome was a second border around a first one. */
-  .feature-media .frame { padding: 0; border: none; background: transparent; }
-  .feature + .feature { margin-top: var(--section-pad); }
-  .feature-lead { margin-top: var(--section-pad); }
-  .feature--flip .feature-media { order: 2; }
-  .feature-title { margin-bottom: var(--stack-md); }
-  .feature-text .body-lg { color: var(--muted); }
+  /* Honest-outcome block */
+  /* THE CONCLUSION BLOCK, rebuilt to match KeHE's. It was a .split, which left the whole
+     narrow 4fr column empty beside the line, and the paragraph that explains the outcome sat
+     in a separate .split--body BELOW the block's bottom rule, fenced off from what it
+     explains. The line was 32px Playfair while this page's h2 renders at 26px inside a split.
+     Now: one full-width block read top to bottom — label, outcome, why — at 26px Inter. */
+  .note-block { margin-top: var(--section-pad); border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink); padding: var(--stack-lg) 0; }
+  .note-block .ui-label { color: var(--ink); display: block; margin-bottom: var(--stack-md); }
+  .note-line { font-family: "Inter", sans-serif; font-weight: 600; font-size: 26px;
+    line-height: 36px; letter-spacing: -0.02em; max-width: 46ch; margin: 0; }
+  /* 78ch measured 81 characters per line here; this page's own body copy runs 75. 72ch
+     lands the reasoning on the same measure as every other paragraph on the page. */
+  .note-why { max-width: 72ch; margin: var(--stack-lg) 0 0; }
+  @media (max-width: 720px) { .note-line { font-size: 22px; line-height: 30px; } }
 
-  /* Close */
   .close-actions { display: flex; gap: var(--stack-md); flex-wrap: wrap; }
   .btn { display: inline-flex; align-items: center; padding: 14px 32px; text-decoration: none; border: 1px solid transparent; }
-  .btn-primary { background: var(--slate); color: #fff; }
-  .btn-primary:hover { background: #536771; }
   .btn-ghost { border-color: var(--ink); color: var(--ink); }
   .btn-ghost:hover { background: var(--ink); color: var(--canvas); }
 
   a:focus-visible, .btn:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
   @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
+  @media (max-width: 900px) {
+    .owned { grid-template-columns: 1fr; }
+  }
   @media (max-width: 800px) {
-    .feature { grid-template-columns: 1fr; }
-    .feature--flip .feature-media { order: 0; }
-    .feature-media { margin-bottom: var(--stack-md); }
+    .work { grid-template-columns: 1fr; }
+    .work--flip .work-media { order: 0; }
   }
   @media (max-width: 640px) {
     :root { --gutter: 24px; --section-pad: 40px; }
     .display-name { font-size: 44px; }
     .statement { font-size: 28px; line-height: 34px; }
-    .headline-lg { font-size: 30px; line-height: 38px; }
     .headline-md { font-size: 25px; line-height: 33px; }
     .body-lg { font-size: 18px; line-height: 29px; }
     .context-item + .context-item { padding-left: 0; }
@@ -268,104 +265,94 @@
 </g>
 </svg>
 <div class="padding-global"><div class="container-large">
-<div class="hero-eyebrow ui-label">Selected UX Work</div>
-<h1 class="display-name">Juiced</h1>
-<p class="statement hero-statement">Giving secondhand sellers the tools to maximize profit with minimal effort.</p>
+<div class="hero-eyebrow ui-label">Professional Work / Built &amp; Launched</div>
+<h1 class="display-name">RPEC<br/>Portal</h1>
+<p class="statement hero-statement">The platform an entire remote team's job lived on, designed and built by one person.</p>
+<p class="body-lg hero-sub measure">
+        Leverage Homes piloted a new sales structure: remote appointment setters feeding
+        appointments to in-house closers. The RPEC Portal was where that job happened, a
+        Salesforce Experience Cloud platform for setting appointments, creating opportunities,
+        and logging notes, wired into Salesforce so every appointment routed to the right
+        closer, accurately, automatically.
+      </p>
 </div></div>
 </header>
 <!-- CONTEXT STRIP -->
 <section class="section section--flush-top">
 <div class="padding-global"><div class="container-large">
 <div class="context">
-<div class="context-item"><span class="ui-label">Role</span><div class="val">UX Designer</div></div>
-<div class="context-item"><span class="ui-label">Context</span><div class="val">Client collaboration with Juiced, a reselling platform in active development</div></div>
-<div class="context-item"><span class="ui-label">Responsibilities</span><div class="val">Interaction &amp; UX design, research</div></div>
-<div class="context-item"><span class="ui-label">Tools</span><div class="val">Figma, Jira</div></div>
+<div class="context-item"><span class="ui-label">Role</span><div class="val">Sole designer &amp; builder</div></div>
+<div class="context-item"><span class="ui-label">Platform</span><div class="val">Salesforce Experience Cloud</div></div>
+<div class="context-item"><span class="ui-label">Outcome</span><div class="val">Built, launched, used in production</div></div>
+<div class="context-item"><span class="ui-label">For</span><div class="val">Leverage Homes remote sales pilot</div></div>
 </div>
 </div></div>
 </section>
 <!-- HERO IMAGE -->
 <section class="section section--flush-top">
 <div class="padding-global"><div class="container-large">
-<div class="frame"><img alt="The Juiced app" src="images/juicedthumbtest.webp"/></div>
+<div class="frame is-anchor"><div class="shot"><span class="ui-label">Anchor / Portal home or appointment-setting flow (scrubbed screenshot)</span></div></div>
 </div></div>
 </section>
-<!-- BACKGROUND -->
+<!-- END-TO-END OWNERSHIP (centerpiece) -->
 <section class="section sec">
 <div class="padding-global"><div class="container-large">
-<div class="split"><div><div class="sec-eyebrow ui-label">Background</div><h2 class="headline-lg sec-head">What is Juiced?</h2></div><div class="prose measure">
-<p class="body-lg">Juiced is a membership-based <strong>online community</strong> of secondhand sellers looking to buy in-demand products and <strong>sell them for a profit.</strong></p>
-<p class="body-lg">The community lives on Discord, where members get useful tools like insights on new releases and website-monitoring bots. A standalone app, though, would open up far more flexibility and much more powerful features.</p>
+<div class="split"><div><div class="sec-eyebrow ui-label">End to End</div><h2 class="headline-md sec-head">I designed and built the entire platform</h2></div><div class="prose measure">
+<p class="body-lg">The pilot needed its tooling fast, and it needed the tooling to be right: a remote setter's entire workday would happen inside it, and every appointment they set had to land with the right closer in Salesforce without anyone checking behind it. I owned all of it.</p>
 </div></div>
-<div class="split"><h3 class="headline-md subhead">My role</h3><div class="prose measure">
-<p class="body-lg">As a longtime member of the Juiced community, I jumped at the chance to design the app when it was announced. Working directly with Juiced's leadership and developers, I designed the full app experience with the goals of both the reselling community and the business in mind.</p>
-<p class="body-lg">While designing, I served as an alpha tester for the version of the app that already existed. Using my designs as reference, and working alongside developers and leadership, I contributed heavily to the alpha testing program and suggested many changes for the app's further development.</p>
-</div></div>
+<div class="owned">
+<div class="owned-item">
+<span class="ui-label">Designed</span>
+<h3>The experience</h3>
+<p class="body-md">The full interface for a job that lived on screen: setting appointments, creating new opportunities, adding notes, and seeing the day's work clearly. Built for new remote hires to learn fast and use all day.</p>
+</div>
+<div class="owned-item">
+<span class="ui-label">Built</span>
+<h3>The platform</h3>
+<p class="body-md">Constructed on Salesforce Experience Cloud, from the portal itself through the custom functionality the pilot's workflow needed.</p>
+</div>
+<div class="owned-item">
+<span class="ui-label">Wired</span>
+<h3>The routing</h3>
+<p class="body-md">Deep Salesforce integration: appointments created in the portal mapped into the org and distributed across the closing team accurately, so the inflow balanced itself.</p>
+</div>
+</div>
 </div></div>
 </section>
-<!-- THE PROBLEM -->
+<!-- THE PORTAL (screens) -->
 <section class="section sec sec--tint">
 <div class="padding-global"><div class="container-large">
-<div class="split"><div><div class="sec-eyebrow ui-label">The Problem</div><h2 class="headline-lg sec-head">Selling secondhand is more work than it looks.</h2></div><div class="prose"><div class="prose measure">
-<p class="body-lg"><strong>Managing inventory</strong> and <strong>sourcing new items</strong> to buy can be difficult. It's hard to keep track of listings across different platforms, and just as hard to get a clear picture of everything you currently have on hand.</p>
-<p class="body-lg">It's also tough for sellers to <strong>find new, hyped products</strong> worth paying attention to, and tougher still to know <strong>when to sell them.</strong></p>
-</div></div></div><div class="hmw">
-<p class="statement">How might we help sellers streamline their workflow and maximize profit with minimal effort?</p>
-</div>
-</div></div>
-</section>
-<!-- THE SOLUTION -->
-<section class="section sec">
-<div class="padding-global"><div class="container-large">
-<div class="split"><div><div class="sec-eyebrow ui-label">The Solution</div><h2 class="headline-lg sec-head">One app for the whole reselling workflow.</h2></div><div class="prose measure">
-<p class="body-lg">The Juiced app builds on the fundamentals of the Discord community, including website monitors, a release calendar, and more, then goes further. Users can manage their inventory and listings, and get AI-powered insights on their items in the context of the current market.</p>
-</div></div>
-<!-- Feature 1 -->
-<div class="feature feature-lead">
-<div class="feature-media"><div class="frame"><img alt="Juiced dashboard" loading="lazy" src="images/juiceddashboard.webp"/></div></div>
-<div class="feature-text">
-<h3 class="headline-md feature-title">See an overview of your performance</h3>
-<p class="body-lg">The dashboard gives an in-depth view of buying and selling history, plus AI-generated, actionable insights about your items and where they stand in the current market, so you always know how to get the most out of them.</p>
+<div class="sec-eyebrow ui-label">The Portal</div>
+<h2 class="headline-md sec-head">Where the job happened.</h2>
+<div class="work mt-lg">
+<div class="work-media"><div class="frame"><div class="shot"><span class="ui-label">Appointment-setting flow (scrubbed)</span></div></div></div>
+<div class="work-text">
+<h3 class="headline-md work-title">Setting appointments</h3>
+<p class="body-lg work-note">The core loop of the job: a setter books an appointment for a homeowner, and the portal handles the rest, creating the record, mapping it to Salesforce, and routing it to a closer's calendar.</p>
 </div>
 </div>
-<!-- Feature 2 (flip) -->
-<div class="feature feature--flip">
-<div class="feature-media"><div class="frame"><img alt="Juiced inventory page" loading="lazy" src="images/juicedinventory.webp"/></div></div>
-<div class="feature-text">
-<h3 class="headline-md feature-title">Manage your inventory</h3>
-<p class="body-lg">The inventory page lets users keep track of all of their items and the important information for each one, in a single place.</p>
-</div>
-</div>
-<!-- Feature 3 -->
-<div class="feature">
-<div class="feature-media"><div class="frame"><img alt="Juiced listings manager" loading="lazy" src="images/juicedlistings.webp"/></div></div>
-<div class="feature-text">
-<h3 class="headline-md feature-title">Manage and optimize listings</h3>
-<p class="body-lg">The listings page shows every active listing across platforms. Keeping prices current across channels is usually a headache, so the listing manager makes sure every item is listed on the right platforms and lets changes be made quickly, everywhere at once.</p>
-</div>
-</div>
-<!-- Feature 4 (flip) -->
-<div class="feature feature--flip">
-<div class="feature-media"><div class="frame"><img alt="Juiced releases calendar" loading="lazy" src="images/juicedreleases.webp"/></div></div>
-<div class="feature-text">
-<h3 class="headline-md feature-title">Stay ahead of important releases</h3>
-<p class="body-lg">Anticipated drops and high-demand releases surface here, focused on items likely to resell for a profit, with the information a seller needs to plan a purchase.</p>
-</div>
-</div>
-<!-- Feature 5 -->
-<div class="feature">
-<div class="feature-media"><div class="frame"><img alt="Juiced website activity monitor" loading="lazy" src="images/juicedwebsiteactivity.webp"/></div></div>
-<div class="feature-text">
-<h3 class="headline-md feature-title">Monitor websites for new products</h3>
-<p class="body-lg">The website activity page shows live updates from key sneaker, fashion, and other sites that often carry high-demand products, so users can catch restocks and buy before anyone else.</p>
+<div class="work work--flip">
+<div class="work-media"><div class="frame"><div class="shot"><span class="ui-label">Opportunities &amp; notes (scrubbed)</span></div></div></div>
+<div class="work-text">
+<h3 class="headline-md work-title">Opportunities and notes</h3>
+<p class="body-lg work-note">Setters could create new opportunities and log notes as they worked leads, so the closer walking into an appointment had the full context of every conversation that came before it.</p>
 </div>
 </div>
 </div></div>
 </section>
-<!-- CLOSE -->
+<!-- THE HONEST OUTCOME -->
 <section class="section sec">
 <div class="padding-global"><div class="container-large">
-<div class="close-actions">
+<!-- This section had NO heading at all: a section eyebrow, a second uppercase label
+     ("The honest version") right under it, then the payoff line as a plain <p>. It is now
+     one conclusion block, the same component KeHE's decision uses, with the payoff line as
+     the section's real h2. -->
+<div class="note-block" style="margin-top:0">
+<span class="ui-label">The outcome</span>
+<h2 class="note-line">The platform did its job. The business hypothesis didn't, and leadership sunset the pilot.</h2>
+<p class="body-md text-muted note-why">The remote-setter model didn't perform the way leadership projected, and the program was eventually halted. The portal itself ran as designed: appointments flowed, routing held up, and the tooling was never the bottleneck. Building something that works for a bet that doesn't is part of shipping real products, and this project is where I learned that lesson firsthand.</p>
+</div>
+<div class="close-actions mt-lg">
 <a class="btn btn-ghost ui-label" href="index.html#work">Back to work</a>
 </div>
 </div></div>
